@@ -9,21 +9,25 @@
         body {
             margin: 0;
             padding: 0;
-            background-color: #1a3c26; /* Dark Green */
+            background-color: #1a3c26; /* The exact dark green from your photo */
             font-family: 'Hind Siliguri', sans-serif;
             color: #ffffff;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
         }
 
-        /* Top Navigation */
+        /* Header Styling */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 15px 5%;
+            padding: 15px 4%;
+            background-color: rgba(0, 0, 0, 0.1);
         }
 
         .logo {
-            height: 50px;
+            height: 55px; /* Adjust based on your preference */
             width: auto;
         }
 
@@ -34,37 +38,100 @@
         }
 
         .donate-btn {
-            background-color: #00897b;
+            background-color: #00897b; /* Teal button color from image */
             color: white;
             text-decoration: none;
             padding: 10px 20px;
             border-radius: 8px;
             font-weight: bold;
+            font-size: 16px;
         }
 
         .menu-icon {
-            font-size: 30px;
+            font-size: 32px;
             cursor: pointer;
+            line-height: 1;
         }
 
-        /* Hero Section */
+        /* Hero Layout - This creates the side-by-side look */
         .hero {
             display: flex;
-            flex-direction: column;
+            flex: 1;
+            flex-direction: row; /* Side by side */
             align-items: center;
-            justify-content: center;
+            justify-content: space-evenly;
+            padding: 20px 5%;
+            gap: 30px;
+        }
+
+        .hero-left {
+            flex: 1;
             text-align: center;
-            padding: 40px 10%;
-            min-height: 70vh;
+            max-width: 450px;
         }
 
         .motto-img {
-            width: 90%;
-            max-width: 400px;
+            width: 100%;
             height: auto;
-            margin-bottom: 10px;
         }
 
+        .tagline {
+            font-size: 28px;
+            margin-top: 10px;
+            color: #d1e7dd; /* Light mint color for the sub-text */
+        }
+
+        .hero-right {
+            flex: 1;
+            font-size: 24px;
+            line-height: 1.6;
+            text-align: left;
+            padding-left: 20px;
+            max-width: 500px;
+        }
+
+        /* Mobile View - stacks only on very small screens */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+                padding-top: 40px;
+            }
+            .hero-right {
+                text-align: center;
+                padding-left: 0;
+                font-size: 20px;
+            }
+            .tagline {
+                font-size: 22px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Picsart_26-02-20_22-36-27-546.png" alt="Shurjoday Foundation" class="logo">
+        <div class="nav-right">
+            <a href="#" class="donate-btn">দান করুন</a>
+            <div class="menu-icon">☰</div>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-left">
+            <img src="Picsart_26-02-20_22-35-57-632.png" alt="হাতে রেখে হাত" class="motto-img">
+            <div class="tagline">আনবো রঙিন প্রভাত</div>
+        </div>
+
+        <div class="hero-right">
+            <p>সূর্যোদয় ফাউন্ডেশন একটি গ্রামভিত্তিক অলাভজনক সংগঠন।</p>
+            <p>আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
+        </div>
+    </main>
+
+</body>
+</html>
         .tagline {
             font-size: 24px;
             margin-bottom: 30px;
