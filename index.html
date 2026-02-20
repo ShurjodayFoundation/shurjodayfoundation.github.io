@@ -14,57 +14,106 @@
             color: #ffffff;
         }
 
-        /* Top Header */
+        /* Top Navigation */
         header {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            padding: 20px 5%;
+            padding: 15px 5%;
         }
 
         .logo {
-            height: 60px;
+            height: 50px;
+            width: auto;
         }
 
-        .nav-controls {
+        .nav-right {
             display: flex;
             align-items: center;
-            gap: 20px;
+            gap: 15px;
         }
 
         .donate-btn {
-            background-color: #00897b; /* Teal button */
+            background-color: #00897b;
             color: white;
             text-decoration: none;
-            padding: 10px 25px;
+            padding: 10px 20px;
             border-radius: 8px;
             font-weight: bold;
-            font-size: 18px;
         }
 
-        .hamburger {
+        .menu-icon {
             font-size: 30px;
             cursor: pointer;
         }
 
-        /* Content Layout */
+        /* Hero Section */
         .hero {
             display: flex;
-            flex-direction: row;
+            flex-direction: column;
             align-items: center;
-            justify-content: space-around;
-            padding: 60px 10%;
-            gap: 40px;
-        }
-
-        .hero-left {
-            flex: 1;
+            justify-content: center;
             text-align: center;
+            padding: 40px 10%;
+            min-height: 70vh;
         }
 
         .motto-img {
-            max-width: 100%;
+            width: 90%;
+            max-width: 400px;
             height: auto;
+            margin-bottom: 10px;
+        }
+
+        .tagline {
+            font-size: 24px;
+            margin-bottom: 30px;
+        }
+
+        .description {
+            font-size: 20px;
+            line-height: 1.6;
+            max-width: 600px;
+        }
+
+        /* Tablet/Desktop layout */
+        @media (min-width: 768px) {
+            .hero {
+                flex-direction: row;
+                text-align: left;
+                justify-content: space-around;
+            }
+            .description {
+                border-left: 2px solid rgba(255,255,255,0.3);
+                padding-left: 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <img src="Picsart_26-02-20_22-36-27-546.png" alt="Logo" class="logo">
+        <div class="nav-right">
+            <a href="#" class="donate-btn">দান করুন</a>
+            <div class="menu-icon">☰</div>
+        </div>
+    </header>
+
+    <main class="hero">
+        <div class="hero-left">
+            <img src="Picsart_26-02-20_22-35-57-632.png" alt="হাতে রেখে হাত" class="motto-img">
+            <div class="tagline">আনবো রঙিন প্রভাত</div>
+        </div>
+
+        <div class="description">
+            <p>সূর্যোদয় ফাউন্ডেশন একটি গ্রামভিত্তিক অলাভজনক সংগঠন।</p>
+            <p>আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
+        </div>
+    </main>
+
+</body>
+</html>            height: auto;
             width: 400px;
         }
 
