@@ -4,67 +4,113 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Shurjoday Foundation</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
     <style>
-        body { font-family: 'Arial', sans-serif; background-color: #f8f9fa; margin: 0; }
-        .navbar { background: white; border-bottom: 1px solid #ddd; padding: 10px 20px; }
-        
-        /* Sidebar Menu Styles */
-        .sidebar { height: 100vh; width: 0; position: fixed; z-index: 1000; top: 0; left: 0; background-color: #0a192f; overflow-x: hidden; transition: 0.5s; padding-top: 60px; }
-        .sidebar a { padding: 15px 32px; text-decoration: none; font-size: 20px; color: white; display: block; transition: 0.3s; border-bottom: 1px solid #1a2a3f; }
-        .sidebar a:hover { background-color: #1a2a3f; }
-        .sidebar .closebtn { position: absolute; top: 0; right: 25px; font-size: 36px; margin-left: 50px; border-bottom: none; }
-        
-        /* Layout Styles */
-        .logo-img { height: 40px; }
-        .search-text { color: #666; font-size: 16px; cursor: pointer; }
-        .section-title { font-weight: bold; margin-top: 20px; display: flex; justify-content: space-between; align-items: center; }
-        .card { border-radius: 15px; border: 1px solid #eee; text-align: center; padding: 10px; background: #fff; transition: 0.3s; }
-        .card img { border-radius: 10px; width: 100%; height: auto; }
-        .card-text { margin-top: 10px; font-size: 14px; font-weight: bold; }
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: #1a3c26; /* Dark Green */
+            font-family: 'Hind Siliguri', sans-serif;
+            color: #ffffff;
+        }
+
+        /* Top Header */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 20px 5%;
+        }
+
+        .logo {
+            height: 60px;
+        }
+
+        .nav-controls {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .donate-btn {
+            background-color: #00897b; /* Teal button */
+            color: white;
+            text-decoration: none;
+            padding: 10px 25px;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 18px;
+        }
+
+        .hamburger {
+            font-size: 30px;
+            cursor: pointer;
+        }
+
+        /* Content Layout */
+        .hero {
+            display: flex;
+            flex-direction: row;
+            align-items: center;
+            justify-content: space-around;
+            padding: 60px 10%;
+            gap: 40px;
+        }
+
+        .hero-left {
+            flex: 1;
+            text-align: center;
+        }
+
+        .motto-img {
+            max-width: 100%;
+            height: auto;
+            width: 400px;
+        }
+
+        .hero-right {
+            flex: 1;
+            font-size: 24px;
+            line-height: 1.8;
+            text-align: left;
+        }
+
+        /* Mobile View Adjustment */
+        @media (max-width: 768px) {
+            .hero {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-right {
+                text-align: center;
+                font-size: 20px;
+            }
+        }
     </style>
 </head>
 <body>
 
-    <div id="mySidebar" class="sidebar">
-      <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-      <a href="#">মূলপাতা</a>
-      <a href="#">মিডিয়া</a>
-      <a href="#">গৃহীত কর্মসূচি</a>
-      <a href="#">সদস্যবৃন্দ</a>
-      <a href="#">যোগাযোগ</a>
-      <a href="#" style="color: #ff8c00; font-weight: bold;">ডোনেট করুন</a>
-    </div>
-
-    <nav class="navbar sticky-top" style="background-color: #fdf5e6; border-bottom: 1px solid #ddd; padding: 10px 15px;">
-    <div class="container-fluid d-flex justify-content-between align-items-center">
-        
-        <div style="font-size:30px; cursor:pointer; color: #333;" onclick="openNav()">&#9776;</div>
-        
-        <div class="text-center">
-            <div class="d-flex align-items-center justify-content-center">
-                <img src="your-logo-icon.png" alt="Logo" style="height: 40px; margin-right: 10px;">
-                <div class="text-start">
-                    <h1 style="font-size: 22px; margin: 0; color: #5d4037; font-weight: bold;">সূর্যোদয় ফাউন্ডেশন</h1>
-                    <p style="font-size: 11px; margin: 0; color: #5d4037;">হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
-                </div>
-            </div>
+    <header>
+        <img src="1000166336.png" alt="Shurjoday Foundation" class="logo">
+        <div class="nav-controls">
+            <a href="#" class="donate-btn">দান করুন</a>
+            <div class="hamburger">☰</div>
         </div>
-        
-        <a href="donate.html" style="background-color: #009688; color: white; padding: 8px 20px; border-radius: 8px; text-decoration: none; font-weight: bold; font-size: 16px;">দান করুন</a>
-        
-    </div>
-</nav>
+    </header>
 
-    <div class="container mt-4">
-        <div class="section-title">
-            <span>♫ Media Albums</span>
-            <a href="#" class="text-decoration-none" style="color: #0056b3;">View All</a>
+    <main class="hero">
+        <div class="hero-left">
+            <img src="1000166335.png" alt="হাতে রেখে হাত" class="motto-img">
         </div>
-        
-        <div class="row mt-3">
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card">
+
+        <div class="hero-right">
+            <p>সূর্যোদয় ফাউন্ডেশন একটি গ্রামভিত্তিক অলাভজনক সংগঠন।</p>
+            <p>আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
+        </div>
+    </main>
+
+</body>
+</html>                <div class="card">
                     <img src="https://via.placeholder.com/150/f5f5dc/000000?text=Logo" alt="Album">
                     <div class="card-text">প্রত্যাবর্তন</div>
                 </div>
