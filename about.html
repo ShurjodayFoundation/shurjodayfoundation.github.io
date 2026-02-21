@@ -1,0 +1,173 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <!-- ========================================= -->
+  <!-- BASIC META -->
+  <!-- ========================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমাদের সম্পর্কে | সূর্যোদয় ফাউন্ডেশন</title>
+  <meta name="description" content="সূর্যোদয় ফাউন্ডেশনের লক্ষ্য, উদ্দেশ্য, নীতি ও আয়-ব্যয়ের নীতিমালা সম্পর্কে বিস্তারিত জানুন।">
+
+  <!-- Open Graph -->
+  <meta property="og:title" content="আমাদের সম্পর্কে | সূর্যোদয় ফাউন্ডেশন">
+  <meta property="og:description" content="গ্রামভিত্তিক অলাভজনক সংগঠন সূর্যোদয় ফাউন্ডেশন।">
+  <meta property="og:type" content="website">
+
+  <!-- Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hind Siliguri', sans-serif; }
+  </style>
+</head>
+
+<body class="bg-[#fffdf7] text-[#1f2937]">
+
+<!-- ========================================= -->
+<!-- NAVBAR -->
+<!-- ========================================= -->
+<nav class="fixed w-full bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <div class="text-xl font-bold text-[#008E48]">
+      সূর্যোদয় ফাউন্ডেশন
+    </div>
+
+    <div class="hidden md:flex space-x-6 items-center">
+      <a href="index.html">হোম</a>
+      <a href="activities.html">কার্যক্রম</a>
+      <a href="contact.html">যোগাযোগ</a>
+      <a href="index.html#donation" class="bg-[#008E48] text-white px-4 py-2 rounded-lg hover:bg-[#163322] transition">
+        ডোনেট করুন
+      </a>
+    </div>
+  </div>
+</nav>
+
+<!-- ========================================= -->
+<!-- MAIN CONTENT -->
+<!-- ========================================= -->
+<section class="pt-32 pb-20 max-w-4xl mx-auto px-6 space-y-16">
+
+  <!-- About Section -->
+  <div>
+    <h1 class="text-4xl font-bold mb-6">আমাদের সম্পর্কে</h1>
+    <p class="leading-relaxed text-lg">
+      সূর্যোদয় ফাউন্ডেশন কমলাপুর, সদর দক্ষিণ, কুমিল্লা ভিত্তিক একটি অলাভজনক, অরাজনৈতিক ও স্বেচ্ছাসেবী সংগঠন। 
+      গত ১+ বছর ধরে আমরা গ্রামের সার্বিক উন্নয়ন, মানবিক সহায়তা এবং সামাজিক ঐক্য প্রতিষ্ঠায় কাজ করে যাচ্ছি। 
+      আমাদের লক্ষ্য হলো একটি সচেতন, ঐক্যবদ্ধ ও উন্নত গ্রাম গড়ে তোলা।
+    </p>
+  </div>
+
+  <!-- লক্ষ্য-উদ্দেশ্য -->
+  <div>
+    <h2 class="text-2xl font-semibold mb-4">লক্ষ্য-উদ্দেশ্য</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>শিক্ষা সহায়তা</li>
+      <li>সামাজিক উন্নয়ন</li>
+      <li>যুব সম্পৃক্ততা</li>
+      <li>মানবিক সহায়তা</li>
+      <li>ঐক্য</li>
+    </ul>
+  </div>
+
+  <!-- নীতি ও আদর্শ -->
+  <div>
+    <h2 class="text-2xl font-semibold mb-4">নীতি ও আদর্শ</h2>
+    <ul class="list-disc pl-6 space-y-2">
+      <li>অরাজনৈতিক</li>
+      <li>অলাভজনক</li>
+      <li>স্বেচ্ছাসেবী</li>
+    </ul>
+  </div>
+
+  <!-- আয়-ব্যয়ের নীতিমালা -->
+  <div>
+    <h2 class="text-2xl font-semibold mb-4">আয়-ব্যয়ের নীতিমালা</h2>
+
+    <!-- Expandable Button -->
+    <button id="incomeToggle" 
+      class="bg-[#DBF9DF] px-6 py-3 rounded-lg font-medium hover:bg-[#008E48] hover:text-white transition">
+      আয়ের উৎস দেখুন
+    </button>
+
+    <!-- Hidden Content -->
+    <div id="incomeContent" class="hidden mt-6 bg-white p-6 rounded-lg shadow-sm">
+      <ul class="list-disc pl-6 space-y-3">
+        <li>বিভিন্ন ব্যক্তি ও প্রতিষ্ঠান থেকে প্রাপ্ত স্বেচ্ছা অনুদান ও অর্থসহায়তা।</li>
+        <li>সদস্য, সমর্থক ও শুভাকাঙ্ক্ষীদের এককালীন ও নিয়মিত অনুদান।</li>
+        <li>ফাউন্ডেশনের যে কোনো প্রকল্পের জন্য সংগৃহীত অর্থ।</li>
+      </ul>
+    </div>
+  </div>
+
+  <!-- Newsletter Section -->
+  <div class="bg-[#DBF9DF] p-8 rounded-xl text-center">
+    <h3 class="text-xl font-semibold mb-4">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+    <form id="newsletterForm" class="max-w-md mx-auto space-y-4">
+      <input 
+        type="email" 
+        id="emailInput"
+        placeholder="আপনার ইমেইল লিখুন"
+        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008E48]"
+        required
+      >
+      <button 
+        type="submit"
+        class="w-full bg-[#008E48] text-white py-3 rounded-lg hover:bg-[#163322] transition">
+        সাবস্ক্রাইব
+      </button>
+      <p id="formMessage" class="text-sm mt-2"></p>
+    </form>
+  </div>
+
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+<footer class="bg-[#1f2937] text-white py-8 text-center text-sm">
+  © ২০২৬ সূর্যোদয় ফাউন্ডেশন | হাতে রেখে হাত, আনবো রঙিন প্রভাত
+</footer>
+
+<!-- ========================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================= -->
+<script>
+  // Expand Income Section
+  const toggleBtn = document.getElementById("incomeToggle");
+  const incomeContent = document.getElementById("incomeContent");
+
+  toggleBtn.addEventListener("click", () => {
+    incomeContent.classList.toggle("hidden");
+  });
+
+  // Newsletter Validation
+  const form = document.getElementById("newsletterForm");
+  const emailInput = document.getElementById("emailInput");
+  const message = document.getElementById("formMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const emailValue = emailInput.value.trim();
+
+    if (!emailValue.includes("@") || emailValue.length < 5) {
+      message.textContent = "সঠিক ইমেইল প্রদান করুন।";
+      message.classList.add("text-red-600");
+      message.classList.remove("text-green-600");
+      return;
+    }
+
+    message.textContent = "সফলভাবে সাবস্ক্রাইব হয়েছে!";
+    message.classList.add("text-green-600");
+    message.classList.remove("text-red-600");
+    emailInput.value = "";
+  });
+</script>
+
+</body>
+      </html>
