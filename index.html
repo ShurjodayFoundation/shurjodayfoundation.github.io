@@ -1,249 +1,231 @@
 <!DOCTYPE html>
 <html lang="bn">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Shurjoday Foundation</title>
-    <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;600&display=swap" rel="stylesheet">
-    <style>
-        body {
-            margin: 0;
-            padding: 0;
-            background-color: #1a3c26; /* The exact dark green from your photo */
-            font-family: 'Hind Siliguri', sans-serif;
-            color: #ffffff;
-            display: flex;
-            flex-direction: column;
-            min-height: 100vh;
-        }
+  <!-- ========================================= -->
+  <!-- BASIC META -->
+  <!-- ========================================= -->
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>সূর্যোদয় ফাউন্ডেশন | কমলাপুর, কুমিল্লা</title>
+  <meta name="description" content="কমলাপুর, সদর দক্ষিণ, কুমিল্লা ভিত্তিক অলাভজনক সংগঠন সূর্যোদয় ফাউন্ডেশন। হাতে রেখে হাত, আনবো রঙিন প্রভাত।">
+  <meta name="keywords" content="সূর্যোদয় ফাউন্ডেশন, কমলাপুর, কুমিল্লা, সামাজিক উন্নয়ন, স্বেচ্ছাসেবী সংগঠন">
 
-        /* Header Styling */
-        header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 15px 4%;
-            background-color: rgba(0, 0, 0, 0.1);
-        }
+  <!-- Open Graph -->
+  <meta property="og:title" content="সূর্যোদয় ফাউন্ডেশন">
+  <meta property="og:description" content="গ্রামভিত্তিক অলাভজনক সংগঠন। হাতে রেখে হাত, আনবো রঙিন প্রভাত।">
+  <meta property="og:type" content="website">
 
-        .logo {
-            height: 55px; /* Adjust based on your preference */
-            width: auto;
-        }
+  <!-- Favicon Placeholder -->
+  <link rel="icon" href="favicon.ico">
 
-        .nav-right {
-            display: flex;
-            align-items: center;
-            gap: 15px;
-        }
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
 
-        .donate-btn {
-            background-color: #00897b; /* Teal button color from image */
-            color: white;
-            text-decoration: none;
-            padding: 10px 20px;
-            border-radius: 8px;
-            font-weight: bold;
-            font-size: 16px;
-        }
+  <!-- Tailwind CDN -->
+  <script src="https://cdn.tailwindcss.com"></script>
 
-        .menu-icon {
-            font-size: 32px;
-            cursor: pointer;
-            line-height: 1;
-        }
-
-        /* Hero Layout - This creates the side-by-side look */
-        .hero {
-            display: flex;
-            flex: 1;
-            flex-direction: row; /* Side by side */
-            align-items: center;
-            justify-content: space-evenly;
-            padding: 20px 5%;
-            gap: 30px;
-        }
-
-        .hero-left {
-            flex: 1;
-            text-align: center;
-            max-width: 450px;
-        }
-
-        .motto-img {
-            width: 100%;
-            height: auto;
-        }
-
-        .tagline {
-            font-size: 28px;
-            margin-top: 10px;
-            color: #d1e7dd; /* Light mint color for the sub-text */
-        }
-
-        .hero-right {
-            flex: 1;
-            font-size: 24px;
-            line-height: 1.6;
-            text-align: left;
-            padding-left: 20px;
-            max-width: 500px;
-        }
-
-        /* Mobile View - stacks only on very small screens */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-                padding-top: 40px;
-            }
-            .hero-right {
-                text-align: center;
-                padding-left: 0;
-                font-size: 20px;
-            }
-            .tagline {
-                font-size: 22px;
-            }
-        }
-    </style>
+  <style>
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Hind Siliguri', sans-serif; }
+  </style>
 </head>
-<body>
 
-    <header>
-        <img src="Picsart_26-02-20_22-36-27-546.png" alt="Shurjoday Foundation" class="logo">
-        <div class="nav-right">
-            <a href="#" class="donate-btn">দান করুন</a>
-            <div class="menu-icon">☰</div>
-        </div>
-    </header>
+<body class="bg-[#fffdf7] text-[#1f2937]">
 
-    <main class="hero">
-        <div class="hero-left">
-            <img src="Picsart_26-02-20_22-35-57-632.png" alt="হাতে রেখে হাত" class="motto-img">
-            <div class="tagline">আনবো রঙিন প্রভাত</div>
-        </div>
-
-        <div class="hero-right">
-            <p>সূর্যোদয় ফাউন্ডেশন একটি গ্রামভিত্তিক অলাভজনক সংগঠন।</p>
-            <p>আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
-        </div>
-    </main>
-
-</body>
-</html>
-        .tagline {
-            font-size: 24px;
-            margin-bottom: 30px;
-        }
-
-        .description {
-            font-size: 20px;
-            line-height: 1.6;
-            max-width: 600px;
-        }
-
-        /* Tablet/Desktop layout */
-        @media (min-width: 768px) {
-            .hero {
-                flex-direction: row;
-                text-align: left;
-                justify-content: space-around;
-            }
-            .description {
-                border-left: 2px solid rgba(255,255,255,0.3);
-                padding-left: 30px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <img src="Picsart_26-02-20_22-36-27-546.png" alt="Logo" class="logo">
-        <div class="nav-right">
-            <a href="#" class="donate-btn">দান করুন</a>
-            <div class="menu-icon">☰</div>
-        </div>
-    </header>
-
-    <main class="hero">
-        <div class="hero-left">
-            <img src="Picsart_26-02-20_22-35-57-632.png" alt="হাতে রেখে হাত" class="motto-img">
-            <div class="tagline">আনবো রঙিন প্রভাত</div>
-        </div>
-
-        <div class="description">
-            <p>সূর্যোদয় ফাউন্ডেশন একটি গ্রামভিত্তিক অলাভজনক সংগঠন।</p>
-            <p>আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
-        </div>
-    </main>
-
-</body>
-</html>            height: auto;
-            width: 400px;
-        }
-
-        .hero-right {
-            flex: 1;
-            font-size: 24px;
-            line-height: 1.8;
-            text-align: left;
-        }
-
-        /* Mobile View Adjustment */
-        @media (max-width: 768px) {
-            .hero {
-                flex-direction: column;
-                text-align: center;
-            }
-            .hero-right {
-                text-align: center;
-                font-size: 20px;
-            }
-        }
-    </style>
-</head>
-<body>
-
-    <header>
-        <img src="1000166336.png" alt="Shurjoday Foundation" class="logo">
-        <div class="nav-controls">
-            <a href="#" class="donate-btn">দান করুন</a>
-            <div class="hamburger">☰</div>
-        </div>
-    </header>
-
-    <main class="hero">
-        <div class="hero-left">
-            <img src="1000166335.png" alt="হাতে রেখে হাত" class="motto-img">
-        </div>
-
-        <div class="hero-right">
-            <p>সূর্যোদয় ফাউন্ডেশন একটি গ্রামভিত্তিক অলাভজনক সংগঠন।</p>
-            <p>আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
-        </div>
-    </main>
-
-</body>
-</html>                <div class="card">
-                    <img src="https://via.placeholder.com/150/f5f5dc/000000?text=Logo" alt="Album">
-                    <div class="card-text">প্রত্যাবর্তন</div>
-                </div>
-            </div>
-            <div class="col-6 col-md-3 mb-4">
-                <div class="card">
-                    <img src="https://via.placeholder.com/150/fdf5e6/000000?text=Image" alt="Album">
-                    <div class="card-text">কর্মসূচি ২০২৪</div>
-                </div>
-            </div>
-        </div>
+<!-- ========================================= -->
+<!-- NAVBAR -->
+<!-- ========================================= -->
+<nav class="fixed w-full bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    
+    <!-- Logo Text Placeholder -->
+    <div class="text-xl font-bold text-[#008E48]">
+      সূর্যোদয় ফাউন্ডেশন
     </div>
 
-    <script>
-        function openNav() { document.getElementById("mySidebar").style.width = "280px"; }
-        function closeNav() { document.getElementById("mySidebar").style.width = "0"; }
-    </script>
+    <!-- Right Side -->
+    <div class="flex items-center space-x-4">
+      
+      <!-- Donate Button -->
+      <a href="#donation" class="hidden md:inline-block bg-[#008E48] text-white px-4 py-2 rounded-lg hover:bg-[#163322] transition">
+        ডোনেট করুন
+      </a>
+
+      <!-- Hamburger -->
+      <button id="menuBtn" class="text-2xl md:hidden">
+        ☰
+      </button>
+    </div>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden bg-white px-6 pb-6 space-y-4">
+    <a href="about.html" class="block">আমাদের সম্পর্কে</a>
+    <a href="media.html" class="block">মিডিয়া</a>
+    <a href="members.html" class="block">সদস্যবৃন্দ</a>
+    <a href="contact.html" class="block">যোগাযোগ</a>
+    <a href="#donation" class="block bg-[#008E48] text-white px-4 py-2 rounded-lg text-center">ডোনেট করুন</a>
+  </div>
+</nav>
+
+<!-- ========================================= -->
+<!-- HERO SECTION -->
+<!-- ========================================= -->
+<section class="pt-32 pb-20 bg-gradient-to-r from-[#163322] to-[#008E48] text-white">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
+
+    <!-- Left -->
+    <div>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
+        সূর্যোদয় <br> ফাউন্ডেশন
+      </h1>
+
+      <p class="text-[#E8B65D] text-lg mb-6">
+        হাতে রেখে হাত, আনবো রঙিন প্রভাত
+      </p>
+
+      <div class="flex space-x-4">
+        <a href="about.html" class="bg-[#E8B65D] text-black px-6 py-3 rounded-lg hover:opacity-90 transition">
+          আরও জানুন
+        </a>
+        <a href="#donation" class="border border-white px-6 py-3 rounded-lg hover:bg-white hover:text-[#163322] transition">
+          ডোনেট করুন
+        </a>
+      </div>
+    </div>
+
+    <!-- Right -->
+    <div>
+      <p class="text-lg leading-relaxed">
+        সূর্যোদয় ফাউন্ডেশন কমলাপুর গ্রামভিত্তিক একটি অলাভজনক সংগঠন। 
+        আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ। 
+        গত ১+ বছর ধরে আমরা শিক্ষা, মানবিক সহায়তা ও সামাজিক উন্নয়নে কাজ করে যাচ্ছি।
+      </p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- ACTIVITIES PREVIEW -->
+<!-- ========================================= -->
+<section class="py-16">
+  <div class="max-w-7xl mx-auto px-6">
+
+    <h2 class="text-3xl font-bold text-center mb-10">
+      <a href="activities.html" class="hover:text-[#008E48]">
+        আমাদের কার্যক্রমসমূহ
+      </a>
+    </h2>
+
+    <div class="grid md:grid-cols-3 gap-8">
+
+      <!-- Card Template -->
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+        <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+        <h3 class="font-semibold mb-2">কবরস্থান পরিষ্কার</h3>
+        <p class="text-sm mb-4">গ্রামের কবরস্থানের আগাছা পরিষ্কার কার্যক্রম।</p>
+        <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+        <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+        <h3 class="font-semibold mb-2">ইফতার সামগ্রী বিতরণ ২০২৫</h3>
+        <p class="text-sm mb-4">৩ টি পরিবারে রমজান সহায়তা।</p>
+        <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+        <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+        <h3 class="font-semibold mb-2">বৃক্ষরোপণ</h3>
+        <p class="text-sm mb-4">১০০+ বৃক্ষ রোপণ।</p>
+        <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+        <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+        <h3 class="font-semibold mb-2">ঘাস কাটার মেশিন ক্রয়</h3>
+        <p class="text-sm mb-4">কবরস্থান রক্ষণাবেক্ষণ উন্নয়ন।</p>
+        <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+        <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+        <h3 class="font-semibold mb-2">ইফতার মাহফিল ২০২৫</h3>
+        <p class="text-sm mb-4">গ্রামের সম্মিলিত ইফতার আয়োজন।</p>
+        <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+      </div>
+
+      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+        <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+        <h3 class="font-semibold mb-2">আদমশুমারী ও ইফতার ২০২৬</h3>
+        <p class="text-sm mb-4">ডাটাবেইজ ও ৫ পরিবার সহায়তা।</p>
+        <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- DONATION SECTION -->
+<!-- ========================================= -->
+<section id="donation" class="py-16 bg-[#DBF9DF]">
+  <div class="max-w-3xl mx-auto text-center px-6">
+
+    <h2 class="text-3xl font-bold mb-6">ডোনেশন তথ্য</h2>
+
+    <div class="space-y-2">
+      <p><strong>bKash:</strong> +8801690211979, +8801613736942</p>
+      <p><strong>Nagad:</strong> +8801613736942, +8801613736942</p>
+      <p><strong>Rocket:</strong> +8801690211979</p>
+    </div>
+
+  </div>
+</section>
+
+<!-- ========================================= -->
+<!-- FOOTER -->
+<!-- ========================================= -->
+<footer class="bg-[#1f2937] text-white py-10">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
+
+    <div>
+      <h3 class="font-semibold mb-2">সূর্যোদয় ফাউন্ডেশন</h3>
+      <p>হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold mb-2">যোগাযোগ</h3>
+      <p>কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
+      <p>contact.shurjodayfoundation@gmail.com</p>
+    </div>
+
+    <div>
+      <h3 class="font-semibold mb-2">দ্রুত লিংক</h3>
+      <p><a href="about.html">আমাদের সম্পর্কে</a></p>
+      <p><a href="activities.html">কার্যক্রম</a></p>
+      <p><a href="contact.html">যোগাযোগ</a></p>
+    </div>
+
+  </div>
+
+  <div class="text-center mt-8 text-xs">
+    © ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
+  </div>
+</footer>
+
+<!-- ========================================= -->
+<!-- JAVASCRIPT -->
+<!-- ========================================= -->
+<script>
+  const menuBtn = document.getElementById("menuBtn");
+  const mobileMenu = document.getElementById("mobileMenu");
+
+  menuBtn.addEventListener("click", () => {
+    mobileMenu.classList.toggle("hidden");
+  });
+</script>
 
 </body>
 </html>
