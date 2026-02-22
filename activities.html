@@ -1,0 +1,140 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কার্যক্রমসমূহ | সূর্যোদয় ফাউন্ডেশন</title>
+
+  <!-- Tailwind -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <style>
+    html, body {
+      margin: 0;
+      padding: 0;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+    }
+  </style>
+</head>
+<body class="bg-[#fffdf7] text-[#1f2937]">
+
+  <!-- Navbar -->
+  <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+    <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+      <div class="text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</div>
+
+      <div class="flex items-center space-x-6">
+        <!-- Desktop Menu -->
+        <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+          <a href="about.html" class="hover:text-[#008E48]">আমাদের সম্পর্কে</a>
+          <a href="media.html" class="hover:text-[#008E48]">মিডিয়া</a>
+          <a href="members.html" class="hover:text-[#008E48]">সদস্যবৃন্দ</a>
+          <a href="contact.html" class="hover:text-[#008E48]">যোগাযোগ</a>
+        </div>
+
+        <!-- Donate Button -->
+        <a href="#donation" class="hidden md:inline-block bg-[#008E48] text-white px-8 py-3 text-lg font-semibold rounded-lg hover:bg-[#163322] transition">
+          ডোনেট করুন
+        </a>
+
+        <!-- Hamburger -->
+        <button id="menuBtn" class="text-2xl md:hidden">☰</button>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobileMenu" class="absolute top-full left-0 w-full bg-white px-6 pb-6 space-y-4 transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-md">
+      <a href="about.html" class="block">আমাদের সম্পর্কে</a>
+      <a href="media.html" class="block">মিডিয়া</a>
+      <a href="members.html" class="block">সদস্যবৃন্দ</a>
+      <a href="contact.html" class="block">যোগাযোগ</a>
+      <a href="#donation" class="block bg-[#008E48] text-white px-4 py-2 rounded-lg text-center">ডোনেট করুন</a>
+    </div>
+  </nav>
+
+  <!-- Activities Section -->
+  <section class="pt-32 py-16">
+    <div class="max-w-7xl mx-auto px-6">
+      <h2 class="text-3xl font-bold text-center mb-10">আমাদের কার্যক্রমসমূহ</h2>
+
+      <div class="grid md:grid-cols-3 gap-8">
+
+        <!-- Card 1 -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">কবরস্থান পরিষ্কার</h3>
+          <p class="text-sm mb-4">গ্রামের কবরস্থানের আগাছা পরিষ্কার কার্যক্রম।</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+        <!-- Card 2 -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">ইফতার সামগ্রী বিতরণ ২০২৫</h3>
+          <p class="text-sm mb-4">২০০+ পরিবারের মধ্যে ইফতার বিতরণ।</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+        <!-- Card 3 -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">বৃক্ষরোপণ</h3>
+          <p class="text-sm mb-4">১০০+ বৃক্ষ রোপণ।</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+        <!-- Card 4 -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">ঘাস কাটার মেশিন ক্রয়</h3>
+          <p class="text-sm mb-4">কবরস্থান রক্ষণাবেক্ষণ উন্নয়ন।</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+        <!-- Card 5 -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">ইফতার মাহফিল ২০২৫</h3>
+          <p class="text-sm mb-4">গ্রামের সম্মিলিত ইফতার আয়োজন।</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+        <!-- Card 6 -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">আদমশুমারী</h3>
+          <p class="text-sm mb-4">গ্রামের ছোট-বড় সবার তথ্য সংগ্রহ</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+        <!-- Card 7 (moved) -->
+        <div class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
+          <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
+          <h3 class="font-semibold mb-2">ইফতার সামগ্রী বিতরণ ২০২৬</h3>
+          <p class="text-sm mb-4">৫ টি দরিদ্র পরিবারে রমজান সহায়তা প্রদান।</p>
+          <a href="#" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- JS for hamburger -->
+  <script>
+    const menuBtn = document.getElementById("menuBtn");
+    const mobileMenu = document.getElementById("mobileMenu");
+
+    menuBtn.addEventListener("click", () => {
+      mobileMenu.classList.toggle("-translate-x-full");
+      mobileMenu.classList.toggle("translate-x-0");
+    });
+  </script>
+
+</body>
+</html>
