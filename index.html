@@ -1,63 +1,57 @@
 <!DOCTYPE html>
 <html lang="bn">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-
   <title>সূর্যোদয় ফাউন্ডেশন | কমলাপুর, কুমিল্লা</title>
 
   <meta name="description" content="কমলাপুর, সদর দক্ষিণ, কুমিল্লা ভিত্তিক অলাভজনক সংগঠন সূর্যোদয় ফাউন্ডেশন। হাতে রেখে হাত, আনবো রঙিন প্রভাত।">
 
-  <!-- AOS CSS (INSIDE HEAD) -->
+  <!-- AOS CSS -->
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
 
+  <!-- Tailwind -->
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    html { scroll-behavior: smooth; }
-    body { font-family: 'Hind Siliguri', sans-serif; }
+    html, body {
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      scroll-behavior: smooth;
+    }
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+    }
   </style>
 </head>
 
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-<body class="bg-[#fffdf7] text-[#1f2937] overflow-x-hidden">
+<body class="bg-[#fffdf7] text-[#1f2937]">
+
 <!-- ========================================= -->
 <!-- NAVBAR -->
 <!-- ========================================= -->
-<nav class="fixed w-full bg-white shadow-sm z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    
-    <!-- Logo Text Placeholder -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+  <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+
     <div class="text-xl font-bold text-[#008E48]">
       সূর্যোদয় ফাউন্ডেশন
     </div>
 
-    <!-- Right Side -->
     <div class="flex items-center space-x-4">
-      
-      <!-- Donate Button -->
       <a href="#donation" class="hidden md:inline-block bg-[#008E48] text-white px-4 py-2 rounded-lg hover:bg-[#163322] transition">
         ডোনেট করুন
       </a>
 
-      <!-- Hamburger -->
       <button id="menuBtn" class="text-2xl md:hidden">
         ☰
       </button>
     </div>
   </div>
 
-  <!-- Mobile Menu -->
   <div id="mobileMenu" class="hidden md:hidden bg-white px-6 pb-6 space-y-4">
     <a href="about.html" class="block">আমাদের সম্পর্কে</a>
     <a href="media.html" class="block">মিডিয়া</a>
@@ -68,13 +62,12 @@
 </nav>
 
 <!-- ========================================= -->
-<!-- HERO SECTION -->
+<!-- HERO -->
 <!-- ========================================= -->
 <section class="pt-40 pb-20 bg-gradient-to-r from-[#163322] to-[#008E48] text-white">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-2 gap-12 items-center">
 
-    <!-- Left -->
-<div data-aos="fade-right">
+    <div data-aos="fade-right">
       <h1 class="text-4xl md:text-5xl font-bold mb-4 leading-tight">
         সূর্যোদয় <br> ফাউন্ডেশন
       </h1>
@@ -93,11 +86,10 @@
       </div>
     </div>
 
-    <!-- Right -->
-<div data-aos="fade-left">
+    <div data-aos="fade-left">
       <p class="text-lg leading-relaxed">
-        সূর্যোদয় ফাউন্ডেশন কমলাপুর গ্রামভিত্তিক একটি অলাভজনক সংগঠন। 
-        আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ। 
+        সূর্যোদয় ফাউন্ডেশন কমলাপুর গ্রামভিত্তিক একটি অলাভজনক সংগঠন।
+        আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।
         গত ২ বছর ধরে আমরা শিক্ষা, মানবিক সহায়তা ও সামাজিক উন্নয়নে কাজ করে যাচ্ছি।
       </p>
     </div>
@@ -106,10 +98,10 @@
 </section>
 
 <!-- ========================================= -->
-<!-- ACTIVITIES PREVIEW -->
+<!-- ACTIVITIES -->
 <!-- ========================================= -->
-<section class="py-16">
-  <div class="max-w-7xl mx-auto px-6">
+<section class="py-16 overflow-x-hidden">
+  <div class="max-w-7xl mx-auto px-6 overflow-x-hidden">
 
     <h2 data-aos="fade-up" class="text-3xl font-bold text-center mb-10">
       <a href="activities.html" class="hover:text-[#008E48]">
@@ -119,7 +111,7 @@
 
     <div class="grid md:grid-cols-3 gap-8">
 
-      <!-- Card Template -->
+      <!-- Card 1 -->
       <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">কবরস্থান পরিষ্কার</h3>
@@ -127,57 +119,63 @@
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+      <!-- Card 2 -->
+      <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">ইফতার সামগ্রী বিতরণ ২০২৫</h3>
-        
+        <p class="text-sm mb-4">২০০+ পরিবারের মধ্যে ইফতার বিতরণ।</p>
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+      <!-- Card 3 -->
+      <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">বৃক্ষরোপণ</h3>
         <p class="text-sm mb-4">১০০+ বৃক্ষ রোপণ।</p>
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+      <!-- Card 4 -->
+      <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">ঘাস কাটার মেশিন ক্রয়</h3>
         <p class="text-sm mb-4">কবরস্থান রক্ষণাবেক্ষণ উন্নয়ন।</p>
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+      <!-- Card 5 -->
+      <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">ইফতার মাহফিল ২০২৫</h3>
         <p class="text-sm mb-4">গ্রামের সম্মিলিত ইফতার আয়োজন।</p>
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
 
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+      <!-- Card 6 -->
+      <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">আদমশুমারী</h3>
         <p class="text-sm mb-4">গ্রামের ছোট-বড় সবার তথ্য সংগ্রহ</p>
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
-      
-      <div class="bg-white rounded-xl shadow-sm hover:shadow-md transition p-6">
+
+      <!-- Card 7 (Fixed) -->
+      <div data-aos="zoom-in" class="bg-white rounded-xl shadow-sm hover:shadow-lg transition-all duration-300 hover:-translate-y-2 p-6">
         <div class="h-40 bg-[#DBF9DF] rounded-lg mb-4"></div>
         <h3 class="font-semibold mb-2">ইফতার সামগ্রী বিতরণ ২০২৬</h3>
+        <p class="text-sm mb-4">৫ টি দরিদ্র পরিবারে রমজান সহায়তা প্রদান।</p>
         <a href="activities.html" class="text-[#008E48] font-medium">বিস্তারিত দেখুন →</a>
       </div>
-      
+
     </div>
   </div>
 </section>
 
 <!-- ========================================= -->
-<!-- DONATION SECTION -->
+<!-- DONATION -->
 <!-- ========================================= -->
 <section id="donation" class="py-16 bg-[#DBF9DF]">
   <div class="max-w-3xl mx-auto text-center px-6">
-
     <h2 class="text-3xl font-bold mb-6">ডোনেশন তথ্য</h2>
 
     <div class="space-y-2">
@@ -185,7 +183,6 @@
       <p><strong>Nagad:</strong> +8801613736942, +8801613736942</p>
       <p><strong>Rocket:</strong> +8801690211979</p>
     </div>
-
   </div>
 </section>
 
@@ -194,7 +191,6 @@
 <!-- ========================================= -->
 <footer class="bg-[#1f2937] text-white py-10">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
-
     <div>
       <h3 class="font-semibold mb-2">সূর্যোদয় ফাউন্ডেশন</h3>
       <p>হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
@@ -212,7 +208,6 @@
       <p><a href="activities.html">কার্যক্রম</a></p>
       <p><a href="contact.html">যোগাযোগ</a></p>
     </div>
-
   </div>
 
   <div class="text-center mt-8 text-xs">
@@ -221,7 +216,7 @@
 </footer>
 
 <!-- ========================================= -->
-<!-- JAVASCRIPT -->
+<!-- JS -->
 <!-- ========================================= -->
 <script>
   const menuBtn = document.getElementById("menuBtn");
@@ -231,9 +226,9 @@
     mobileMenu.classList.toggle("hidden");
   });
 </script>
-  
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 
+<!-- AOS JS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
   AOS.init({
     duration: 1000,
