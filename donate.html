@@ -10,11 +10,12 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body{
+body {
   font-family: 'Hind Siliguri', sans-serif;
 }
 .payment-card {
   transition: all 0.3s ease;
+  cursor: pointer;
 }
 .payment-card:hover {
   transform: translateY(-6px);
@@ -34,9 +35,7 @@ body{
 <!-- NAVBAR -->
 <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-    <a href="index.html" class="text-xl font-bold text-[#008E48]">
-      সূর্যোদয় ফাউন্ডেশন
-    </a>
+    <a href="index.html" class="text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</a>
     <a href="index.html" class="text-sm hover:text-[#008E48]">← হোম</a>
   </div>
 </nav>
@@ -60,36 +59,47 @@ body{
 <div class="grid md:grid-cols-3 gap-8 text-center">
 
 <!-- bKash -->
-<div data-aos="zoom-in" onclick="copyNumber('01690211979')" 
-class="payment-card bg-[#DBF9DF] p-8 rounded-xl shadow-sm cursor-pointer">
-<img src="images/bkash.png" class="h-12 mx-auto mb-4">
-<h3 class="text-lg font-semibold mb-2">bKash</h3>
-<p class="text-sm">01690211979</p>
-<p id="msg1" class="copied-msg text-green-700 text-xs mt-2">Copied!</p>
+<div data-aos="zoom-in"
+     onclick="copyNumber(event, ['01690211979', '01613736942'])"
+     class="payment-card bg-[#DBF9DF] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+
+  <img src="images/bkash.png" class="h-12 mx-auto mb-4">
+  <h3 class="text-lg font-semibold mb-2">bKash</h3>
+  <p class="text-sm">01690211979</p>
+  <p class="text-sm">01613736942</p>
+  <p class="copied-msg text-green-700 text-xs mt-2">Copied!</p>
+
 </div>
 
 <!-- Nagad -->
-<div data-aos="zoom-in" onclick="copyNumber('01613736942')" 
-class="payment-card bg-[#DBF9DF] p-8 rounded-xl shadow-sm cursor-pointer">
-<img src="images/nagad.png" class="h-12 mx-auto mb-4">
-<h3 class="text-lg font-semibold mb-2">Nagad</h3>
-<p class="text-sm">01613736942</p>
-<p id="msg2" class="copied-msg text-green-700 text-xs mt-2">Copied!</p>
+<div data-aos="zoom-in"
+     onclick="copyNumber(event, ['01690211979', '01613736942'])"
+     class="payment-card bg-[#DBF9DF] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+
+  <img src="images/nagad.png" class="h-12 mx-auto mb-4">
+  <h3 class="text-lg font-semibold mb-2">Nagad</h3>
+  <p class="text-sm">01690211979</p>
+  <p class="text-sm">01613736942</p>
+  <p class="copied-msg text-green-700 text-xs mt-2">Copied!</p>
+
 </div>
 
 <!-- Rocket -->
-<div data-aos="zoom-in" onclick="copyNumber('01690211979')" 
-class="payment-card bg-[#DBF9DF] p-8 rounded-xl shadow-sm cursor-pointer">
-<img src="images/rocket.png" class="h-12 mx-auto mb-4">
-<h3 class="text-lg font-semibold mb-2">Rocket</h3>
-<p class="text-sm">01690211979</p>
-<p id="msg3" class="copied-msg text-green-700 text-xs mt-2">Copied!</p>
+<div data-aos="zoom-in"
+     onclick="copyNumber(event, ['01690211979'])"
+     class="payment-card bg-[#DBF9DF] p-8 rounded-xl shadow-lg hover:shadow-2xl transition-all duration-300">
+
+  <img src="images/rocket.png" class="h-12 mx-auto mb-4">
+  <h3 class="text-lg font-semibold mb-2">Rocket</h3>
+  <p class="text-sm">01690211979</p>
+  <p class="copied-msg text-green-700 text-xs mt-2">Copied!</p>
+
 </div>
 
 </div>
 
 <p data-aos="fade-up" class="text-center mt-12 text-sm text-gray-600">
-ট্যাপ করলে নাম্বার কপি হয়ে যাবে।
+নাম্বার কপি করতে ট্যাপ করুন ।
 </p>
 
 </div>
@@ -111,9 +121,26 @@ AOS.init({
 
 <!-- COPY SCRIPT -->
 <script>
-function copyNumber(number) {
+function copyNumber(event, numbers) {
+  // pick a random number from the array (Rocket has only 1 number, so it will always pick that)
+  const number = numbers[Math.floor(Math.random() * numbers.length)];
+
+  // copy to clipboard
   navigator.clipboard.writeText(number);
-  alert("Number Copied: " + number);
+
+  // hide all copied messages
+  document.querySelectorAll(".copied-msg").forEach(msg => {
+    msg.classList.remove("copied-active");
+  });
+
+  // show only this card's message
+  const message = event.currentTarget.querySelector(".copied-msg");
+  message.classList.add("copied-active");
+
+  // hide after 2 seconds
+  setTimeout(() => {
+    message.classList.remove("copied-active");
+  }, 2000);
 }
 </script>
 
