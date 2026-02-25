@@ -1,73 +1,270 @@
 <!DOCTYPE html>
 <html lang="bn">
-  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>সদস্যবৃন্দ | Shurjoday Foundation</title>
-  <link rel="stylesheet" href="style.css">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>সদস্যবৃন্দ | সূর্যোদয় ফাউন্ডেশন</title>
+
+<link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+<script src="https://cdn.tailwindcss.com"></script>
+
+<style>
+body{
+  font-family: 'Hind Siliguri', sans-serif;
+}
+
+/* tab button style */
+.tab-btn {
+  transition: all 0.3s ease;
+}
+.tab-btn.active {
+  background: linear-gradient(to right, #163322, #008E48);
+  color: white;
+  transform: translateY(-3px);
+}
+
+/* smooth fade content */
+.tab-content {
+  display: none;
+  opacity: 0;
+  transition: opacity 0.4s ease;
+}
+.tab-content.active {
+  display: block;
+  opacity: 1;
+}
+</style>
 </head>
-  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
-</script>
-<body>
 
-<header>
-  <div class="container">
-    <h1>Shurjoday Foundation</h1>
-    <nav>
-      <a href="index.html">Home</a>
-      <a href="members.html">Members</a>
-      <a href="index.html#contact">Contact</a>
-    </nav>
+<body class="bg-[#fffdf7] text-[#1f2937]">
+
+<!-- NAVBAR -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+    <a href="index.html" class="text-xl font-bold text-[#008E48]">
+      সূর্যোদয় ফাউন্ডেশন
+    </a>
+    <a href="index.html" class="text-sm hover:text-[#008E48]">← হোম</a>
   </div>
-</header>
+</nav>
 
-<section class="members-section">
-  <div class="container">
-    <h2>আমাদের সদস্যবৃন্দ</h2>
-
-    <div class="member-grid">
-
-      <!-- Member 1 -->
-      <div class="member-card">
-        <img src="images/member1.jpg" alt="Member 1">
-        <h3>সদস্যের নাম</h3>
-        <p>পদবি / দায়িত্ব</p>
-      </div>
-
-      <!-- Member 2 -->
-      <div class="member-card">
-        <img src="images/member2.jpg" alt="Member 2">
-        <h3>সদস্যের নাম</h3>
-        <p>পদবি / দায়িত্ব</p>
-      </div>
-
-      <!-- Member 3 -->
-      <div class="member-card">
-        <img src="images/member3.jpg" alt="Member 3">
-        <h3>সদস্যের নাম</h3>
-        <p>পদবি / দায়িত্ব</p>
-      </div>
-
-      <!-- Member 4 -->
-      <div class="member-card">
-        <img src="images/member4.jpg" alt="Member 4">
-        <h3>সদস্যের নাম</h3>
-        <p>পদবি / দায়িত্ব</p>
-      </div>
-
-    </div>
+<!-- HEADER -->
+<section class="pt-36 pb-16 bg-gradient-to-r from-[#163322] to-[#008E48] text-white text-center">
+  <div data-aos="fade-up">
+    <h1 class="text-3xl md:text-4xl font-bold mb-4">
+      দ্য ড্রিম উইভার্স (The Dream Weavers)
+    </h1>
+    <p class="text-[#E8B65D]">
+      মানবিকতার বন্ধনে আবদ্ধ একদল নিবেদিত প্রাণ।
+    </p>
   </div>
 </section>
 
-<footer>
-  <p>© 2026 Shurjoday Foundation | হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
+<!-- TAB BUTTONS -->
+<section class="py-12">
+<div class="max-w-6xl mx-auto px-6">
+
+<div class="space-y-4 mb-12">
+
+<button onclick="openTab('advisory')" 
+class="tab-btn w-full p-5 rounded-xl shadow-lg bg-[#DBF9DF] text-left font-semibold">
+১. উপদেষ্টা পরিষদ
+</button>
+
+<button onclick="openTab('executive')" 
+class="tab-btn w-full p-5 rounded-xl shadow-lg bg-[#DBF9DF] text-left font-semibold">
+২. কার্যনির্বাহী পরিষদ
+</button>
+
+<button onclick="openTab('coordinator')" 
+class="tab-btn w-full p-5 rounded-xl shadow-lg bg-[#DBF9DF] text-left font-semibold">
+৩. সমন্বয়ক পরিষদ
+</button>
+
+</div>
+
+<!-- CONTENT AREA -->
+
+<!-- ADVISORY -->
+<div id="advisory" class="tab-content">
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div data-aos="fade-up" class="text-center">
+<img src="images/jowel.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">প্রধান উপদেষ্টা</p>
+<p class="text-sm">আবদুল্লাহ মোহাম্মদ জুয়েল</p>
+</div>
+
+<div data-aos="fade-up" class="text-center">
+<img src="images/mehedi.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সহকারী উপদেষ্টা</p>
+<p class="text-sm">ইমাম মেহেদী হাসান</p>
+</div>
+
+<div data-aos="fade-up" class="text-center">
+<img src="images/osman.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সহকারী উপদেষ্টা</p>
+<p class="text-sm">ওসমান গনি মজুমদার (রাজু)</p>
+</div>
+
+<div data-aos="fade-up" class="text-center">
+<img src="images/razzak.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সহকারী উপদেষ্টা</p>
+<p class="text-sm">আব্দুর রাজ্জাক মজুমদার</p>
+</div>
+
+<div data-aos="fade-up" class="text-center">
+<img src="images/joni.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সহকারী উপদেষ্টা</p>
+<p class="text-sm">জনি মজুমদার</p>
+</div>
+
+<div data-aos="fade-up" class="text-center">
+<img src="images/masum.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সহকারী উপদেষ্টা</p>
+<p class="text-sm">মো: মাসুম</p>
+</div>
+
+</div>
+</div>
+
+
+<!-- EXECUTIVE -->
+<div id="executive" class="tab-content">
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="text-center">
+  <img src="https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/main/images/nahid.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+  <p class="font-semibold">প্রচার ও প্রকাশনা সম্পাদক</p>
+  <p class="text-sm">নাহিদ হাসান সাজিদ</p>
+</div>
+
+<div class="text-center">
+<img src="images/omi.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সাংগঠনিক সম্পাদক</p>
+<p class="text-sm">তপু রায়হান অমি</p>
+</div>
+
+<div class="text-center">
+<img src="images/shahedi.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">শিক্ষা ও সংস্কৃতি বিষয়ক সম্পাদক</p>
+<p class="text-sm">রেদওয়ান উল্লাহ শাহেদী</p>
+</div>
+
+<div class="text-center">
+<img src="images/muhit.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">বিজ্ঞান ও প্রযুক্তি বিষয়ক সম্পাদক</p>
+<p class="text-sm">মুহিত মজুমদার</p>
+</div>
+
+<div class="text-center">
+<img src="images/hasan.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">পরিবেশ বিষয়ক সম্পাদক</p>
+<p class="text-sm">মেহেদী হাসান</p>
+</div>
+
+<div class="text-center">
+<img src="images/masuk.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">আইন ও শিষ্টাচার বিষয়ক সম্পাদক</p>
+<p class="text-sm">মো: আরিফুল ইসলাম (মাসুক)</p>
+</div>
+
+<div class="text-center">
+<img src="images/salman.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">ক্রীড়া বিষয়ক সম্পাদক</p>
+<p class="text-sm">মো: সালমান আরেফীন</p>
+</div>
+
+<div class="text-center">
+<img src="images/rafi.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">ক্রীড়া বিষয়ক সহকারী সম্পাদক</p>
+<p class="text-sm">রায়হান চৌধুরী রাফি</p>
+</div>
+
+</div>
+</div>
+
+
+<!-- COORDINATOR -->
+<div id="coordinator" class="tab-content">
+
+<div class="grid md:grid-cols-3 gap-8">
+
+<div class="text-center">
+<img src="images/rakib.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (মাওলানা সাহেব বাড়ি)</p>
+<p class="text-sm">মো: রাকিব</p>
+</div>
+
+<div class="text-center">
+<img src="images/rafi.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (চৌধুরী বাড়ি)</p>
+<p class="text-sm">রায়হান চৌধুরী রাফি</p>
+</div>
+
+<div class="text-center">
+<img src="images/siam.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (তহশিলদার বাড়ি)</p>
+<p class="text-sm">শাহরিয়া ইসলাম সিয়াম</p>
+</div>
+
+<div class="text-center">
+<img src="images/jihan.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (মজুমদার বাড়ি)</p>
+<p class="text-sm">জাহিদ হাসান জিহান</p>
+</div>
+
+<div class="text-center">
+<img src="images/khalil.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (হাজী বাড়ি)</p>
+<p class="text-sm">ইব্রাহিম খলিল</p>
+</div>
+
+<div class="text-center">
+<img src="images/rubel.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (মনু মাস্টার বাড়ি)</p>
+<p class="text-sm">এমদাদুল হক রুবেল</p>
+</div>
+
+<div class="text-center">
+<img src="images/maiful.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (তালতলী হাজী বাড়ি)</p>
+<p class="text-sm">শাহিদুল ইসলাম মাঈফুল</p>
+</div>
+
+<div class="text-center">
+<img src="images/mossarof.jpg" class="h-40 w-40 mx-auto rounded-full object-cover shadow-lg mb-4">
+<p class="font-semibold">সমন্বয়ক (জামাল মিয়ার বাড়ি)</p>
+<p class="text-sm">মোশারফ হোসেন</p>
+</div>
+
+</div>
+</div>
+
+</div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#1f2937] text-white py-8 text-center text-sm">
+© ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
 </footer>
 
+<!-- AOS -->
+<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+<script>
+AOS.init({
+  duration: 1000,
+  once: true
+});
+
+function openTab(id) {
+  document.querySelectorAll('.tab-content').forEach(el => el.classList.remove('active'));
+  document.getElementById(id).classList.add('active');
+}
+</script>
+
 </body>
-  </html>
+</html>
