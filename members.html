@@ -10,314 +10,151 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-body{
-  font-family: 'Hind Siliguri', sans-serif;
-}
+  body {
+    font-family: 'Hind Siliguri', sans-serif;
+    background-color: #00332b; 
+    /* Using the GitHub path you provided */
+    background-image: url('https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/0a0e4050594e48af769d1915f2a496e14973e242/images/1000167146.jpg');
+    background-size: cover;
+    background-position: center;
+    background-attachment: fixed;
+    background-repeat: no-repeat;
+    margin: 0;
+    color: #ffffff;
+  }
 
-.section-btn{
-  transition: all 0.3s ease;
-}
+  /* Overlay to ensure text readability over the pattern */
+  body::after {
+    content: "";
+    position: fixed;
+    inset: 0;
+    background: rgba(0, 51, 43, 0.4);
+    z-index: -1;
+  }
 
-.section-content{
-  animation: fadeIn 0.4s ease;
-}
+  .glass-card {
+    background: rgba(255, 255, 255, 0.05);
+    backdrop-filter: blur(16px);
+    -webkit-backdrop-filter: blur(16px);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    border-radius: 24px;
+    transition: all 0.3s ease;
+  }
 
-@keyframes fadeIn{
-  from{opacity:0; transform:translateY(10px);}
-  to{opacity:1; transform:translateY(0);}
-}
+  .glass-card:hover {
+    transform: translateY(-8px);
+    background: rgba(255, 255, 255, 0.1);
+    border-color: rgba(185, 246, 202, 0.4);
+  }
 
-.member-card{
-  transition: all 0.3s ease;
-}
+  nav {
+    background: rgba(0, 51, 43, 0.8) !important;
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+  }
 
-.member-card:hover{
-  transform: translateY(-6px);
-}
+  .section-btn {
+    transition: all 0.3s ease;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+  }
+
+  .section-content {
+    animation: fadeIn 0.5s ease;
+  }
+
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .hidden { display: none; }
 </style>
 </head>
 
-<body class="bg-[#fffdf7] text-[#1f2937]">
+<body class="pt-20">
 
-<!-- NAVBAR -->
-<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-    <a href="index.html" class="text-xl font-bold text-[#008E48]">
-      সূর্যোদয় ফাউন্ডেশন
-    </a>
-
-    <div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-      <a href="about.html" class="hover:text-[#008E48]">আমাদের সম্পর্কে</a>
-      <a href="media.html" class="hover:text-[#008E48]">মিডিয়া</a>
-      <a href="members.html" class="hover:text-[#008E48]">সদস্যবৃন্দ</a>
-      <a href="contact.html" class="hover:text-[#008E48]">যোগাযোগ</a>
+<nav class="fixed top-0 left-0 right-0 z-50">
+  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
+    <a href="index.html" class="text-xl font-bold text-[#B9F6CA]">সূর্যোদয় ফাউন্ডেশন</a>
+    <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+      <a href="about.html" class="hover:text-[#B9F6CA]">আমাদের সম্পর্কে</a>
+      <a href="media.html" class="hover:text-[#B9F6CA]">মিডিয়া</a>
+      <a href="members.html" class="text-[#B9F6CA] font-bold">সদস্যবৃন্দ</a>
+      <a href="contact.html" class="hover:text-[#B9F6CA]">যোগাযোগ</a>
     </div>
-
-    <a href="donate.html" class="hidden md:inline-block bg-[#008E48] text-white px-6 py-2 rounded-lg hover:bg-[#163322] transition">
-      ডোনেট করুন
-    </a>
-
+    <a href="donate.html" class="hidden md:inline-block bg-[#008E48] text-white px-6 py-2 rounded-full hover:bg-[#B9F6CA] hover:text-[#00332b] transition font-bold">ডোনেট করুন</a>
     <button id="menuBtn" class="text-2xl md:hidden">☰</button>
-  </div>
-
-  <div id="mobileMenu"
-     class="absolute top-full left-0 w-full bg-white px-6 pb-6 space-y-4 
-            transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-md">
-    <a href="about.html" class="block">আমাদের সম্পর্কে</a>
-    <a href="media.html" class="block">মিডিয়া</a>
-    <a href="members.html" class="block">সদস্যবৃন্দ</a>
-    <a href="contact.html" class="block">যোগাযোগ</a>
-    <a href="donate.html" class="block bg-[#008E48] text-white px-4 py-2 rounded-lg text-center">ডোনেট করুন</a>
   </div>
 </nav>
 
-<!-- HEADER -->
-<section class="pt-36 pb-16 bg-gradient-to-r from-[#163322] to-[#008E48] text-white text-center">
+<header class="py-20 text-center relative z-10">
   <div data-aos="fade-up">
-    <h1 class="text-3xl font-bold mb-4">
-      দ্য ড্রিম উইভার্স:
-    </h1>
-    <p class="text-[#E8B65D]">
-      মানবিকতার বন্ধনে আবদ্ধ একদল নিবেদিত প্রাণ
-    </p>
+    <h1 class="text-4xl md:text-5xl font-bold mb-4">দ্য ড্রিম উইভার্স</h1>
+    <p class="text-[#B9F6CA] text-lg opacity-90">মানবিকতার বন্ধনে আবদ্ধ একদল নিবেদিত প্রাণ</p>
   </div>
-</section>
+</header>
 
-<!-- SECTIONS -->
-<section class="py-16">
-<div class="max-w-6xl mx-auto px-6">
+<main class="max-w-6xl mx-auto px-6 pb-24 relative z-10">
+  <div class="grid md:grid-cols-3 gap-8">
+    
+    <div>
+      <button onclick="toggleSection('advisory')" id="btn-advisory" class="section-btn w-full bg-white/10 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-white/20">১. উপদেষ্টা পরিষদ</button>
+      <div id="advisory" class="section-content hidden mt-8 space-y-4">
+        <div class="glass-card p-6 text-center">
+          <img src="images/jowel.jpg" class="w-20 h-20 mx-auto rounded-full object-cover mb-4 border-2 border-[#B9F6CA]">
+          <h3 class="font-bold">প্রধান উপদেষ্টা</h3>
+          <p class="text-sm opacity-80">আবদুল্লাহ মোহাম্মদ জুয়েল</p>
+        </div>
+      </div>
+    </div>
 
-<div class="grid md:grid-cols-3 gap-6">
+    <div>
+      <button onclick="toggleSection('executive')" id="btn-executive" class="section-btn w-full bg-white/10 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-white/20">২. কার্যনির্বাহী পরিষদ</button>
+      <div id="executive" class="section-content hidden mt-8 space-y-4">
+        <div class="glass-card p-6 text-center">
+          <img src="images/sajid.jpg" class="w-20 h-20 mx-auto rounded-full object-cover mb-4 border-2 border-[#B9F6CA]">
+          <h3 class="font-bold">প্রচার সম্পাদক</h3>
+          <p class="text-sm opacity-80">নাহিদ হাসান সাজিদ</p>
+        </div>
+      </div>
+    </div>
 
-<!-- ১. উপদেষ্টা পরিষদ -->
-<div>
-<button onclick="toggleSection('advisory')" id="btn-advisory"
-class="section-btn w-full bg-[#DBF9DF] px-6 py-4 rounded-xl font-semibold shadow-lg">
-১. উপদেষ্টা পরিষদ
-</button>
+    <div>
+      <button onclick="toggleSection('coordinator')" id="btn-coordinator" class="section-btn w-full bg-white/10 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-white/20">৩. সমন্বয়ক পরিষদ</button>
+      <div id="coordinator" class="section-content hidden mt-8 space-y-4">
+        <div class="glass-card p-6 text-center">
+          <img src="images/rakib.jpg" class="w-20 h-20 mx-auto rounded-full object-cover mb-4 border-2 border-[#B9F6CA]">
+          <h3 class="font-bold">সমন্বয়ক</h3>
+          <p class="text-sm opacity-80">মো: রাকিব</p>
+        </div>
+      </div>
+    </div>
 
-<div id="advisory" class="section-content hidden mt-6 bg-white p-6 rounded-xl shadow-lg">
-<div class="grid md:grid-cols-2 gap-6">
+  </div>
+</main>
 
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/jowel.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">প্রধান উপদেষ্টা</h3>
-<p>আবদুল্লাহ মোহাম্মদ জুয়েল</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/mehedi.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সহকারী উপদেষ্টা</h3>
-<p>ইমাম মেহেদী হাসান</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/osman.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সহকারী উপদেষ্টা</h3>
-<p>ওসমান গনি মজুমদার (রাজু)</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/razzak.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সহকারী উপদেষ্টা</h3>
-<p>আব্দুর রাজ্জাক মজুমদার</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/joni.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সহকারী উপদেষ্টা</h3>
-<p>জনি মজুমদার</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/masum.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সহকারী উপদেষ্টা</h3>
-<p>মো: মাসুম</p>
-</div>
-
-</div>
-</div>
-</div>
-
-<!-- ২. কার্যনির্বাহী পরিষদ -->
-<div>
-<button onclick="toggleSection('executive')" id="btn-executive"
-class="section-btn w-full bg-[#DBF9DF] px-6 py-4 rounded-xl font-semibold shadow-lg">
-২. কার্যনির্বাহী পরিষদ
-</button>
-
-<div id="executive" class="section-content hidden mt-6 bg-white p-6 rounded-xl shadow-lg">
-<div class="grid md:grid-cols-2 gap-6">
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/main/images/nahid.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">প্রচার ও প্রকাশনা সম্পাদক</h3>
-<p>নাহিদ হাসান সাজিদ</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/omi.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সাংগঠনিক সম্পাদক</h3>
-<p>তপু রায়হান অমি</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/shahedi.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">শিক্ষা ও সংস্কৃতি বিষয়ক সম্পাদক</h3>
-<p>রেদওয়ান উল্লাহ শাহেদী</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/muhit.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">বিজ্ঞান ও প্রযুক্তি বিষয়ক সম্পাদক</h3>
-<p>মুহিত মজুমদার</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/hasan.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">পরিবেশ বিষয়ক সম্পাদক</h3>
-<p>মেহেদী হাসান</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/masuk.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">আইন ও শিষ্টাচার বিষয়ক সম্পাদক</h3>
-<p>মো: আরিফুল ইসলাম (মাসুক)</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/salman.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">ক্রীড়া বিষয়ক সম্পাদক</h3>
-<p>মো: সালমান আরেফীন</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/rafi.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">ক্রীড়া বিষয়ক সহকারী সম্পাদক</h3>
-<p>রায়হান চৌধুরী রাফি</p>
-</div>
-
-</div>
-</div>
-</div>
-
-<!-- ৩. সমন্বয়ক পরিষদ -->
-<div>
-<button onclick="toggleSection('coordinator')" id="btn-coordinator"
-class="section-btn w-full bg-[#DBF9DF] px-6 py-4 rounded-xl font-semibold shadow-lg">
-৩. সমন্বয়ক পরিষদ
-</button>
-
-<div id="coordinator" class="section-content hidden mt-6 bg-white p-6 rounded-xl shadow-lg">
-<div class="grid md:grid-cols-2 gap-6">
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/rakib.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (মাওলানা সাহেব বাড়ি)</h3>
-<p>মো: রাকিব</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/rafi.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-<p>রায়হান চৌধুরী রাফি</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/siam.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (তহশিলদার বাড়ি)</h3>
-<p>শাহরিয়া ইসলাম সিয়াম</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/jihan.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (মজুমদার বাড়ি)</h3>
-<p>জাহিদ হাসান জিহান</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/khalil.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (হাজী বাড়ি)</h3>
-<p>ইব্রাহিম খলিল</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/rubel.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (মনু মাস্টার বাড়ি)</h3>
-<p>এমদাদুল হক রুবেল</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/maiful.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (তালতলী হাজী বাড়ি)</h3>
-<p>শাহিদুল ইসলাম মাঈফুল</p>
-</div>
-
-<div class="member-card bg-[#DBF9DF] p-6 rounded-xl shadow-md text-center">
-<img src="images/mossarof.jpg" class="w-24 h-24 mx-auto rounded-full object-cover mb-4">
-<h3 class="font-semibold">সমন্বয়ক (জামাল মিয়ার বাড়ি)</h3>
-<p>মোশারফ হোসেন</p>
-</div>
-
-</div>
-</div>
-</div>
-
-</div>
-</div>
-</section>
-
-<!-- FOOTER -->
-<footer class="bg-[#1f2937] text-white py-8 text-center text-sm">
-© ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
+<footer class="py-10 text-center opacity-60 text-sm">
+  © ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
 </footer>
 
-<!-- SCRIPTS -->
 <script>
 function toggleSection(id){
-
   const sections = document.querySelectorAll(".section-content");
   const buttons = document.querySelectorAll(".section-btn");
-
-  sections.forEach(sec=>{
-    if(sec.id !== id){
-      sec.classList.add("hidden");
+  sections.forEach(sec => sec.id === id ? sec.classList.toggle("hidden") : sec.classList.add("hidden"));
+  buttons.forEach(btn => {
+    btn.classList.remove("bg-[#B9F6CA]", "text-[#00332b]");
+    btn.classList.add("bg-white/10", "text-white");
+    if(btn.id === "btn-"+id && !document.getElementById(id).classList.contains("hidden")) {
+      btn.classList.replace("bg-white/10", "bg-[#B9F6CA]");
+      btn.classList.replace("text-white", "text-[#00332b]");
     }
   });
-
-  buttons.forEach(btn=>{
-    btn.classList.remove("bg-gradient-to-r","from-[#163322]","to-[#008E48]","text-white");
-    btn.classList.add("bg-[#DBF9DF]");
-  });
-
-  const currentSection = document.getElementById(id);
-  const currentButton = document.getElementById("btn-"+id);
-
-  if(currentSection.classList.contains("hidden")){
-    currentSection.classList.remove("hidden");
-    currentButton.classList.remove("bg-[#DBF9DF]");
-    currentButton.classList.add("bg-gradient-to-r","from-[#163322]","to-[#008E48]","text-white");
-  }else{
-    currentSection.classList.add("hidden");
-  }
 }
-
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-
-menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("-translate-x-full");
-  mobileMenu.classList.toggle("translate-x-0");
-});
 </script>
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>
-AOS.init({
-  duration: 1000,
-  once: true
-});
-</script>
+<script>AOS.init({ duration: 1000, once: true });</script>
 
 </body>
 </html>
