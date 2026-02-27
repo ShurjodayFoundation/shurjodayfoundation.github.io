@@ -133,7 +133,29 @@
   </div>
 </main>
 
-<footer class="text-white py-10">
+  <!-- Newsletter Section -->
+  <div class="bg-[#DBF9DF] p-8 rounded-xl text-center">
+    <h3 class="text-xl font-semibold mb-4">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+    <form id="newsletterForm" class="max-w-md mx-auto space-y-4">
+      <input 
+        type="email" 
+        id="emailInput"
+        placeholder="আপনার ইমেইল লিখুন"
+        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008E48]"
+        required
+      >
+      <button 
+        type="submit"
+        class="w-full bg-[#008E48] text-white py-3 rounded-lg hover:bg-[#163322] transition">
+        সাবস্ক্রাইব
+      </button>
+      <p id="formMessage" class="text-sm mt-2"></p>
+    </form>
+  </div>
+
+</section>
+
+  <footer class="text-white py-10">
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
     <div>
       <h3 class="font-semibold mb-2">সূর্যোদয় ফাউন্ডেশন</h3>
@@ -177,6 +199,36 @@ function toggleSection(id){
 
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>AOS.init({ duration: 1000, once: true });</script>
+
+  <form id="newsletterForm">
+  <input type="email" id="emailInput" placeholder="Enter your email">
+  <button type="submit">Subscribe</button>
+  <p id="formMessage"></p>
+</form>
+
+<script>
+  // Newsletter Validation
+  const form = document.getElementById("newsletterForm");
+  const emailInput = document.getElementById("emailInput");
+  const message = document.getElementById("formMessage");
+
+  form.addEventListener("submit", function(e) {
+    e.preventDefault();
+    const emailValue = emailInput.value.trim();
+
+    if (!emailValue.includes("@") || emailValue.length < 5) {
+      message.textContent = "সঠিক ইমেইল প্রদান করুন।";
+      message.classList.add("text-red-600");
+      message.classList.remove("text-green-600");
+      return;
+    }
+
+    message.textContent = "সফলভাবে সাবস্ক্রাইব হয়েছে!";
+    message.classList.add("text-green-600");
+    message.classList.remove("text-red-600");
+    emailInput.value = "";
+  });
+</script>
 
 </body>
 </html>
