@@ -10,164 +10,153 @@
 <script src="https://cdn.tailwindcss.com"></script>
 
 <style>
-  body {
-    font-family: 'Hind Siliguri', sans-serif;
-    background-color: #00332b; 
-    /* Using the GitHub path you provided */
-    background-image: url('https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/0a0e4050594e48af769d1915f2a496e14973e242/images/1000167146.jpg');
-    background-size: cover;
-    background-position: center;
-    background-attachment: fixed;
-    background-repeat: no-repeat;
-    margin: 0;
-    color: #ffffff;
-  }
+body{
+  font-family:'Hind Siliguri',sans-serif;
+  background-color:#00332b;
+  background-image:url('https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/0a0e4050594e48af769d1915f2a496e14973e242/images/1000167146.jpg');
+  background-size:cover;
+  background-position:center;
+  background-attachment:fixed;
+  color:white;
+}
 
-  /* Overlay to ensure text readability over the pattern */
-  body::after {
-    content: "";
-    position: fixed;
-    inset: 0;
-    background: rgba(0, 51, 43, 0.4);
-    z-index: -1;
-  }
+body::after{
+  content:"";
+  position:fixed;
+  inset:0;
+  background:rgba(0,51,43,0.55);
+  z-index:-1;
+}
 
-  .glass-card {
-    background: rgba(255, 255, 255, 0.05);
-    backdrop-filter: blur(16px);
-    -webkit-backdrop-filter: blur(16px);
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    border-radius: 24px;
-    transition: all 0.3s ease;
-  }
+nav{
+  background:#00332b; /* same as other pages */
+}
 
-  .glass-card:hover {
-    transform: translateY(-8px);
-    background: rgba(255, 255, 255, 0.1);
-    border-color: rgba(185, 246, 202, 0.4);
-  }
+.glass-card{
+  background:rgba(255,255,255,0.05);
+  backdrop-filter:blur(14px);
+  border:1px solid rgba(255,255,255,0.1);
+  border-radius:24px;
+  transition:.3s;
+}
 
-  nav {
-    background: rgba(0, 51, 43, 0.8) !important;
-    backdrop-filter: blur(12px);
-    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-  }
+.glass-card:hover{
+  transform:translateY(-6px);
+}
 
-  .section-btn {
-    transition: all 0.3s ease;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-  }
+.section-content{
+  animation:fade .4s ease;
+}
 
-  .section-content {
-    animation: fadeIn 0.5s ease;
-  }
-
-  @keyframes fadeIn {
-    from { opacity: 0; transform: translateY(20px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .hidden { display: none; }
+@keyframes fade{
+  from{opacity:0;transform:translateY(15px)}
+  to{opacity:1;transform:translateY(0)}
+}
 </style>
 </head>
 
 <body class="pt-20">
 
+<!-- NAV -->
 <nav class="fixed top-0 left-0 right-0 z-50">
   <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <a href="index.html" class="text-xl font-bold text-[#B9F6CA]">সূর্যোদয় ফাউন্ডেশন</a>
-    <div class="hidden md:flex items-center space-x-8 text-sm font-medium">
+    <a href="index.html" class="text-xl font-bold text-[#B9F6CA]">
+      সূর্যোদয় ফাউন্ডেশন
+    </a>
+
+    <div class="hidden md:flex space-x-8 text-sm font-medium">
       <a href="about.html" class="hover:text-[#B9F6CA]">আমাদের সম্পর্কে</a>
       <a href="media.html" class="hover:text-[#B9F6CA]">মিডিয়া</a>
       <a href="members.html" class="text-[#B9F6CA] font-bold">সদস্যবৃন্দ</a>
       <a href="contact.html" class="hover:text-[#B9F6CA]">যোগাযোগ</a>
     </div>
-    <a href="donate.html" class="hidden md:inline-block bg-[#008E48] text-white px-6 py-2 rounded-full hover:bg-[#B9F6CA] hover:text-[#00332b] transition font-bold">ডোনেট করুন</a>
-    <button id="menuBtn" class="text-2xl md:hidden">☰</button>
+
+    <a href="donate.html"
+       class="hidden md:inline-block bg-[#008E48] text-white px-6 py-2 rounded-full font-bold hover:bg-[#B9F6CA] hover:text-[#00332b] transition">
+      ডোনেট করুন
+    </a>
+
+    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
+  </div>
+
+  <!-- Mobile Menu -->
+  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6 space-y-4 text-sm">
+    <a href="about.html" class="block">আমাদের সম্পর্কে</a>
+    <a href="media.html" class="block">মিডিয়া</a>
+    <a href="members.html" class="block font-bold text-[#B9F6CA]">সদস্যবৃন্দ</a>
+    <a href="contact.html" class="block">যোগাযোগ</a>
+    <a href="donate.html" class="block bg-[#008E48] text-white text-center py-2 rounded-full">
+      ডোনেট করুন
+    </a>
   </div>
 </nav>
 
-<header class="py-20 text-center relative z-10">
-  <div data-aos="fade-up">
-    <h1 class="text-4xl md:text-5xl font-bold mb-4">দ্য ড্রিম উইভার্স</h1>
-    <p class="text-[#B9F6CA] text-lg opacity-90">মানবিকতার বন্ধনে আবদ্ধ একদল নিবেদিত প্রাণ</p>
-  </div>
+<!-- HEADER -->
+<header class="py-20 text-center">
+  <h1 class="text-4xl md:text-5xl font-bold mb-4">
+    দ্য ড্রিম উইভার্স
+  </h1>
+  <p class="text-[#B9F6CA]">
+    মানবিকতার বন্ধনে আবদ্ধ একদল নিবেদিত প্রাণ
+  </p>
 </header>
 
-<main class="max-w-6xl mx-auto px-6 pb-24 relative z-10">
-  <div class="grid md:grid-cols-3 gap-8">
-    
-    <div>
-      <button onclick="toggleSection('advisory')" id="btn-advisory" class="section-btn w-full bg-white/10 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-white/20">১. উপদেষ্টা পরিষদ</button>
-      <div id="advisory" class="section-content hidden mt-8 space-y-4">
-        <div class="glass-card p-6 text-center">
-          <img src="images/jowel.jpg" class="w-20 h-20 mx-auto rounded-full object-cover mb-4 border-2 border-[#B9F6CA]">
-          <h3 class="font-bold">প্রধান উপদেষ্টা</h3>
-          <p class="text-sm opacity-80">আবদুল্লাহ মোহাম্মদ জুয়েল</p>
-        </div>
-      </div>
-    </div>
+<!-- SECTION BUTTONS -->
+<section class="max-w-6xl mx-auto px-6">
 
-    <div>
-      <button onclick="toggleSection('executive')" id="btn-executive" class="section-btn w-full bg-white/10 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-white/20">২. কার্যনির্বাহী পরিষদ</button>
-      <div id="executive" class="section-content hidden mt-8 space-y-4">
-        <div class="glass-card p-6 text-center">
-          <img src="images/nahid.jpg" class="w-20 h-20 mx-auto rounded-full object-cover mb-4 border-2 border-[#B9F6CA]">
-          <h3 class="font-bold">বিজ্ঞান ও প্রযুক্তি বিষয়ক সহসম্পাদক</h3>
-          <p class="text-sm opacity-80">নাহিদ হাসান সাজিদ</p>
-        </div>
-      </div>
-    </div>
-
-    <div>
-      <button onclick="toggleSection('coordinator')" id="btn-coordinator" class="section-btn w-full bg-white/10 text-white px-6 py-4 rounded-2xl font-semibold hover:bg-white/20">৩. সমন্বয়ক পরিষদ</button>
-      <div id="coordinator" class="section-content hidden mt-8 space-y-4">
-        <div class="glass-card p-6 text-center">
-          <img src="images/rakib.jpg" class="w-20 h-20 mx-auto rounded-full object-cover mb-4 border-2 border-[#B9F6CA]">
-          <h3 class="font-bold">সমন্বয়ক</h3>
-          <p class="text-sm opacity-80">মো: রাকিব</p>
-        </div>
-      </div>
-    </div>
-
+  <div class="grid md:grid-cols-3 gap-6">
+    <button onclick="openSection('advisory')" class="tab-btn bg-white/10 py-4 rounded-xl">
+      ১. উপদেষ্টা পরিষদ
+    </button>
+    <button onclick="openSection('executive')" class="tab-btn bg-white/10 py-4 rounded-xl">
+      ২. কার্যনির্বাহী পরিষদ
+    </button>
+    <button onclick="openSection('coordinator')" class="tab-btn bg-white/10 py-4 rounded-xl">
+      ৩. সমন্বয়ক পরিষদ
+    </button>
   </div>
-</main>
 
-  <!-- Newsletter Section -->
-  <div class="bg-[#DBF9DF] p-8 rounded-xl text-center">
-    <h3 class="text-xl font-semibold mb-4">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
-    <form id="newsletterForm" class="max-w-md mx-auto space-y-4">
-      <input 
-        type="email" 
-        id="emailInput"
-        placeholder="আপনার ইমেইল লিখুন"
-        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008E48]"
-        required
-      >
-      <button 
-        type="submit"
-        class="w-full bg-[#008E48] text-white py-3 rounded-lg hover:bg-[#163322] transition">
-        সাবস্ক্রাইব
-      </button>
-      <p id="formMessage" class="text-sm mt-2"></p>
-    </form>
-  </div>
+  <!-- FULL WIDTH CONTENT -->
+  <div id="contentArea" class="mt-10"></div>
 
 </section>
 
-  <footer class="text-white py-10">
-  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8 text-sm">
+<!-- NEWSLETTER -->
+<section class="max-w-4xl mx-auto px-6 mt-20 mb-20">
+  <div class="bg-[#DBF9DF] text-black p-8 rounded-xl text-center">
+    <h3 class="text-xl font-semibold mb-4">
+      আপডেট পেতে সাবস্ক্রাইব করুন
+    </h3>
+
+    <form id="newsletterForm" class="space-y-4">
+      <input type="email"
+             id="emailInput"
+             placeholder="আপনার ইমেইল লিখুন"
+             class="w-full px-4 py-3 rounded-lg border focus:outline-none focus:ring-2 focus:ring-[#008E48]"
+             required>
+
+      <button type="submit"
+              class="w-full bg-[#008E48] text-white py-3 rounded-lg hover:bg-[#163322] transition">
+        সাবস্ক্রাইব
+      </button>
+
+      <p id="formMessage" class="text-sm"></p>
+    </form>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer class="bg-[#00332b] py-10 text-white text-sm">
+  <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
     <div>
       <h3 class="font-semibold mb-2">সূর্যোদয় ফাউন্ডেশন</h3>
       <p>হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
     </div>
-
     <div>
       <h3 class="font-semibold mb-2">যোগাযোগ</h3>
       <p>কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
       <p>contact.shurjodayfoundation@gmail.com</p>
     </div>
-
     <div>
       <h3 class="font-semibold mb-2">দ্রুত লিংক</h3>
       <p><a href="about.html">আমাদের সম্পর্কে</a></p>
@@ -175,59 +164,66 @@
       <p><a href="contact.html">যোগাযোগ</a></p>
     </div>
   </div>
-
-  <div class="text-center mt-8 text-xs">
-    © ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
-  </div>
 </footer>
 
 <script>
-function toggleSection(id){
-  const sections = document.querySelectorAll(".section-content");
-  const buttons = document.querySelectorAll(".section-btn");
-  sections.forEach(sec => sec.id === id ? sec.classList.toggle("hidden") : sec.classList.add("hidden"));
-  buttons.forEach(btn => {
-    btn.classList.remove("bg-[#B9F6CA]", "text-[#00332b]");
-    btn.classList.add("bg-white/10", "text-white");
-    if(btn.id === "btn-"+id && !document.getElementById(id).classList.contains("hidden")) {
-      btn.classList.replace("bg-white/10", "bg-[#B9F6CA]");
-      btn.classList.replace("text-white", "text-[#00332b]");
-    }
-  });
+/* MOBILE MENU */
+document.getElementById("menuBtn").onclick = function(){
+  document.getElementById("mobileMenu").classList.toggle("hidden");
+};
+
+/* TABS FULL WIDTH */
+const content = {
+  advisory: `
+    <div class="section-content">
+      <div class="glass-card p-8 text-center">
+        <img src="images/jowel.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA]">
+        <h3 class="font-bold">প্রধান উপদেষ্টা</h3>
+        <p class="opacity-80">আবদুল্লাহ মোহাম্মদ জুয়েল</p>
+      </div>
+    </div>
+  `,
+  executive: `
+    <div class="section-content">
+      <div class="glass-card p-8 text-center">
+        <img src="images/nahid.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA]">
+        <h3 class="font-bold">বিজ্ঞান ও প্রযুক্তি বিষয়ক সহসম্পাদক</h3>
+        <p class="opacity-80">নাহিদ হাসান সাজিদ</p>
+      </div>
+    </div>
+  `,
+  coordinator: `
+    <div class="section-content">
+      <div class="glass-card p-8 text-center">
+        <img src="images/rakib.jpg" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA]">
+        <h3 class="font-bold">সমন্বয়ক</h3>
+        <p class="opacity-80">মো: রাকিব</p>
+      </div>
+    </div>
+  `
+};
+
+function openSection(id){
+  document.getElementById("contentArea").innerHTML = content[id];
 }
-</script>
 
-<script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
-<script>AOS.init({ duration: 1000, once: true });</script>
+/* NEWSLETTER FIXED */
+document.getElementById("newsletterForm")
+.addEventListener("submit",function(e){
+  e.preventDefault();
+  const email = document.getElementById("emailInput").value.trim();
+  const msg = document.getElementById("formMessage");
 
-  <form id="newsletterForm">
-  <input type="email" id="emailInput" placeholder="Enter your email">
-  <button type="submit">Subscribe</button>
-  <p id="formMessage"></p>
-</form>
+  if(!email.includes("@")){
+    msg.textContent="সঠিক ইমেইল প্রদান করুন।";
+    msg.className="text-red-600 text-sm";
+    return;
+  }
 
-<script>
-  // Newsletter Validation
-  const form = document.getElementById("newsletterForm");
-  const emailInput = document.getElementById("emailInput");
-  const message = document.getElementById("formMessage");
-
-  form.addEventListener("submit", function(e) {
-    e.preventDefault();
-    const emailValue = emailInput.value.trim();
-
-    if (!emailValue.includes("@") || emailValue.length < 5) {
-      message.textContent = "সঠিক ইমেইল প্রদান করুন।";
-      message.classList.add("text-red-600");
-      message.classList.remove("text-green-600");
-      return;
-    }
-
-    message.textContent = "সফলভাবে সাবস্ক্রাইব হয়েছে!";
-    message.classList.add("text-green-600");
-    message.classList.remove("text-red-600");
-    emailInput.value = "";
-  });
+  msg.textContent="সফলভাবে সাবস্ক্রাইব হয়েছে!";
+  msg.className="text-green-600 text-sm";
+  this.reset();
+});
 </script>
 
 </body>
