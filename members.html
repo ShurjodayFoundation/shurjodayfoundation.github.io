@@ -57,37 +57,49 @@ nav{
 
 <body class="pt-20">
 
-<!-- NAV -->
-<nav class="fixed top-0 left-0 right-0 z-50">
-  <div class="max-w-7xl mx-auto flex justify-between items-center px-6 py-4">
-    <a href="index.html" class="text-xl font-bold text-[#B9F6CA]">
-      সূর্যোদয় ফাউন্ডেশন
+<!-- ========================================= -->
+<!-- NAVBAR -->
+<!-- ========================================= -->
+<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
+  <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+
+    <a href="index.html" class="text-xl font-bold text-[#008E48] hover:opacity-90 transition">
+  সূর্যোদয় ফাউন্ডেশন
     </a>
 
-    <div class="hidden md:flex space-x-8 text-sm font-medium">
-      <a href="about.html" class="hover:text-[#B9F6CA]">আমাদের সম্পর্কে</a>
-      <a href="media.html" class="hover:text-[#B9F6CA]">মিডিয়া</a>
-      <a href="members.html" class="text-[#B9F6CA] font-bold">সদস্যবৃন্দ</a>
-      <a href="contact.html" class="hover:text-[#B9F6CA]">যোগাযোগ</a>
+    <div class="flex items-center space-x-6">
+
+  <!-- Desktop Menu -->
+<div class="hidden md:flex items-center space-x-6 text-sm font-medium">
+  <a href="about.html" class="hover:text-[#008E48]">আমাদের সম্পর্কে</a>
+  <a href="media.html" class="hover:text-[#008E48]">মিডিয়া</a>
+  <a href="members.html" class="hover:text-[#008E48]">সদস্যবৃন্দ</a>
+  <a href="contact.html" class="hover:text-[#008E48]">যোগাযোগ</a>
+</div>
+
+  <!-- Donate Button -->
+  <a href="donate.html" class="hidden md:inline-block bg-[#008E48] text-white px-8 py-2 text-lg font-semibold rounded-lg hover:bg-[#163322] transition">
+  ডোনেট করুন
+  </a>
+
+  <!-- Hamburger -->
+  <button id="menuBtn" class="text-2xl md:hidden text-[#1f2937]">
+    ☰
+  </button>
+
+</div>
+      
     </div>
-
-    <a href="donate.html"
-       class="hidden md:inline-block bg-[#008E48] text-white px-6 py-2 rounded-full font-bold hover:bg-[#B9F6CA] hover:text-[#00332b] transition">
-      ডোনেট করুন
-    </a>
-
-    <button id="menuBtn" class="md:hidden text-2xl">☰</button>
   </div>
 
-  <!-- Mobile Menu -->
-  <div id="mobileMenu" class="hidden md:hidden px-6 pb-6 space-y-4 text-sm">
+  <div id="mobileMenu" 
+     class="absolute top-full left-0 w-full bg-white text-[#1f2937] px-6 pb-6 space-y-4 
+            transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-md">
     <a href="about.html" class="block">আমাদের সম্পর্কে</a>
     <a href="media.html" class="block">মিডিয়া</a>
-    <a href="members.html" class="block font-bold text-[#B9F6CA]">সদস্যবৃন্দ</a>
+    <a href="members.html" class="block">সদস্যবৃন্দ</a>
     <a href="contact.html" class="block">যোগাযোগ</a>
-    <a href="donate.html" class="block bg-[#008E48] text-white text-center py-2 rounded-full">
-      ডোনেট করুন
-    </a>
+    <a href="donate.html" class="block bg-[#008E48] text-white px-4 py-2 rounded-lg text-center">ডোনেট করুন</a>
   </div>
 </nav>
 
@@ -106,13 +118,13 @@ nav{
 
   <div class="grid md:grid-cols-3 gap-6">
     <button onclick="openSection('advisory')" class="tab-btn bg-white/10 py-4 rounded-xl">
-      ১. উপদেষ্টা পরিষদ
+      উপদেষ্টা পরিষদ
     </button>
     <button onclick="openSection('executive')" class="tab-btn bg-white/10 py-4 rounded-xl">
-      ২. কার্যনির্বাহী পরিষদ
+      কার্যনির্বাহী পরিষদ
     </button>
     <button onclick="openSection('coordinator')" class="tab-btn bg-white/10 py-4 rounded-xl">
-      ৩. সমন্বয়ক পরিষদ
+      সমন্বয়ক পরিষদ
     </button>
   </div>
 
@@ -123,7 +135,7 @@ nav{
 
 <!-- NEWSLETTER -->
 <section class="max-w-4xl mx-auto px-6 mt-20 mb-20">
-  <div class="bg-[#DBF9DF] text-black p-8 rounded-xl text-center">
+  <div class="bg-[#103C35] text-white p-8 rounded-xl text-center">
     <h3 class="text-xl font-semibold mb-4">
       আপডেট পেতে সাবস্ক্রাইব করুন
     </h3>
@@ -146,7 +158,9 @@ nav{
 </section>
 
 <!-- FOOTER -->
-<footer class="bg-[#00332b] py-10 text-white text-sm">
+<footer class="py-10 text-white text-sm">
+  <div class="h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent mb-8"></div>
+
   <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
     <div>
       <h3 class="font-semibold mb-2">সূর্যোদয় ফাউন্ডেশন</h3>
@@ -164,13 +178,15 @@ nav{
       <p><a href="contact.html">যোগাযোগ</a></p>
     </div>
   </div>
+  
+  <div class="text-center mt-8 text-xs">
+    © ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
+  </div>
 </footer>
 
 <script>
 /* MOBILE MENU */
-document.getElementById("menuBtn").onclick = function(){
-  document.getElementById("mobileMenu").classList.toggle("hidden");
-};
+
 
 /* TABS FULL WIDTH */
 const content = {
@@ -223,6 +239,16 @@ document.getElementById("newsletterForm")
   msg.textContent="সফলভাবে সাবস্ক্রাইব হয়েছে!";
   msg.className="text-green-600 text-sm";
   this.reset();
+});
+</script>
+  
+  <script>
+const menuBtn = document.getElementById("menuBtn");
+const mobileMenu = document.getElementById("mobileMenu");
+
+menuBtn.addEventListener("click", () => {
+  mobileMenu.classList.toggle("-translate-x-full");
+  mobileMenu.classList.toggle("translate-x-0");
 });
 </script>
 
