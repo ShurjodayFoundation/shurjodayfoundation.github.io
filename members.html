@@ -234,37 +234,37 @@
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
               <p class="opacity-80">রায়হান চৌধুরী রাফি</p>
              </div>
-						 <!-- Member 3 -->
+             <!-- Member 3 -->
              <div class="glass-card p-8 text-center">
               <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
               <p class="opacity-80">রায়হান চৌধুরী রাফি</p>
              </div>
-							<!-- Member 4 -->
+              <!-- Member 4 -->
              <div class="glass-card p-8 text-center">
               <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
               <p class="opacity-80">রায়হান চৌধুরী রাফি</p>
              </div>
-							<!-- Member 5 -->
+              <!-- Member 5 -->
              <div class="glass-card p-8 text-center">
               <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
               <p class="opacity-80">রায়হান চৌধুরী রাফি</p>
              </div>
-							<!-- Member 6 -->
+              <!-- Member 6 -->
              <div class="glass-card p-8 text-center">
               <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
               <p class="opacity-80">রায়হান চৌধুরী রাফি</p>
              </div>
-							<!-- Member 7 -->
+              <!-- Member 7 -->
              <div class="glass-card p-8 text-center">
               <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
               <p class="opacity-80">রায়হান চৌধুরী রাফি</p>
              </div>
-							<!-- Member 8 -->
+              <!-- Member 8 -->
              <div class="glass-card p-8 text-center">
               <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
               <h3 class="font-bold">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
@@ -315,33 +315,40 @@
   </footer>
 
   <script>
-    /* INDEPENDENT TOGGLE LOGIC */
+    /* TOGGLE LOGIC: INDEPENDENT ON MOBILE, ACCORDION ON DESKTOP */
     function toggleSection(id) {
       const btn = document.getElementById(`btn-${id}`);
       const content = document.getElementById(`content-${id}`);
-
-      // Check if this specific section is already active
       const isActive = content.classList.contains("active");
 
+      // Check if Desktop (Tailwind 'md' breakpoint is 768px)
+      if (window.innerWidth >= 768) {
+        // Close all other sections on Desktop
+        const sections = ['advisory', 'executive', 'coordinator'];
+        sections.forEach(secId => {
+          if (secId !== id) {
+            const otherContent = document.getElementById(`content-${secId}`);
+            const otherBtn = document.getElementById(`btn-${secId}`);
+            otherContent.classList.remove("active");
+            otherBtn.classList.remove("bg-[#B9F6CA]", "text-[#01332B]");
+            otherBtn.classList.add("bg-white/10", "text-white");
+          }
+        });
+      }
+
+      // Toggle current clicked section
       if (isActive) {
-        // If it's active, collapse it
         content.classList.remove("active");
-        
-        // Remove active button styles
         btn.classList.remove("bg-[#B9F6CA]", "text-[#01332B]");
         btn.classList.add("bg-white/10", "text-white");
       } else {
-        // If it's not active, expand it
         content.classList.add("active");
-        
-        // Add active button styles
         btn.classList.add("bg-[#B9F6CA]", "text-[#01332B]");
         btn.classList.remove("bg-white/10", "text-white");
       }
     }
 
     // Initialize the first section to be open by default on page load (Optional)
-    // If you want all of them to be closed initially, just remove the 3 lines below.
     document.addEventListener("DOMContentLoaded", () => {
       toggleSection('advisory');
     });
