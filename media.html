@@ -226,14 +226,42 @@
     </div>
   </footer>
 
-  <!-- SCRIPTS -->
+  <!-- ========================================= -->
+  <!-- SCRIPTS                                   -->
+  <!-- ========================================= -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   
   <script>
     AOS.init({ duration: 1000, once: true });
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // --- TAB SWITCHING LOGIC (Fixed for rounded-xl) ---
+    // ==========================================
+    // 1. ADD YOUR PHOTO FILENAMES HERE (Just the paths)
+    // ==========================================
+    const galleryImages = [
+        // Page 1
+        "images/koborsthan.jpg",
+        "images/photo2.jpg",
+        "images/photo3.jpg",
+        "images/photo4.jpg",
+        "images/photo5.jpg",
+        "images/photo6.jpg",
+
+        // Page 2 (Auto-created)
+        "images/photo7.jpg",
+        "images/photo8.jpg",
+        // Add as many as you want...
+    ];
+
+    // Configuration
+    const itemsPerPage = 6; 
+    let currentPage = 1;
+    
+    // Calculate total pages automatically
+    // Use Math.max(..., 1) to ensure at least 1 page exists
+    const totalPages = Math.max(Math.ceil(galleryImages.length / itemsPerPage), 1);
+
+    // --- TAB SWITCHING LOGIC ---
     function switchTab(tabId) {
       document.getElementById('photos').classList.remove('active');
       document.getElementById('videos').classList.remove('active');
@@ -241,60 +269,62 @@
       const btnPhotos = document.getElementById('btn-photos');
       const btnVideos = document.getElementById('btn-videos');
 
-      // FIXED: Used 'rounded-xl' here instead of 'rounded-full'
       btnPhotos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-inactive";
       btnVideos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-inactive";
 
-      // Activate content
       document.getElementById(tabId).classList.add('active');
       
-      // Activate button
       if(tabId === 'photos'){
-        // FIXED: Used 'rounded-xl' here
         btnPhotos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-active";
       } else {
-        // FIXED: Used 'rounded-xl' here
         btnVideos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-active";
       }
     }
 
-    // --- PAGINATION LOGIC ---
-    const totalPages = 17;
-    let currentPage = 1;
-    
+    // --- PAGINATION & IMAGE LOADING LOGIC ---
     function loadPage(page) {
         currentPage = page;
         const grid = document.getElementById('photo-grid');
-        grid.innerHTML = ""; 
+        grid.innerHTML = ""; // Clear existing images
         
-        for (let i = 1; i <= 6; i++) {
-            const imgIndex = ((page - 1) * 6) + i;
-            const div = document.createElement('div');
-            div.className = "group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative";
-            div.setAttribute('data-aos', 'zoom-in');
-            
-            div.innerHTML = `
-                <img src="https://via.placeholder.com/600x400/01332b/white?text=Page+${page}+-+Image+${i}" 
-                     alt="Gallery Image ${imgIndex}" 
-                     class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
-                <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition">
-                    Activity Photo ${imgIndex}
-                </div>
-            `;
-            grid.appendChild(div);
+        // Calculate which images to show for this page
+        const start = (page - 1) * itemsPerPage;
+        const end = start + itemsPerPage;
+        const paginatedItems = galleryImages.slice(start, end);
+
+        // If list is empty, show placeholder
+        if(galleryImages.length === 0) {
+            // Optional: Show 6 dummy placeholders if you have no real images yet
+            for(let i=0; i<6; i++){
+                grid.innerHTML += `<div class="aspect-[3/2] bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center text-gray-400">No Image</div>`;
+            }
+        } else {
+            // Loop through your real images
+            paginatedItems.forEach((imagePath) => {
+                const div = document.createElement('div');
+                div.className = "group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative";
+                div.setAttribute('data-aos', 'zoom-in');
+                
+                // NO CAPTION CODE HERE anymore
+                div.innerHTML = `
+                    <img src="${imagePath}" 
+                         alt="Gallery Image" 
+                         onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'"
+                         class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                `;
+                grid.appendChild(div);
+            });
         }
         
         renderPagination();
         
-        // --- FIXED SCROLL LOGIC ---
+        // --- SCROLL LOGIC ---
         if(page > 1) {
-            // Check if screen width is Mobile (Less than 768px)
             if (window.innerWidth < 768) {
-                // For Mobile: Scroll to the Tab Buttons Container so texts are visible
+                // Mobile: Scroll to buttons
                 document.getElementById('tab-buttons-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
-            } else {
-                // For Desktop: DO NOTHING (No Scroll)
-            }
+            } 
+            // Desktop: Do nothing
         }
     }
 
@@ -302,12 +332,14 @@
         const container = document.getElementById('pagination-container');
         container.innerHTML = ""; 
 
+        // Prev Button
         const prevBtn = document.createElement('button');
         prevBtn.innerText = "<";
         prevBtn.className = `pagination-btn ${currentPage === 1 ? 'pagination-btn-inactive opacity-50 cursor-not-allowed' : 'pagination-btn-inactive'}`;
         prevBtn.onclick = () => { if(currentPage > 1) loadPage(currentPage - 1); };
         container.appendChild(prevBtn);
 
+        // Dynamic Page Numbers
         let pagesToShow = [];
         
         if (totalPages <= 7) {
@@ -337,6 +369,7 @@
             container.appendChild(btn);
         });
 
+        // Next Button
         const nextBtn = document.createElement('button');
         nextBtn.innerText = ">";
         nextBtn.className = `pagination-btn ${currentPage === totalPages ? 'pagination-btn-inactive opacity-50 cursor-not-allowed' : 'pagination-btn-inactive'}`;
