@@ -128,27 +128,27 @@
           </div>
         </div>
 
-        <!-- COLUMN 2: Contact Form -->
+        <!-- COLUMN 2: Contact Form (Configured with Formspree) -->
         <div data-aos="fade-up" data-aos-delay="100" class="glass-card w-full p-6 md:p-10 flex flex-col h-full">
           <h2 class="text-2xl font-bold mb-6">বার্তা পাঠান</h2>
           
-          <form id="contactMessageForm" class="space-y-5 flex-grow flex flex-col justify-center">
+          <form id="contactMessageForm" action="https://formspree.io/f/mdaljrwp" method="POST" class="space-y-5 flex-grow flex flex-col justify-center">
             <div>
               <label class="block text-sm font-medium mb-1 opacity-90">আপনার নাম</label>
-              <input type="text" id="name" placeholder="আপনার নাম লিখুন" required class="glass-input w-full px-4 py-3 rounded-xl">
+              <input type="text" id="name" name="name" placeholder="আপনার নাম লিখুন" required class="glass-input w-full px-4 py-3 rounded-xl">
             </div>
 
             <div>
               <label class="block text-sm font-medium mb-1 opacity-90">ইমেইল এড্রেস</label>
-              <input type="email" id="email" placeholder="আপনার ইমেইল লিখুন" required class="glass-input w-full px-4 py-3 rounded-xl">
+              <input type="email" id="email" name="email" placeholder="আপনার ইমেইল লিখুন" required class="glass-input w-full px-4 py-3 rounded-xl">
             </div>
 
             <div>
               <label class="block text-sm font-medium mb-1 opacity-90">আপনার বার্তা</label>
-              <textarea id="message" rows="4" placeholder="বিস্তারিত লিখুন..." required class="glass-input w-full px-4 py-3 rounded-xl resize-none"></textarea>
+              <textarea id="message" name="message" rows="4" placeholder="বিস্তারিত লিখুন..." required class="glass-input w-full px-4 py-3 rounded-xl resize-none"></textarea>
             </div>
 
-            <button type="submit" class="w-full bg-[#008E48] text-white py-3.5 rounded-xl font-bold hover:bg-[#163322] transition duration-300 shadow-lg mt-4">
+            <button type="submit" id="contactSubmitBtn" class="w-full bg-[#008E48] text-white py-3.5 rounded-xl font-bold hover:bg-[#163322] transition duration-300 shadow-lg mt-4">
               মেসেজ পাঠান
             </button>
             
@@ -233,19 +233,53 @@
     // Set Dynamic Year in Footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Contact Form Logic (Mockup for message sending)
+    // Contact Form Logic (Functional with Formspree)
     document.getElementById("contactMessageForm").addEventListener("submit", function(e) {
-      e.preventDefault();
+      e.preventDefault(); 
       
+      const form = this;
       const statusText = document.getElementById("contactFormStatus");
-      statusText.textContent = "আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে! ধন্যবাদ।";
-      statusText.classList.remove("hidden", "text-red-400");
-      statusText.classList.add("text-[#B9F6CA]");
-      this.reset();
+      const submitBtn = document.getElementById("contactSubmitBtn");
       
-      setTimeout(() => {
-        statusText.classList.add("hidden");
-      }, 5000);
+      const originalBtnText = submitBtn.innerHTML;
+      submitBtn.innerHTML = "পাঠানো হচ্ছে...";
+      submitBtn.disabled = true;
+
+      fetch(form.action, {
+        method: form.method,
+        body: new FormData(form),
+        headers: {
+            'Accept': 'application/json'
+        }
+      }).then(response => {
+        if (response.ok) {
+          statusText.textContent = "আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে! আমরা দ্রুতই যোগাযোগ করব।";
+          statusText.classList.remove("hidden", "text-red-400");
+          statusText.classList.add("text-[#B9F6CA]");
+          form.reset();
+        } else {
+          response.json().then(data => {
+            if (Object.hasOwn(data, 'errors')) {
+              statusText.textContent = data["errors"].map(error => error["message"]).join(", ");
+            } else {
+              statusText.textContent = "দুঃখিত, একটি সমস্যা হয়েছে। আবার চেষ্টা করুন।";
+            }
+            statusText.classList.remove("hidden", "text-[#B9F6CA]");
+            statusText.classList.add("text-red-400");
+          })
+        }
+      }).catch(error => {
+        statusText.textContent = "দুঃখিত, কোনো একটি সমস্যা হয়েছে। দয়া করে আবার চেষ্টা করুন।";
+        statusText.classList.remove("hidden", "text-[#B9F6CA]");
+        statusText.classList.add("text-red-400");
+      }).finally(() => {
+        submitBtn.innerHTML = originalBtnText;
+        submitBtn.disabled = false;
+        
+        setTimeout(() => {
+          statusText.classList.add("hidden");
+        }, 5000);
+      });
     });
   </script>
 
