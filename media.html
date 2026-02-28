@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>মিডিয়া গ্যালারি | সূর্যোদয় ফাউন্ডেশন</title>
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body{
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #00332b;
+      background-image: url('https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/0a0e4050594e48af769d1915f2a496e14973e242/images/1000167146.jpg');
+      background-size: cover;
+      background-position: center;
+      background-attachment: fixed;
+      color: white;
+    }
+    
+    body::after{
+      content: "";
+      position: fixed;
+      inset: 0;
+      background: rgba(0,51,43,0.55);
+      z-index: -1;
+    }
+    
+    .glass-card{
+      background: rgba(255,255,255,0.05);
+      backdrop-filter: blur(14px);
+      border: 1px solid rgba(255,255,255,0.1);
+      border-radius: 24px;
+      transition: all 0.3s ease;
+    }
+
+    .glass-card:hover{
+      transform: translateY(-6px);
+      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    }
+
+    /* Tab Switch Animation */
+    .tab-content {
+      display: none;
+      animation: fadeIn 0.4s ease-in-out;
+    }
+    .tab-content.active {
+      display: block;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(15px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+  </style>
+</head>
+
+<body class="pt-20 overflow-x-hidden">
+
+  <!-- ========================================= -->
+  <!-- NAVBAR INJECTED VIA JAVASCRIPT -->
+  <!-- ========================================= -->
+  <div id="navbar-container"></div>
+
+  <!-- ========================================= -->
+  <!-- HEADER                                    -->
+  <!-- ========================================= -->
+  <header class="py-20 text-center relative z-10">
+    <div data-aos="fade-up">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">মিডিয়া গ্যালারি</h1>
+      <p class="text-[#B9F6CA] text-lg font-medium">আমাদের কার্যক্রম ও যাবতীয় মুহূর্ত</p>
+    </div>
+  </header>
+
+  <!-- ========================================= -->
+  <!-- MEDIA TABS & CONTENT                      -->
+  <!-- ========================================= -->
+  <section class="max-w-7xl mx-auto px-6 mb-20 relative z-10">
+    
+    <!-- Tab Buttons -->
+    <div class="flex justify-center space-x-4 mb-12" data-aos="zoom-in">
+      <button id="btn-photos" onclick="switchTab('photos')" class="px-8 py-3 rounded-xl font-bold transition-all bg-[#B9F6CA] text-[#01332B] shadow-lg">
+        ছবির গ্যালারি
+      </button>
+      <button id="btn-videos" onclick="switchTab('videos')" class="px-8 py-3 rounded-xl font-bold transition-all bg-white/10 text-white hover:bg-white/20">
+        ভিডিও গ্যালারি
+      </button>
+    </div>
+
+    <!-- PHOTOS SECTION -->
+    <div id="photos" class="tab-content active">
+      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
+        
+        <!-- Photo Item 1 -->
+        <div class="glass-card overflow-hidden group cursor-pointer">
+          <div class="overflow-hidden">
+            <img src="images/koborsthan.jpg" alt="কবরস্থান পরিষ্কার" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Image+Not+Found'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-1">কবরস্থান পরিষ্কার কার্যক্রম</h3>
+            <p class="text-sm opacity-80">কমলাপুর গ্রামভিত্তিক সামাজিক উদ্যোগ</p>
+          </div>
+        </div>
+
+        <!-- Photo Item 2 -->
+        <div class="glass-card overflow-hidden group cursor-pointer">
+          <div class="overflow-hidden">
+            <img src="images/placeholder.jpg" alt="ইফতার মাহফিল" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Event+Photo'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-1">ইফতার মাহফিল ২০২৫</h3>
+            <p class="text-sm opacity-80">গ্রামের সকলের সম্মিলিত অংশগ্রহণ</p>
+          </div>
+        </div>
+
+        <!-- Photo Item 3 -->
+        <div class="glass-card overflow-hidden group cursor-pointer">
+          <div class="overflow-hidden">
+            <img src="images/placeholder.jpg" alt="বৃক্ষরোপণ" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Tree+Plantation'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-1">বৃক্ষরোপণ কর্মসূচি</h3>
+            <p class="text-sm opacity-80">১০০+ বৃক্ষ রোপণ করা হয়</p>
+          </div>
+        </div>
+
+        <!-- Photo Item 4 -->
+        <div class="glass-card overflow-hidden group cursor-pointer">
+          <div class="overflow-hidden">
+            <img src="images/placeholder.jpg" alt="মিটিং" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Meeting'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-1">সদস্যদের মতবিনিময় সভা</h3>
+            <p class="text-sm opacity-80">কার্যনির্বাহী পরিষদের মাসিক সভা</p>
+          </div>
+        </div>
+
+        <!-- Photo Item 5 -->
+        <div class="glass-card overflow-hidden group cursor-pointer">
+          <div class="overflow-hidden">
+            <img src="images/placeholder.jpg" alt="ত্রাণ বিতরণ" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Relief'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-1">ইফতার সামগ্রী বিতরণ</h3>
+            <p class="text-sm opacity-80">দরিদ্র পরিবারের মাঝে খাদ্য সামগ্রী বিতরণ</p>
+          </div>
+        </div>
+
+        <!-- Photo Item 6 -->
+        <div class="glass-card overflow-hidden group cursor-pointer">
+          <div class="overflow-hidden">
+            <img src="images/placeholder.jpg" alt="ঘাস কাটার মেশিন" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Maintenance'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
+          </div>
+          <div class="p-5">
+            <h3 class="font-bold text-lg mb-1">ঘাস কাটার মেশিন ক্রয়</h3>
+            <p class="text-sm opacity-80">কবরস্থান রক্ষণাবেক্ষণের জন্য যন্ত্র ক্রয়</p>
+          </div>
+        </div>
+
+      </div>
+    </div>
+
+    <!-- VIDEOS SECTION -->
+    <div id="videos" class="tab-content">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
+        
+        <!-- Video Item 1 -->
+        <div class="glass-card overflow-hidden p-5">
+          <div class="relative w-full pb-[56.25%] bg-black/50 rounded-xl overflow-hidden mb-5 border border-white/10 flex items-center justify-center">
+            <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 cursor-pointer hover:opacity-100 transition hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <p class="absolute bottom-4 text-xs opacity-60">ভিডিও শীঘ্রই যুক্ত করা হবে</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2">সূর্যোদয় ফাউন্ডেশনের পরিচিতি</h3>
+          <p class="text-sm opacity-80">ফাউন্ডেশনের প্রতিষ্ঠা, উদ্দেশ্য ও লক্ষ্য নিয়ে বিশেষ প্রমাণ্যচিত্র।</p>
+        </div>
+
+        <!-- Video Item 2 -->
+        <div class="glass-card overflow-hidden p-5">
+          <div class="relative w-full pb-[56.25%] bg-black/50 rounded-xl overflow-hidden mb-5 border border-white/10 flex items-center justify-center">
+            <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 cursor-pointer hover:opacity-100 transition hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+            <p class="absolute bottom-4 text-xs opacity-60">ভিডিও শীঘ্রই যুক্ত করা হবে</p>
+          </div>
+          <h3 class="font-bold text-xl mb-2">ইফতার মাহফিল ও স্বেচ্ছাসেবা</h3>
+          <p class="text-sm opacity-80">সম্মিলিত ইফতার আয়োজন ও স্বেচ্ছাসেবকদের অক্লান্ত পরিশ্রমের মুহূর্ত।</p>
+        </div>
+
+      </div>
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- NEWSLETTER -->
+  <!-- ========================================== -->
+  <section class="max-w-4xl mx-auto px-6 pb-20 relative z-10">
+    <div data-aos="zoom-in" class="bg-[#103C35] text-white p-8 md:p-10 rounded-2xl text-center shadow-lg border border-white/10">
+      <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+      <p class="opacity-80 mb-6 text-sm md:text-base">ফাউন্ডেশনের কার্যক্রম এবং নতুন ইভেন্টের আপডেট সরাসরি ইমেইলে পেতে যুক্ত হোন আমাদের সাথে।</p>
+      
+      <form id="newsletterForm" class="space-y-4 max-w-lg mx-auto">
+        <input type="email" id="emailInput" placeholder="আপনার ইমেইল এড্রেস লিখুন" class="w-full px-5 py-3.5 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-[#008E48] text-[#1f2937]" required>
+        <button type="submit" class="w-full bg-[#008E48] text-white py-3.5 rounded-xl font-bold hover:bg-[#163322] transition duration-300 shadow-md">সাবস্ক্রাইব করুন</button>
+        <p id="formMessage" class="text-sm font-semibold mt-2"></p>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================= -->
+  <!-- FOOTER                                    -->
+  <!-- ========================================= -->
+  <footer class="py-10 text-white text-sm relative z-10">
+    <div class="h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent mb-8"></div>
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+      <div>
+        <h3 class="font-semibold mb-2 text-lg">সূর্যোদয় ফাউন্ডেশন</h3>
+        <p class="opacity-80">হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">যোগাযোগ</h3>
+        <p class="opacity-80 mb-1">📍 কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
+        <p class="opacity-80 mb-1">✉️ contact.shurjodayfoundation@gmail.com</p>
+        <p class="opacity-80">📞 +880 1690 211979, +880 1843 103146</p>
+      </div>
+      <div>
+        <h3 class="font-semibold mb-3 text-lg">দ্রুত লিংক</h3>
+        <p class="mb-1"><a href="about.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">আমাদের সম্পর্কে</a></p>
+        <p class="mb-1"><a href="activities.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">কার্যক্রম</a></p>
+        <p><a href="donate.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">ডোনেট করুন</a></p>
+      </div>
+    </div>
+    <div class="text-center mt-12 text-xs opacity-70">
+      © <span id="year"></span> সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
+    </div>
+  </footer>
+
+  <!-- ========================================= -->
+  <!-- SCRIPTS                                   -->
+  <!-- ========================================= -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  <script>
+    // Initialize Animations
+    AOS.init({
+      duration: 1000,
+      once: true
+    });
+
+    // Set Dynamic Year in Footer
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Tab Switching Logic
+    function switchTab(tabId) {
+      // Hide all contents
+      document.getElementById('photos').classList.remove('active');
+      document.getElementById('videos').classList.remove('active');
+      
+      // Reset Button Styles
+      const btnPhotos = document.getElementById('btn-photos');
+      const btnVideos = document.getElementById('btn-videos');
+
+      btnPhotos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-white/10 text-white hover:bg-white/20";
+      btnVideos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-white/10 text-white hover:bg-white/20";
+
+      // Show specific content & highlight button
+      document.getElementById(tabId).classList.add('active');
+      
+      if(tabId === 'photos'){
+        btnPhotos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-[#B9F6CA] text-[#01332B] shadow-lg";
+      } else {
+        btnVideos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-[#B9F6CA] text-[#01332B] shadow-lg";
+      }
+    }
+  </script>
+
+  <!-- Global Navbar & Newsletter Scripts -->
+  <script src="navbar.js"></script>
+  <script src="newsletter.js"></script>
+
+</body>
+</html>
