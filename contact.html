@@ -3,12 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>সদস্যবৃন্দ | সূর্যোদয় ফাউন্ডেশন</title>
-  
+  <title>যোগাযোগ | সূর্যোদয় ফাউন্ডেশন</title>
+
   <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
   <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
   <script src="https://cdn.tailwindcss.com"></script>
-  
+
   <style>
     body{
       font-family: 'Hind Siliguri', sans-serif;
@@ -33,34 +33,28 @@
       backdrop-filter: blur(14px);
       border: 1px solid rgba(255,255,255,0.1);
       border-radius: 24px;
-      transition: .3s;
+      transition: all 0.3s ease;
     }
-    
+
     .glass-card:hover{
-      transform: translateY(-6px);
       box-shadow: 0 10px 25px rgba(0,0,0,0.3);
     }
 
-    /* Accordion & Tab Animation Setup */
-    .content-panel {
-      display: grid;
-      grid-template-rows: 0fr;
-      transition: grid-template-rows 0.4s ease-in-out;
+    /* Form Input Styles for Glass Theme */
+    .glass-input {
+      background: rgba(255, 255, 255, 0.08);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      color: white;
+      transition: 0.3s;
     }
-    .content-panel.active {
-      grid-template-rows: 1fr;
+    .glass-input::placeholder {
+      color: rgba(255, 255, 255, 0.6);
     }
-    .panel-inner {
-      overflow: hidden;
-    }
-    
-    .section-content{
-      animation: fade .4s ease;
-    }
-    
-    @keyframes fade{
-      from{ opacity: 0; transform: translateY(15px) }
-      to{ opacity: 1; transform: translateY(0) }
+    .glass-input:focus {
+      outline: none;
+      border-color: #B9F6CA;
+      background: rgba(255, 255, 255, 0.15);
+      box-shadow: 0 0 0 2px rgba(185, 246, 202, 0.2);
     }
   </style>
 </head>
@@ -73,248 +67,111 @@
   <div id="navbar-container"></div>
 
   <!-- ========================================= -->
-  <!-- HEADER -->
+  <!-- HEADER                                    -->
   <!-- ========================================= -->
   <header class="py-20 text-center relative z-10">
     <div data-aos="fade-up">
-      <h1 class="text-4xl md:text-5xl font-bold mb-4">দ্য ড্রিম উইভার্স</h1>
-      <p class="text-[#B9F6CA] text-lg font-medium">মানবিকতার বন্ধনে আবদ্ধ একদল নিবেদিত প্রাণ</p>
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">যোগাযোগ করুন</h1>
+      <p class="text-[#B9F6CA] text font-medium">যেকোনো জিজ্ঞাসা বা প্রয়োজনে আমরা আছি আপনার পাশে</p>
     </div>
   </header>
 
   <!-- ========================================= -->
-  <!-- TABS & GRID CONTENT SECTION -->
+  <!-- CONTACT SECTION                           -->
   <!-- ========================================= -->
-  <section class="max-w-6xl mx-auto px-6 mb-16 relative z-10">
-    <!-- Flex Container -->
-    <div class="flex flex-col md:flex-row md:flex-wrap md:justify-between w-full">
+  <section class="pb-16 relative z-10 w-full">
+    <div class="w-full max-w-5xl mx-auto px-4 md:px-6">
       
-      <!-- ADVISORY TAB & CONTENT -->
-      <button id="btn-advisory" onclick="toggleSection('advisory')" class="tab-btn font-bold py-4 rounded-xl w-full md:w-[32%] mb-4 order-1 md:order-1 transition-all duration-300 bg-white/10 text-white shadow-sm">
-        উপদেষ্টা পরিষদ
-      </button>
-      <div id="content-advisory" class="content-panel w-full order-2 md:order-4">
-        <div class="panel-inner">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8 mt-2 section-content">
-            <!-- Member Card 1 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/jowel.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">উপদেষ্টা</h3>
-              <p class="opacity-80 text-sm mt-1">আবদুল্লাহ মোহাম্মদ জুয়েল</p>
-            </div>
-            <!-- Member 2 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">উপদেষ্টা</h3>
-              <p class="opacity-80 text-sm mt-1">ইমাম মেহেদী হাসান</p>
-            </div>
-             <!-- Member 3 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">উপদেষ্টা</h3>
-              <p class="opacity-80 text-sm mt-1">ওসমান গণি মজুমদার (রাজু)</p>
-            </div>
-            <!-- Member 4 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">উপদেষ্টা</h3>
-              <p class="opacity-80 text-sm mt-1">আব্দুর রাজ্জাক মজুমদার</p>
-            </div>
-            <!-- Member 5 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">উপদেষ্টা</h3>
-              <p class="opacity-80 text-sm mt-1">জনি মজুমদার</p>
-            </div>
-            <!-- Member 6 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">উপদেষ্টা</h3>
-              <p class="opacity-80 text-sm mt-1">মোঃ মাসুম</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- EXECUTIVE TAB & CONTENT -->
-      <button id="btn-executive" onclick="toggleSection('executive')" class="tab-btn font-bold py-4 rounded-xl w-full md:w-[32%] mb-4 order-3 md:order-2 transition-all duration-300 bg-white/10 text-white shadow-sm">
-        কার্যনির্বাহী পরিষদ
-      </button>
-      <div id="content-executive" class="content-panel w-full order-4 md:order-5">
-        <div class="panel-inner">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8 mt-2 section-content">
-            <!-- Member Card 1 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/nahid.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">প্রচার ও প্রকাশনা সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">নাহিদ হাসান সাজিদ</p>
-            </div>
-            <!-- Member 2 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সাংগঠনিক সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">তপু রায়হান অমি</p>
-            </div>
-            <!-- Member 3 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">শিক্ষা ও সংস্কৃতি বিষয়ক সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">রেদওয়ান উল্লাহ শাহেদী</p>
-            </div>
-            <!-- Member 4 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">বিজ্ঞান ও প্রযুক্তি বিষয়ক সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">মুহিত মজুমদার</p>
-            </div>
-            <!-- Member 5 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">পরিবেশ বিষয়ক সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">মেহেদী হাসান</p>
-            </div>
-            <!-- Member 6 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">ক্রীড়া বিষয়ক সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">মো: সালমান আরেফীন</p>
-            </div>
-            <!-- Member 7 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">ক্রীড়া বিষয়ক সম্পাদক</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <!-- COORDINATOR TAB & CONTENT -->
-      <button id="btn-coordinator" onclick="toggleSection('coordinator')" class="tab-btn font-bold py-4 rounded-xl w-full md:w-[32%] mb-4 order-5 md:order-3 transition-all duration-300 bg-white/10 text-white shadow-sm">
-        সমন্বয়ক পরিষদ
-      </button>
-      <div id="content-coordinator" class="content-panel w-full order-6 md:order-6">
-        <div class="panel-inner">
-          <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6 mb-8 mt-2 section-content">
-            <!-- Member Card 1 -->
-            <div class="glass-card p-8 text-center">
-              <img src="images/rakib.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (মাওলানা সাহেব বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">মো: রাকিব</p>
-            </div>
-             <!-- Member 2 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-             <!-- Member 3 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-              <!-- Member 4 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-              <!-- Member 5 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-              <!-- Member 6 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-              <!-- Member 7 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-              <!-- Member 8 -->
-             <div class="glass-card p-8 text-center">
-              <img src="images/placeholder.jpg" alt="Member" class="w-24 h-24 mx-auto rounded-full mb-4 border-2 border-[#B9F6CA] object-cover bg-gray-500">
-              <h3 class="font-bold text-lg">সমন্বয়ক (চৌধুরী বাড়ি)</h3>
-              <p class="opacity-80 text-sm mt-1">রায়হান চৌধুরী রাফি</p>
-             </div>
-          </div>
-        </div>
-      </div>
-
-    </div>
-  </section>
-  
-  <!-- ========================================== -->
-  <!-- EXTRA MEMBERS SECTION (NEW STYLE) -->
-  <!-- ========================================== -->
-  <section class="max-w-6xl mx-auto px-6 mb-20 relative z-10">
-    <div class="text-center mb-10" data-aos="fade-up">
-      <h2 class="text-3xl font-bold mb-6 text-[#B9F6CA]">অন্যান্য সদস্যবৃন্দ</h2>
-      
-      <!-- Pill Shaped Tabs -->
-      <div class="inline-flex bg-white/10 rounded-full p-1 border border-white/10 backdrop-blur-md">
-        <button id="btn-active" onclick="toggleExtraSection('active')" class="extra-tab-btn px-6 py-2.5 rounded-full font-semibold transition-all duration-300 bg-[#B9F6CA] text-[#01332B] text-sm md:text-base">
-          সক্রিয় সদস্য
-        </button>
-        <button id="btn-expat" onclick="toggleExtraSection('expat')" class="extra-tab-btn px-6 py-2.5 rounded-full font-semibold transition-all duration-300 text-white hover:bg-white/10 text-sm md:text-base">
-          প্রবাসী কন্ট্রিবিউটরস ও শুভাকাঙ্ক্ষীগণ
-        </button>
-      </div>
-    </div>
-
-    <!-- Active Members Content -->
-    <div id="content-active" class="extra-content block section-content">
-      <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
+      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 md:gap-12 items-stretch w-full">
         
-        <!-- Horizontal Mini Card 1 -->
-        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center space-x-4 hover:bg-white/10 transition hover:-translate-y-1">
-          <img src="images/placeholder.jpg" class="w-14 h-14 rounded-full object-cover bg-gray-500" alt="Member">
-          <div class="text-left">
-            <h4 class="font-bold text-sm">সদস্যের নাম</h4>
-            <p class="text-xs opacity-70">সক্রিয় সদস্য</p>
+        <!-- COLUMN 1: Contact Information -->
+        <div data-aos="fade-up" class="glass-card w-full p-6 md:p-10 flex flex-col justify-center h-full overflow-hidden">
+          <h2 class="text-2xl font-bold mb-6 text-[#B9F6CA]">আমাদের ঠিকানা</h2>
+          <p class="mb-8 opacity-80 leading-relaxed text-sm md:text-base">
+            সূর্যোদয় ফাউন্ডেশনের কার্যক্রম সম্পর্কে আরও জানতে, আমাদের সাথে যুক্ত হতে অথবা যেকোনো ধরনের সহায়তার জন্য নিচের মাধ্যমগুলোতে যোগাযোগ করতে পারেন।
+          </p>
+
+          <div class="space-y-6 w-full">
+            <!-- Address -->
+            <div class="flex items-start space-x-4 w-full">
+              <div class="bg-white/10 p-3 rounded-full text-[#B9F6CA] shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M17.657 16.657L13.414 20.9a1.998 1.998 0 01-2.827 0l-4.242-4.243a8 8 0 1111.314 0z"></path><path stroke-linecap="round" stroke-linejoin="round" d="M15 11a3 3 0 11-6 0 3 3 0 016 0z"></path></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-lg">অফিস</h4>
+                <p class="opacity-80 text-sm">কমলাপুর, সদর দক্ষিণ,<br>কুমিল্লা, বাংলাদেশ</p>
+              </div>
+            </div>
+
+            <!-- Email -->
+            <div class="flex items-start space-x-4 w-full">
+              <div class="bg-white/10 p-3 rounded-full text-[#B9F6CA] shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z"></path></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-lg">ইমেইল</h4>
+                <p class="opacity-80 text-sm break-all sm:break-normal">contact.shurjodayfoundation@gmail.com</p>
+              </div>
+            </div>
+
+            <!-- Phone -->
+            <div class="flex items-start space-x-4 w-full">
+              <div class="bg-white/10 p-3 rounded-full text-[#B9F6CA] shrink-0">
+                <svg class="w-6 h-6" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 5a2 2 0 012-2h3.28a1 1 0 01.948.684l1.498 4.493a1 1 0 01-.502 1.21l-2.257 1.13a11.042 11.042 0 005.516 5.516l1.13-2.257a1 1 0 011.21-.502l4.493 1.498a1 1 0 01.684.949V19a2 2 0 01-2 2h-1C9.716 21 3 14.284 3 6V5z"></path></svg>
+              </div>
+              <div class="flex-1 min-w-0">
+                <h4 class="font-bold text-lg">মোবাইল</h4>
+                <p class="opacity-80 text-sm">+880 1690 211979</p>
+                <p class="opacity-80 text-sm">+880 1843 103146</p>
+              </div>
+            </div>
           </div>
         </div>
 
-        <!-- Horizontal Mini Card 2 -->
-        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center space-x-4 hover:bg-white/10 transition hover:-translate-y-1">
-          <img src="images/placeholder.jpg" class="w-14 h-14 rounded-full object-cover bg-gray-500" alt="Member">
-          <div class="text-left">
-            <h4 class="font-bold text-sm">সদস্যের নাম</h4>
-            <p class="text-xs opacity-70">সক্রিয় সদস্য</p>
-          </div>
-        </div>
-      </div>
-    </div>
+        <!-- COLUMN 2: Contact Form -->
+        <div data-aos="fade-up" data-aos-delay="100" class="glass-card w-full p-6 md:p-10 flex flex-col h-full">
+          <h2 class="text-2xl font-bold mb-6">বার্তা পাঠান</h2>
+          
+          <form id="contactMessageForm" class="space-y-5 flex-grow flex flex-col justify-center">
+            <div>
+              <label class="block text-sm font-medium mb-1 opacity-90">আপনার নাম</label>
+              <input type="text" id="name" placeholder="আপনার নাম লিখুন" required class="glass-input w-full px-4 py-3 rounded-xl">
+            </div>
 
-    <!-- Expat Members Content -->
-    <div id="content-expat" class="extra-content hidden section-content">
-      <div class="grid grid-cols-1 md:grid-cols-4 sm:grid-cols-2 gap-4">
-        
-        <!-- Horizontal Mini Card 1 -->
-        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center space-x-4 hover:bg-white/10 transition hover:-translate-y-1">
-          <img src="images/placeholder.jpg" class="w-14 h-14 rounded-full object-cover bg-gray-500" alt="Expat">
-          <div class="text-left">
-            <h4 class="font-bold text-sm">শুভাকাঙ্ক্ষীর নাম</h4>
-            <p class="text-xs text-[#B9F6CA]">প্রবাসী, যুক্তরাষ্ট্র</p>
-          </div>
+            <div>
+              <label class="block text-sm font-medium mb-1 opacity-90">ইমেইল এড্রেস</label>
+              <input type="email" id="email" placeholder="আপনার ইমেইল লিখুন" required class="glass-input w-full px-4 py-3 rounded-xl">
+            </div>
+
+            <div>
+              <label class="block text-sm font-medium mb-1 opacity-90">আপনার বার্তা</label>
+              <textarea id="message" rows="4" placeholder="বিস্তারিত লিখুন..." required class="glass-input w-full px-4 py-3 rounded-xl resize-none"></textarea>
+            </div>
+
+            <button type="submit" class="w-full bg-[#008E48] text-white py-3.5 rounded-xl font-bold hover:bg-[#163322] transition duration-300 shadow-lg mt-4">
+              মেসেজ পাঠান
+            </button>
+            
+            <!-- Success/Error Message -->
+            <p id="contactFormStatus" class="text-center text-sm mt-3 hidden font-semibold"></p>
+          </form>
         </div>
-        
-        <!-- Horizontal Mini Card 2 -->
-        <div class="bg-white/5 border border-white/10 rounded-xl p-4 flex items-center space-x-4 hover:bg-white/10 transition hover:-translate-y-1">
-          <img src="images/placeholder.jpg" class="w-14 h-14 rounded-full object-cover bg-gray-500" alt="Expat">
-          <div class="text-left">
-            <h4 class="font-bold text-sm">শুভাকাঙ্ক্ষীর নাম</h4>
-            <p class="text-xs text-[#B9F6CA]">প্রবাসী, ইউএই</p>
-          </div>
-        </div>
+
       </div>
+
+      <!-- MAP SECTION -->
+      <div data-aos="fade-up" class="mt-12 glass-card p-2 md:p-3 rounded-3xl overflow-hidden w-full">
+        <iframe 
+          src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3661.164317134888!2d91.16132641539266!3d23.418386384753554!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x37547e178b668d2b%3A0xc3c94f1f547c1303!2sSadar%20Dakshin%20Upazila%2C%20Cumilla!5e0!3m2!1sen!2sbd!4v1689020000000!5m2!1sen!2sbd" 
+          width="100%" 
+          height="350" 
+          style="border:0; border-radius: 20px;" 
+          allowfullscreen="" 
+          loading="lazy" 
+          referrerpolicy="no-referrer-when-downgrade">
+        </iframe>
+      </div>
+
     </div>
   </section>
 
@@ -334,9 +191,9 @@
     </div>
   </section>
 
-  <!-- ========================================== -->
-  <!-- FOOTER -->
-  <!-- ========================================== -->
+  <!-- ========================================= -->
+  <!-- FOOTER                                    -->
+  <!-- ========================================= -->
   <footer class="py-10 text-white text-sm relative z-10">
     <div class="h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent mb-8"></div>
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
@@ -348,13 +205,13 @@
         <h3 class="font-semibold mb-3 text-lg">যোগাযোগ</h3>
         <p class="opacity-80 mb-1">📍 কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
         <p class="opacity-80 mb-1">✉️ contact.shurjodayfoundation@gmail.com</p>
-        <p class="opacity-80">📞 +8801690211979, +8801843103146</p>
+        <p class="opacity-80">📞 +880 1690 211979, +880 1843 103146</p>
       </div>
       <div>
         <h3 class="font-semibold mb-3 text-lg">দ্রুত লিংক</h3>
-        <p class="mb-1"><a href="about.html" class="opacity-80 hover:text-[#B9F6CA] transition">আমাদের সম্পর্কে</a></p>
-        <p class="mb-1"><a href="activities.html" class="opacity-80 hover:text-[#B9F6CA] transition">কার্যক্রম</a></p>
-        <p><a href="donate.html" class="opacity-80 hover:text-[#B9F6CA] transition">ডোনেট করুন</a></p>
+        <p class="mb-1"><a href="about.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">আমাদের সম্পর্কে</a></p>
+        <p class="mb-1"><a href="activities.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">কার্যক্রম</a></p>
+        <p><a href="donate.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">ডোনেট করুন</a></p>
       </div>
     </div>
     <div class="text-center mt-12 text-xs opacity-70">
@@ -362,88 +219,37 @@
     </div>
   </footer>
 
-  <!-- ========================================== -->
-  <!-- SCRIPTS -->
-  <!-- ========================================== -->
+  <!-- ========================================= -->
+  <!-- SCRIPTS                                   -->
+  <!-- ========================================= -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   <script>
-    // Initialize AOS Animations
+    // Initialize Animations
     AOS.init({
       duration: 1000,
       once: true
     });
 
-    // Set Dynamic Year
+    // Set Dynamic Year in Footer
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    /* TOGGLE LOGIC: INDEPENDENT ON MOBILE, ACCORDION ON DESKTOP */
-    function toggleSection(id) {
-      const btn = document.getElementById(`btn-${id}`);
-      const content = document.getElementById(`content-${id}`);
-      const isActive = content.classList.contains("active");
-
-      // Check if Desktop (Tailwind 'md' breakpoint is 768px)
-      if (window.innerWidth >= 768) {
-        // Close all other sections on Desktop
-        const sections =['advisory', 'executive', 'coordinator'];
-        sections.forEach(secId => {
-          if (secId !== id) {
-            const otherContent = document.getElementById(`content-${secId}`);
-            const otherBtn = document.getElementById(`btn-${secId}`);
-            otherContent.classList.remove("active");
-            otherBtn.classList.remove("bg-[#B9F6CA]", "text-[#01332B]");
-            otherBtn.classList.add("bg-white/10", "text-white");
-          }
-        });
-      }
-
-      // Toggle current clicked section
-      if (isActive) {
-        content.classList.remove("active");
-        btn.classList.remove("bg-[#B9F6CA]", "text-[#01332B]");
-        btn.classList.add("bg-white/10", "text-white");
-      } else {
-        content.classList.add("active");
-        btn.classList.add("bg-[#B9F6CA]", "text-[#01332B]");
-        btn.classList.remove("bg-white/10", "text-white");
-      }
-    }
-
-    // Initialize the first section to be open by default on page load
-    document.addEventListener("DOMContentLoaded", () => {
-      toggleSection('advisory');
-    });
-
-    /* ========================================== */
-    /* EXTRA SECTION TABS LOGIC (Active & Expat)  */
-    /* ========================================== */
-    function toggleExtraSection(activeId) {
-      const tabs = ['active', 'expat'];
+    // Contact Form Logic (Mockup for message sending)
+    document.getElementById("contactMessageForm").addEventListener("submit", function(e) {
+      e.preventDefault();
       
-      tabs.forEach(id => {
-        const btn = document.getElementById(`btn-${id}`);
-        const content = document.getElementById(`content-${id}`);
-
-        if (id === activeId) {
-          // Show Content & Highlight Button
-          content.classList.remove('hidden');
-          content.classList.add('block');
-          
-          btn.classList.add('bg-[#B9F6CA]', 'text-[#01332B]');
-          btn.classList.remove('text-white', 'hover:bg-white/10');
-        } else {
-          // Hide Content & Remove Highlight
-          content.classList.add('hidden');
-          content.classList.remove('block');
-          
-          btn.classList.remove('bg-[#B9F6CA]', 'text-[#01332B]');
-          btn.classList.add('text-white', 'hover:bg-white/10');
-        }
-      });
-    }
+      const statusText = document.getElementById("contactFormStatus");
+      statusText.textContent = "আপনার মেসেজটি সফলভাবে পাঠানো হয়েছে! ধন্যবাদ।";
+      statusText.classList.remove("hidden", "text-red-400");
+      statusText.classList.add("text-[#B9F6CA]");
+      this.reset();
+      
+      setTimeout(() => {
+        statusText.classList.add("hidden");
+      }, 5000);
+    });
   </script>
 
-  <!-- Global Navbar & Newsletter Scripts -->
+  <!-- Global Scripts (Navbar & Newsletter) -->
   <script src="navbar.js"></script>
   <script src="newsletter.js"></script>
 
