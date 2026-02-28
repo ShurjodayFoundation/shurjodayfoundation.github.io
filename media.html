@@ -13,38 +13,50 @@
   <script src="https://cdn.tailwindcss.com"></script>
 
   <style>
-    body{
+    body {
       font-family: 'Hind Siliguri', sans-serif;
-      background-color: #00332b;
+      /* CHANGED: Plain White Background */
+      background-color: #ffffff; 
+      color: #1f2937;
+      margin: 0;
+    }
+    
+    /* Header with SCROLLING Background */
+    .gallery-header {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
       background-image: url('https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/0a0e4050594e48af769d1915f2a496e14973e242/images/1000167146.jpg');
+      background-attachment: scroll; 
       background-size: cover;
       background-position: center;
-      background-attachment: fixed;
-      color: white;
     }
-    
-    body::after{
+
+    .gallery-header::after {
       content: "";
-      position: fixed;
+      position: absolute;
       inset: 0;
-      background: rgba(0,51,43,0.55);
-      z-index: -1;
+      background: rgba(1, 51, 43, 0.7); 
     }
-    
-    .glass-card{
-      background: rgba(255,255,255,0.05);
-      backdrop-filter: blur(14px);
-      border: 1px solid rgba(255,255,255,0.1);
-      border-radius: 24px;
+
+    /* Media Card Style */
+    .media-card {
+      background: #ffffff;
+      border: 1px solid #e5e7eb;
+      border-radius: 16px;
       transition: all 0.3s ease;
+      box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.05);
     }
 
-    .glass-card:hover{
-      transform: translateY(-6px);
-      box-shadow: 0 10px 25px rgba(0,0,0,0.3);
+    .media-card:hover {
+      transform: translateY(-5px);
+      box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+      border-color: #008E48;
     }
 
-    /* Tab Switch Animation */
     .tab-content {
       display: none;
       animation: fadeIn 0.4s ease-in-out;
@@ -54,158 +66,153 @@
     }
 
     @keyframes fadeIn {
-      from { opacity: 0; transform: translateY(15px); }
+      from { opacity: 0; transform: translateY(10px); }
       to { opacity: 1; transform: translateY(0); }
+    }
+
+    /* Pagination Buttons */
+    .pagination-btn {
+        width: 40px; 
+        height: 40px; 
+        display: flex; 
+        align-items: center; 
+        justify-content: center; 
+        border-radius: 9999px; 
+        transition: all 0.3s;
+        cursor: pointer;
+        font-weight: 600;
+        border: 1px solid transparent; /* Default border */
+    }
+    
+    /* CHANGED: Inactive Pagination is now White with Border (No Gray) */
+    .pagination-btn-inactive {
+        background-color: #ffffff;
+        border-color: #e5e7eb; /* Light border frame */
+        color: #374151;
+    }
+    .pagination-btn-inactive:hover {
+        border-color: #008E48;
+        color: #008E48;
+    }
+
+    /* Active State */
+    .pagination-btn-active {
+        background-color: #008E48;
+        color: white;
+        box-shadow: 0 4px 6px rgba(0, 142, 72, 0.3);
+        border-color: #008E48;
+    }
+
+    /* CHANGED: Tab Buttons Inactive State is now White with Border */
+    .tab-inactive {
+        background-color: #ffffff;
+        color: #374151;
+        border: 1px solid #e5e7eb;
+    }
+    .tab-inactive:hover {
+        border-color: #008E48;
+        color: #008E48;
+    }
+    
+    .tab-active {
+        background-color: #008E48; 
+        color: white; 
+        box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        border: 1px solid #008E48;
     }
   </style>
 </head>
 
-<body class="pt-20 overflow-x-hidden">
+<body class="overflow-x-hidden">
 
-  <!-- ========================================= -->
-  <!-- NAVBAR INJECTED VIA JAVASCRIPT -->
-  <!-- ========================================= -->
+  <!-- NAVBAR INJECTED VIA JS -->
   <div id="navbar-container"></div>
 
   <!-- ========================================= -->
   <!-- HEADER                                    -->
   <!-- ========================================= -->
-  <header class="py-20 text-center relative z-10">
-    <div data-aos="fade-up">
+  <header class="gallery-header pt-20">
+    <div class="relative z-10 text-center px-6 text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">মিডিয়া গ্যালারি</h1>
-      <p class="text-[#B9F6CA] text-lg font-medium">আমাদের কার্যক্রম ও যাবতীয় মুহূর্ত</p>
+      <p class="text-[#B9F6CA] text-lg max-w-2xl mx-auto opacity-90">
+        সূর্যোদয় ফাউন্ডেশনের বিভিন্ন মানবিক ও সামাজিক কার্যক্রমের খণ্ডচিত্রসমূহ
+      </p>
     </div>
   </header>
 
   <!-- ========================================= -->
-  <!-- MEDIA TABS & CONTENT                      -->
+  <!-- TABS & GALLERY CONTENT                    -->
   <!-- ========================================= -->
-  <section class="max-w-7xl mx-auto px-6 mb-20 relative z-10">
+  <section class="max-w-7xl mx-auto px-6 py-16">
     
-    <!-- Tab Buttons -->
-    <div class="flex justify-center space-x-4 mb-12" data-aos="zoom-in">
-      <button id="btn-photos" onclick="switchTab('photos')" class="px-8 py-3 rounded-xl font-bold transition-all bg-[#B9F6CA] text-[#01332B] shadow-lg">
+    <!-- Tab Buttons (Updated to White/Green theme) -->
+    <div class="flex justify-center space-x-4 mb-12">
+      <button id="btn-photos" onclick="switchTab('photos')" class="px-8 py-2.5 rounded-xl font-bold transition-all tab-active">
         ছবির গ্যালারি
       </button>
-      <button id="btn-videos" onclick="switchTab('videos')" class="px-8 py-3 rounded-xl font-bold transition-all bg-white/10 text-white hover:bg-white/20">
+      <button id="btn-videos" onclick="switchTab('videos')" class="px-8 py-2.5 rounded-xl font-bold transition-all tab-inactive">
         ভিডিও গ্যালারি
       </button>
     </div>
 
     <!-- PHOTOS SECTION -->
     <div id="photos" class="tab-content active">
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8">
-        
-        <!-- Photo Item 1 -->
-        <div class="glass-card overflow-hidden group cursor-pointer">
-          <div class="overflow-hidden">
-            <img src="images/koborsthan.jpg" alt="কবরস্থান পরিষ্কার" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Image+Not+Found'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg mb-1">কবরস্থান পরিষ্কার কার্যক্রম</h3>
-            <p class="text-sm opacity-80">কমলাপুর গ্রামভিত্তিক সামাজিক উদ্যোগ</p>
-          </div>
-        </div>
-
-        <!-- Photo Item 2 -->
-        <div class="glass-card overflow-hidden group cursor-pointer">
-          <div class="overflow-hidden">
-            <img src="images/placeholder.jpg" alt="ইফতার মাহফিল" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Event+Photo'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg mb-1">ইফতার মাহফিল ২০২৫</h3>
-            <p class="text-sm opacity-80">গ্রামের সকলের সম্মিলিত অংশগ্রহণ</p>
-          </div>
-        </div>
-
-        <!-- Photo Item 3 -->
-        <div class="glass-card overflow-hidden group cursor-pointer">
-          <div class="overflow-hidden">
-            <img src="images/placeholder.jpg" alt="বৃক্ষরোপণ" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Tree+Plantation'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg mb-1">বৃক্ষরোপণ কর্মসূচি</h3>
-            <p class="text-sm opacity-80">১০০+ বৃক্ষ রোপণ করা হয়</p>
-          </div>
-        </div>
-
-        <!-- Photo Item 4 -->
-        <div class="glass-card overflow-hidden group cursor-pointer">
-          <div class="overflow-hidden">
-            <img src="images/placeholder.jpg" alt="মিটিং" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Meeting'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg mb-1">সদস্যদের মতবিনিময় সভা</h3>
-            <p class="text-sm opacity-80">কার্যনির্বাহী পরিষদের মাসিক সভা</p>
-          </div>
-        </div>
-
-        <!-- Photo Item 5 -->
-        <div class="glass-card overflow-hidden group cursor-pointer">
-          <div class="overflow-hidden">
-            <img src="images/placeholder.jpg" alt="ত্রাণ বিতরণ" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Relief'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg mb-1">ইফতার সামগ্রী বিতরণ</h3>
-            <p class="text-sm opacity-80">দরিদ্র পরিবারের মাঝে খাদ্য সামগ্রী বিতরণ</p>
-          </div>
-        </div>
-
-        <!-- Photo Item 6 -->
-        <div class="glass-card overflow-hidden group cursor-pointer">
-          <div class="overflow-hidden">
-            <img src="images/placeholder.jpg" alt="ঘাস কাটার মেশিন" onerror="this.src='https://via.placeholder.com/600x400/00332b/B9F6CA?text=Maintenance'" class="w-full h-64 object-cover transform group-hover:scale-110 transition duration-500 ease-in-out">
-          </div>
-          <div class="p-5">
-            <h3 class="font-bold text-lg mb-1">ঘাস কাটার মেশিন ক্রয়</h3>
-            <p class="text-sm opacity-80">কবরস্থান রক্ষণাবেক্ষণের জন্য যন্ত্র ক্রয়</p>
-          </div>
-        </div>
-
+      
+      <!-- Container where JS will inject images -->
+      <div id="photo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Images will be loaded here by JavaScript -->
       </div>
+
+      <!-- ========================================= -->
+      <!-- PAGINATION (Controlled by JS)             -->
+      <!-- ========================================= -->
+      <div id="pagination-container" class="mt-16 flex flex-wrap items-center justify-center gap-2">
+        <!-- JS will render buttons here -->
+      </div>
+
     </div>
 
     <!-- VIDEOS SECTION -->
     <div id="videos" class="tab-content">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        
-        <!-- Video Item 1 -->
-        <div class="glass-card overflow-hidden p-5">
-          <div class="relative w-full pb-[56.25%] bg-black/50 rounded-xl overflow-hidden mb-5 border border-white/10 flex items-center justify-center">
-            <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 cursor-pointer hover:opacity-100 transition hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <p class="absolute bottom-4 text-xs opacity-60">ভিডিও শীঘ্রই যুক্ত করা হবে</p>
+        <!-- Video 1 -->
+        <div class="media-card p-5">
+          <div class="relative w-full pb-[56.25%] bg-black rounded-xl overflow-hidden mb-4 flex items-center justify-center group">
+             <!-- Placeholder for Video Thumbnail -->
+             <div class="absolute inset-0 bg-gray-800 flex items-center justify-center">
+                <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 group-hover:opacity-100 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+             </div>
           </div>
-          <h3 class="font-bold text-xl mb-2">সূর্যোদয় ফাউন্ডেশনের পরিচিতি</h3>
-          <p class="text-sm opacity-80">ফাউন্ডেশনের প্রতিষ্ঠা, উদ্দেশ্য ও লক্ষ্য নিয়ে বিশেষ প্রমাণ্যচিত্র।</p>
+          <h3 class="font-bold text-xl mb-2 text-gray-800">সূর্যোদয় ফাউন্ডেশনের পরিচিতি</h3>
+          <p class="text-sm text-gray-600">ফাউন্ডেশনের প্রতিষ্ঠা ও লক্ষ্য নিয়ে বিশেষ তথ্যচিত্র।</p>
         </div>
 
-        <!-- Video Item 2 -->
-        <div class="glass-card overflow-hidden p-5">
-          <div class="relative w-full pb-[56.25%] bg-black/50 rounded-xl overflow-hidden mb-5 border border-white/10 flex items-center justify-center">
-            <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 cursor-pointer hover:opacity-100 transition hover:scale-110" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
-            <p class="absolute bottom-4 text-xs opacity-60">ভিডিও শীঘ্রই যুক্ত করা হবে</p>
+        <!-- Video 2 -->
+        <div class="media-card p-5">
+          <div class="relative w-full pb-[56.25%] bg-black rounded-xl overflow-hidden mb-4 flex items-center justify-center group">
+             <div class="absolute inset-0 bg-gray-800 flex items-center justify-center">
+                <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 group-hover:opacity-100 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
+             </div>
           </div>
-          <h3 class="font-bold text-xl mb-2">ইফতার মাহফিল ও স্বেচ্ছাসেবা</h3>
-          <p class="text-sm opacity-80">সম্মিলিত ইফতার আয়োজন ও স্বেচ্ছাসেবকদের অক্লান্ত পরিশ্রমের মুহূর্ত।</p>
+          <h3 class="font-bold text-xl mb-2 text-gray-800">ইফতার মাহফিল ২০২৫</h3>
+          <p class="text-sm text-gray-600">গ্রামের সকলের সম্মিলিত ইফতার আয়োজনের ভিডিও ফুটেজ।</p>
         </div>
-
       </div>
     </div>
 
   </section>
 
   <!-- ========================================== -->
-  <!-- NEWSLETTER -->
+  <!-- NEWSLETTER                                 -->
   <!-- ========================================== -->
-  <section class="max-w-4xl mx-auto px-6 pb-20 relative z-10">
-    <div data-aos="zoom-in" class="bg-[#103C35] text-white p-8 md:p-10 rounded-2xl text-center shadow-lg border border-white/10">
-      <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
-      <p class="opacity-80 mb-6 text-sm md:text-base">ফাউন্ডেশনের কার্যক্রম এবং নতুন ইভেন্টের আপডেট সরাসরি ইমেইলে পেতে যুক্ত হোন আমাদের সাথে।</p>
+  <section class="max-w-4xl mx-auto px-6 py-20">
+    <div data-aos="zoom-in" class="bg-[#01332B] text-white p-8 md:p-12 rounded-3xl text-center shadow-2xl">
+      <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+      <p class="opacity-70 mb-8 text-sm md:text-base">ফাউন্ডেশনের কার্যক্রম এবং নতুন ইভেন্টের আপডেট সরাসরি ইমেইলে পেতে যুক্ত হোন আমাদের সাথে।</p>
       
-      <form id="newsletterForm" class="space-y-4 max-w-lg mx-auto">
-        <input type="email" id="emailInput" placeholder="আপনার ইমেইল এড্রেস লিখুন" class="w-full px-5 py-3.5 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-[#008E48] text-[#1f2937]" required>
-        <button type="submit" class="w-full bg-[#008E48] text-white py-3.5 rounded-xl font-bold hover:bg-[#163322] transition duration-300 shadow-md">সাবস্ক্রাইব করুন</button>
-        <p id="formMessage" class="text-sm font-semibold mt-2"></p>
+      <form id="newsletterForm" class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+        <input type="email" id="emailInput" placeholder="আপনার ইমেইল এড্রেস" class="flex-1 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#008E48] text-white placeholder-gray-400" required>
+        <button type="submit" class="bg-[#008E48] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#163322] transition duration-300">সাবস্ক্রাইব</button>
       </form>
     </div>
   </section>
@@ -213,27 +220,27 @@
   <!-- ========================================= -->
   <!-- FOOTER                                    -->
   <!-- ========================================= -->
-  <footer class="py-10 text-white text-sm relative z-10">
-    <div class="h-px w-full bg-gradient-to-r from-transparent via-white/40 to-transparent mb-8"></div>
-    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-8">
+  <footer class="py-12 bg-[#002620] text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
       <div>
-        <h3 class="font-semibold mb-2 text-lg">সূর্যোদয় ফাউন্ডেশন</h3>
-        <p class="opacity-80">হাতে রেখে হাত, আনবো রঙিন প্রভাত</p>
+        <h3 class="font-bold text-lg mb-4">সূর্যোদয় ফাউন্ডেশন</h3>
+        <p class="opacity-70 leading-relaxed">হাতে রেখে হাত, আনবো রঙিন প্রভাত। আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
       </div>
       <div>
-        <h3 class="font-semibold mb-3 text-lg">যোগাযোগ</h3>
-        <p class="opacity-80 mb-1">📍 কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
-        <p class="opacity-80 mb-1">✉️ contact.shurjodayfoundation@gmail.com</p>
-        <p class="opacity-80">📞 +880 1690 211979, +880 1843 103146</p>
+        <h3 class="font-bold text-lg mb-4">যোগাযোগ</h3>
+        <p class="opacity-70 mb-2">📍 কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
+        <p class="opacity-70">✉️ contact.shurjodayfoundation@gmail.com</p>
       </div>
       <div>
-        <h3 class="font-semibold mb-3 text-lg">দ্রুত লিংক</h3>
-        <p class="mb-1"><a href="about.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">আমাদের সম্পর্কে</a></p>
-        <p class="mb-1"><a href="activities.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">কার্যক্রম</a></p>
-        <p><a href="donate.html" class="opacity-80 hover:text-[#B9F6CA] hover:opacity-100 transition">ডোনেট করুন</a></p>
+        <h3 class="font-bold text-lg mb-4">দ্রুত লিংক</h3>
+        <ul class="space-y-2 opacity-70">
+          <li><a href="about.html" class="hover:text-[#B9F6CA]">আমাদের সম্পর্কে</a></li>
+          <li><a href="activities.html" class="hover:text-[#B9F6CA]">কার্যক্রম</a></li>
+          <li><a href="donate.html" class="hover:text-[#B9F6CA]">ডোনেট করুন</a></li>
+        </ul>
       </div>
     </div>
-    <div class="text-center mt-12 text-xs opacity-70">
+    <div class="text-center mt-12 pt-8 border-t border-white/10 text-xs opacity-50">
       © <span id="year"></span> সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
     </div>
   </footer>
@@ -242,43 +249,126 @@
   <!-- SCRIPTS                                   -->
   <!-- ========================================= -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
   <script>
-    // Initialize Animations
-    AOS.init({
-      duration: 1000,
-      once: true
-    });
-
-    // Set Dynamic Year in Footer
+    AOS.init({ duration: 1000, once: true });
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // Tab Switching Logic
+    // --- TAB SWITCHING LOGIC ---
     function switchTab(tabId) {
-      // Hide all contents
       document.getElementById('photos').classList.remove('active');
       document.getElementById('videos').classList.remove('active');
       
-      // Reset Button Styles
       const btnPhotos = document.getElementById('btn-photos');
       const btnVideos = document.getElementById('btn-videos');
 
-      btnPhotos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-white/10 text-white hover:bg-white/20";
-      btnVideos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-white/10 text-white hover:bg-white/20";
+      // Reset both to inactive (White with border)
+      btnPhotos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-inactive";
+      btnVideos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-inactive";
 
-      // Show specific content & highlight button
+      // Activate content
       document.getElementById(tabId).classList.add('active');
       
+      // Activate button (Green filled)
       if(tabId === 'photos'){
-        btnPhotos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-[#B9F6CA] text-[#01332B] shadow-lg";
+        btnPhotos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-active";
       } else {
-        btnVideos.className = "px-8 py-3 rounded-xl font-bold transition-all bg-[#B9F6CA] text-[#01332B] shadow-lg";
+        btnVideos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-active";
       }
     }
+
+    // --- PAGINATION LOGIC (1-17 PAGES) ---
+    const totalPages = 17;
+    let currentPage = 1;
+    
+    // Function to render images for a specific page
+    function loadPage(page) {
+        currentPage = page;
+        const grid = document.getElementById('photo-grid');
+        grid.innerHTML = ""; // Clear existing images
+        
+        // Simulating 6 images per page
+        for (let i = 1; i <= 6; i++) {
+            const imgIndex = ((page - 1) * 6) + i;
+            const div = document.createElement('div');
+            // Changed bg-gray-200 to bg-gray-50 for lighter placeholder
+            div.className = "group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative";
+            div.setAttribute('data-aos', 'zoom-in');
+            
+            div.innerHTML = `
+                <img src="https://via.placeholder.com/600x400/01332b/white?text=Page+${page}+-+Image+${i}" 
+                     alt="Gallery Image ${imgIndex}" 
+                     class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+                <div class="absolute bottom-0 left-0 right-0 bg-black/60 text-white text-xs p-2 translate-y-full group-hover:translate-y-0 transition">
+                    Activity Photo ${imgIndex}
+                </div>
+            `;
+            grid.appendChild(div);
+        }
+        
+        renderPagination();
+        
+        if(page > 1) {
+            document.getElementById('photos').scrollIntoView({ behavior: 'smooth' });
+        }
+    }
+
+    // Function to render the pagination buttons
+    function renderPagination() {
+        const container = document.getElementById('pagination-container');
+        container.innerHTML = ""; 
+
+        // Prev Button
+        const prevBtn = document.createElement('button');
+        prevBtn.innerText = "<";
+        prevBtn.className = `pagination-btn ${currentPage === 1 ? 'pagination-btn-inactive opacity-50 cursor-not-allowed' : 'pagination-btn-inactive'}`;
+        prevBtn.onclick = () => { if(currentPage > 1) loadPage(currentPage - 1); };
+        container.appendChild(prevBtn);
+
+        // Logic for page numbers
+        let pagesToShow = [];
+        
+        if (totalPages <= 7) {
+            for(let i=1; i<=totalPages; i++) pagesToShow.push(i);
+        } else {
+            pagesToShow.push(1);
+            let start = Math.max(2, currentPage - 1);
+            let end = Math.min(totalPages - 1, currentPage + 1);
+
+            if (start > 2) pagesToShow.push('...');
+            for (let i = start; i <= end; i++) pagesToShow.push(i);
+            if (end < totalPages - 1) pagesToShow.push('...');
+            pagesToShow.push(totalPages);
+        }
+
+        pagesToShow.forEach(p => {
+            const btn = document.createElement('button');
+            if (p === '...') {
+                btn.innerText = "...";
+                btn.className = "px-2 text-gray-500";
+                btn.disabled = true;
+            } else {
+                btn.innerText = p;
+                btn.className = `pagination-btn ${p === currentPage ? 'pagination-btn-active' : 'pagination-btn-inactive'}`;
+                btn.onclick = () => loadPage(p);
+            }
+            container.appendChild(btn);
+        });
+
+        // Next Button
+        const nextBtn = document.createElement('button');
+        nextBtn.innerText = ">";
+        nextBtn.className = `pagination-btn ${currentPage === totalPages ? 'pagination-btn-inactive opacity-50 cursor-not-allowed' : 'pagination-btn-inactive'}`;
+        nextBtn.onclick = () => { if(currentPage < totalPages) loadPage(currentPage + 1); };
+        container.appendChild(nextBtn);
+    }
+
+    // Initialize Gallery
+    loadPage(1);
+
   </script>
 
-  <!-- Global Navbar & Newsletter Scripts -->
   <script src="navbar.js"></script>
   <script src="newsletter.js"></script>
-
 </body>
 </html>
