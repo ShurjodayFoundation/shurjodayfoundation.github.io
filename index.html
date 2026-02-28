@@ -32,50 +32,9 @@
 <body class="bg-[#fffdf7] text-[#1f2937]">
 
 <!-- ========================================= -->
-<!-- NAVBAR -->
+<!-- NAVBAR INJECTED VIA JAVASCRIPT -->
 <!-- ========================================= -->
-<nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-  <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-
-    <a href="index.html" class="text-xl font-bold text-[#008E48] hover:opacity-90 transition">
-  সূর্যোদয় ফাউন্ডেশন
-    </a>
-
-    <div class="flex items-center space-x-6">
-
-  <!-- Desktop Menu -->
-<div class="hidden md:flex items-center space-x-6 text-sm font-medium">
-  <a href="about.html" class="hover:text-[#008E48]">আমাদের সম্পর্কে</a>
-  <a href="media.html" class="hover:text-[#008E48]">মিডিয়া</a>
-  <a href="members.html" class="hover:text-[#008E48]">সদস্যবৃন্দ</a>
-  <a href="contact.html" class="hover:text-[#008E48]">যোগাযোগ</a>
-</div>
-
-  <!-- Donate Button -->
-  <a href="donate.html" class="hidden md:inline-block bg-[#008E48] text-white px-8 py-2 text-lg font-semibold rounded-lg hover:bg-[#163322] transition">
-  ডোনেট করুন
-  </a>
-
-  <!-- Hamburger -->
-  <button id="menuBtn" class="text-2xl md:hidden">
-    ☰
-  </button>
-
-</div>
-      
-    </div>
-  </div>
-
-  <div id="mobileMenu" 
-     class="absolute top-full left-0 w-full bg-white px-6 pb-6 space-y-4 
-            transform -translate-x-full transition-transform duration-300 ease-in-out md:hidden shadow-md">
-    <a href="about.html" class="block">আমাদের সম্পর্কে</a>
-    <a href="media.html" class="block">মিডিয়া</a>
-    <a href="members.html" class="block">সদস্যবৃন্দ</a>
-    <a href="contact.html" class="block">যোগাযোগ</a>
-    <a href="donate.html" class="block bg-[#008E48] text-white px-4 py-2 rounded-lg text-center">ডোনেট করুন</a>
-  </div>
-</nav>
+<div id="navbar-container"></div>
 
 <!-- ========================================= -->
 <!-- HERO -->
@@ -102,11 +61,10 @@
       </div>
     </div>
 
+    <!-- Static Text Section (No Typing Animation) -->
     <div data-aos="fade-left">
-      <p class="text-lg leading-relaxed">
-        সূর্যোদয় ফাউন্ডেশন কমলাপুর গ্রামভিত্তিক একটি অলাভজনক সংগঠন।
-        আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।
-        গত ২ বছর ধরে আমরা শিক্ষা, মানবিক সহায়তা ও সামাজিক উন্নয়নে কাজ করে যাচ্ছি।
+      <p class="text-lg leading-relaxed opacity-90">
+        সূর্যোদয় ফাউন্ডেশন কমলাপুর গ্রামভিত্তিক একটি অলাভজনক সংগঠন। আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ। গত ২ বছর ধরে আমরা শিক্ষা, মানবিক সহায়তা ও সামাজিক উন্নয়নে কাজ করে যাচ্ছি।
       </p>
     </div>
 
@@ -176,50 +134,29 @@
       </div>
 
       <div class="col-span-full text-center mt-8" data-aos="zoom-in">
-  <a href="activities.html" class="inline-block bg-[#008E48] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#163322] transition">
-    সকল কার্যক্রম দেখুন →
-  </a>
+        <a href="activities.html" class="inline-block bg-[#008E48] text-white px-6 py-3 rounded-lg font-medium hover:bg-[#163322] transition">
+          সকল কার্যক্রম দেখুন →
+        </a>
       </div>
 
     </div>
   </div>
 </section>
 
-<!-- ========================================= -->
-<!-- DONATION -->
-<!-- ========================================= -->
-<section id="donation" class="py-16 bg-[#004D38]">
-  <div class="max-w-3xl mx-auto text-center px-6">
-    <h2 class="text-3xl font-bold mb-6">ডোনেশন তথ্য</h2>
-
-    <div class="space-y-2">
-      <p><strong>bKash:</strong> +8801690211979, +8801613736942</p>
-      <p><strong>Nagad:</strong> +8801613736942, +8801613736942</p>
-      <p><strong>Rocket:</strong> +8801690211979</p>
-    </div>
-  </div>
-</section>
-
-  <!-- Newsletter Section -->
-  <div class="bg-[#DBF9DF] p-8 rounded-xl text-center">
-    <h3 class="text-xl font-semibold mb-4">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
-    <form id="newsletterForm" class="max-w-md mx-auto space-y-4">
-      <input 
-        type="email" 
-        id="emailInput"
-        placeholder="আপনার ইমেইল লিখুন"
-        class="w-full px-4 py-3 border rounded-lg focus:outline-none focus:ring-2 focus:ring-[#008E48]"
-        required
-      >
-      <button 
-        type="submit"
-        class="w-full bg-[#008E48] text-white py-3 rounded-lg hover:bg-[#163322] transition">
-        সাবস্ক্রাইব
-      </button>
-      <p id="formMessage" class="text-sm mt-2"></p>
+<!-- ========================================== -->
+<!-- NEWSLETTER -->
+<!-- ========================================== -->
+<section class="max-w-4xl mx-auto px-6 py-16">
+  <div data-aos="zoom-in" class="bg-[#103C35] text-white p-8 md:p-10 rounded-2xl text-center shadow-lg border border-[#008E48]/20">
+    <h3 class="text-xl md:text-2xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+    
+    
+    <form id="newsletterForm" class="space-y-4 max-w-lg mx-auto">
+      <input type="email" id="emailInput" placeholder="আপনার ইমেইল এড্রেস লিখুন" class="w-full px-5 py-3.5 rounded-xl border-none focus:outline-none focus:ring-2 focus:ring-[#008E48] text-[#1f2937]" required>
+      <button type="submit" class="w-full bg-[#008E48] text-white py-3.5 rounded-xl font-bold hover:bg-[#163322] transition duration-300 shadow-md">সাবস্কাইব করুন</button>
+      <p id="formMessage" class="text-sm font-semibold mt-2"></p>
     </form>
   </div>
-
 </section>
 
 <!-- ========================================= -->
@@ -247,31 +184,30 @@
   </div>
 
   <div class="text-center mt-8 text-xs">
-    © ২০২৬ সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
+    © <span id="year"></span> সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
   </div>
 </footer>
 
 <!-- ========================================= -->
 <!-- JS -->
 <!-- ========================================= -->
-<script>
-const menuBtn = document.getElementById("menuBtn");
-const mobileMenu = document.getElementById("mobileMenu");
-
-menuBtn.addEventListener("click", () => {
-  mobileMenu.classList.toggle("-translate-x-full");
-  mobileMenu.classList.toggle("translate-x-0");
-});
-</script>
 
 <!-- AOS JS -->
 <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
 <script>
+  // Initialize Animations
   AOS.init({
     duration: 1000,
     once: true
   });
+
+  // Set Dynamic Year
+  document.getElementById("year").textContent = new Date().getFullYear();
 </script>
+
+<!-- Global Scripts (Navbar & Newsletter) -->
+<script src="navbar.js"></script>
+<script src="newsletter.js"></script>
 
 </body>
 </html>
