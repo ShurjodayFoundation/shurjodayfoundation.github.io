@@ -1,0 +1,18 @@
+media:
+  folder: images
+content:
+  - name: gallery
+    label: 📷 মিডিয়া গ্যালারি (ছবি আপলোড)
+    type: file
+    file: gallery.json
+    fields:
+      - name: photos
+        label: আপনার গ্যালারির ছবিসমূহ
+        type: list
+        fields:
+          - name: title
+            label: ছবির ক্যাপশন (Title)
+            type: string
+          - name: image
+            label: ছবি আপলোড করুন (Image)
+            type: image
