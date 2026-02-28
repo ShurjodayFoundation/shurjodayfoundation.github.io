@@ -15,7 +15,6 @@
   <style>
     body {
       font-family: 'Hind Siliguri', sans-serif;
-      /* CHANGED: Plain White Background */
       background-color: #ffffff; 
       color: #1f2937;
       margin: 0;
@@ -81,13 +80,12 @@
         transition: all 0.3s;
         cursor: pointer;
         font-weight: 600;
-        border: 1px solid transparent; /* Default border */
+        border: 1px solid transparent;
     }
     
-    /* CHANGED: Inactive Pagination is now White with Border (No Gray) */
     .pagination-btn-inactive {
         background-color: #ffffff;
-        border-color: #e5e7eb; /* Light border frame */
+        border-color: #e5e7eb;
         color: #374151;
     }
     .pagination-btn-inactive:hover {
@@ -95,7 +93,6 @@
         color: #008E48;
     }
 
-    /* Active State */
     .pagination-btn-active {
         background-color: #008E48;
         color: white;
@@ -103,7 +100,7 @@
         border-color: #008E48;
     }
 
-    /* CHANGED: Tab Buttons Inactive State is now White with Border */
+    /* Tab Buttons Styling */
     .tab-inactive {
         background-color: #ffffff;
         color: #374151;
@@ -128,9 +125,7 @@
   <!-- NAVBAR INJECTED VIA JS -->
   <div id="navbar-container"></div>
 
-  <!-- ========================================= -->
-  <!-- HEADER                                    -->
-  <!-- ========================================= -->
+  <!-- HEADER -->
   <header class="gallery-header pt-20">
     <div class="relative z-10 text-center px-6 text-white" data-aos="fade-up">
       <h1 class="text-4xl md:text-5xl font-bold mb-4">মিডিয়া গ্যালারি</h1>
@@ -140,13 +135,11 @@
     </div>
   </header>
 
-  <!-- ========================================= -->
-  <!-- TABS & GALLERY CONTENT                    -->
-  <!-- ========================================= -->
   <section class="max-w-7xl mx-auto px-6 py-16">
     
-    <!-- Tab Buttons (Updated to White/Green theme) -->
-    <div class="flex justify-center space-x-4 mb-12">
+    <!-- Tab Buttons (ID added for scroll targeting) -->
+    <!-- CHANGED: Rounded-xl applied here -->
+    <div id="tab-buttons-container" class="flex justify-center space-x-4 mb-12">
       <button id="btn-photos" onclick="switchTab('photos')" class="px-8 py-2.5 rounded-xl font-bold transition-all tab-active">
         ছবির গ্যালারি
       </button>
@@ -157,28 +150,21 @@
 
     <!-- PHOTOS SECTION -->
     <div id="photos" class="tab-content active">
-      
-      <!-- Container where JS will inject images -->
       <div id="photo-grid" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
-        <!-- Images will be loaded here by JavaScript -->
+        <!-- JS Injects Images Here -->
       </div>
 
-      <!-- ========================================= -->
-      <!-- PAGINATION (Controlled by JS)             -->
-      <!-- ========================================= -->
+      <!-- PAGINATION -->
       <div id="pagination-container" class="mt-16 flex flex-wrap items-center justify-center gap-2">
-        <!-- JS will render buttons here -->
+        <!-- JS Injects Buttons Here -->
       </div>
-
     </div>
 
     <!-- VIDEOS SECTION -->
     <div id="videos" class="tab-content">
       <div class="grid grid-cols-1 md:grid-cols-2 gap-8">
-        <!-- Video 1 -->
         <div class="media-card p-5">
           <div class="relative w-full pb-[56.25%] bg-black rounded-xl overflow-hidden mb-4 flex items-center justify-center group">
-             <!-- Placeholder for Video Thumbnail -->
              <div class="absolute inset-0 bg-gray-800 flex items-center justify-center">
                 <svg class="w-16 h-16 text-[#B9F6CA] opacity-80 group-hover:opacity-100 transition" fill="currentColor" viewBox="0 0 24 24"><path d="M8 5v14l11-7z"/></svg>
              </div>
@@ -187,7 +173,6 @@
           <p class="text-sm text-gray-600">ফাউন্ডেশনের প্রতিষ্ঠা ও লক্ষ্য নিয়ে বিশেষ তথ্যচিত্র।</p>
         </div>
 
-        <!-- Video 2 -->
         <div class="media-card p-5">
           <div class="relative w-full pb-[56.25%] bg-black rounded-xl overflow-hidden mb-4 flex items-center justify-center group">
              <div class="absolute inset-0 bg-gray-800 flex items-center justify-center">
@@ -202,9 +187,7 @@
 
   </section>
 
-  <!-- ========================================== -->
-  <!-- NEWSLETTER                                 -->
-  <!-- ========================================== -->
+  <!-- NEWSLETTER -->
   <section class="max-w-4xl mx-auto px-6 py-20">
     <div data-aos="zoom-in" class="bg-[#01332B] text-white p-8 md:p-12 rounded-3xl text-center shadow-2xl">
       <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
@@ -217,9 +200,7 @@
     </div>
   </section>
 
-  <!-- ========================================= -->
-  <!-- FOOTER                                    -->
-  <!-- ========================================= -->
+  <!-- FOOTER -->
   <footer class="py-12 bg-[#002620] text-white text-sm">
     <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
       <div>
@@ -245,16 +226,14 @@
     </div>
   </footer>
 
-  <!-- ========================================= -->
-  <!-- SCRIPTS                                   -->
-  <!-- ========================================= -->
+  <!-- SCRIPTS -->
   <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
   
   <script>
     AOS.init({ duration: 1000, once: true });
     document.getElementById("year").textContent = new Date().getFullYear();
 
-    // --- TAB SWITCHING LOGIC ---
+    // --- TAB SWITCHING LOGIC (Fixed for rounded-xl) ---
     function switchTab(tabId) {
       document.getElementById('photos').classList.remove('active');
       document.getElementById('videos').classList.remove('active');
@@ -262,36 +241,35 @@
       const btnPhotos = document.getElementById('btn-photos');
       const btnVideos = document.getElementById('btn-videos');
 
-      // Reset both to inactive (White with border)
-      btnPhotos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-inactive";
-      btnVideos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-inactive";
+      // FIXED: Used 'rounded-xl' here instead of 'rounded-full'
+      btnPhotos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-inactive";
+      btnVideos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-inactive";
 
       // Activate content
       document.getElementById(tabId).classList.add('active');
       
-      // Activate button (Green filled)
+      // Activate button
       if(tabId === 'photos'){
-        btnPhotos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-active";
+        // FIXED: Used 'rounded-xl' here
+        btnPhotos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-active";
       } else {
-        btnVideos.className = "px-8 py-2.5 rounded-full font-bold transition-all tab-active";
+        // FIXED: Used 'rounded-xl' here
+        btnVideos.className = "px-8 py-2.5 rounded-xl font-bold transition-all tab-active";
       }
     }
 
-    // --- PAGINATION LOGIC (1-17 PAGES) ---
+    // --- PAGINATION LOGIC ---
     const totalPages = 17;
     let currentPage = 1;
     
-    // Function to render images for a specific page
     function loadPage(page) {
         currentPage = page;
         const grid = document.getElementById('photo-grid');
-        grid.innerHTML = ""; // Clear existing images
+        grid.innerHTML = ""; 
         
-        // Simulating 6 images per page
         for (let i = 1; i <= 6; i++) {
             const imgIndex = ((page - 1) * 6) + i;
             const div = document.createElement('div');
-            // Changed bg-gray-200 to bg-gray-50 for lighter placeholder
             div.className = "group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative";
             div.setAttribute('data-aos', 'zoom-in');
             
@@ -308,24 +286,28 @@
         
         renderPagination();
         
+        // --- FIXED SCROLL LOGIC ---
         if(page > 1) {
-            document.getElementById('photos').scrollIntoView({ behavior: 'smooth' });
+            // Check if screen width is Mobile (Less than 768px)
+            if (window.innerWidth < 768) {
+                // For Mobile: Scroll to the Tab Buttons Container so texts are visible
+                document.getElementById('tab-buttons-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
+            } else {
+                // For Desktop: DO NOTHING (No Scroll)
+            }
         }
     }
 
-    // Function to render the pagination buttons
     function renderPagination() {
         const container = document.getElementById('pagination-container');
         container.innerHTML = ""; 
 
-        // Prev Button
         const prevBtn = document.createElement('button');
         prevBtn.innerText = "<";
         prevBtn.className = `pagination-btn ${currentPage === 1 ? 'pagination-btn-inactive opacity-50 cursor-not-allowed' : 'pagination-btn-inactive'}`;
         prevBtn.onclick = () => { if(currentPage > 1) loadPage(currentPage - 1); };
         container.appendChild(prevBtn);
 
-        // Logic for page numbers
         let pagesToShow = [];
         
         if (totalPages <= 7) {
@@ -355,7 +337,6 @@
             container.appendChild(btn);
         });
 
-        // Next Button
         const nextBtn = document.createElement('button');
         nextBtn.innerText = ">";
         nextBtn.className = `pagination-btn ${currentPage === totalPages ? 'pagination-btn-inactive opacity-50 cursor-not-allowed' : 'pagination-btn-inactive'}`;
