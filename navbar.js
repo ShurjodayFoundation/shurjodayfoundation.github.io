@@ -1,9 +1,17 @@
 const navbarHTML = `
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
     <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
-      <a href="index.html" class="text-xl font-bold text-[#008E48] hover:opacity-90 transition">
-        সূর্যোদয় ফাউন্ডেশন
+      
+      <!-- LOGO & BRAND NAME START -->
+      <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
+        <!-- আপনার লোগোর লিংক নিচে দিন (যেমন: images/logo.png) -->
+        <img src="images/logo.png" alt="Logo" class="h-10 w-auto object-contain">
+        
+        <!-- যদি লোগোর পাশে নাম রাখতে চান, তবে নিচের লাইনটি রাখুন। না চাইলে মুছে দিন -->
+        <span class="text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</span>
       </a>
+      <!-- LOGO & BRAND NAME END -->
+
       <div class="flex items-center space-x-6">
         <!-- Desktop Menu -->
         <div class="hidden md:flex items-center space-x-6 text-sm font-medium" id="desktop-menu">
@@ -46,6 +54,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
   // ডেস্কটপ মেনু হাইলাইট
   document.querySelectorAll('#desktop-menu .nav-link').forEach(link => {
+    // যদি href এবং currentPath হুবহু মিলে অথবা home page এর ক্ষেত্রে
     if (link.getAttribute('href') === currentPath) {
       link.classList.add('text-[#008E48]', 'font-bold');
       link.classList.remove('text-[#1f2937]', 'hover:text-[#008E48]');
@@ -67,8 +76,13 @@ document.addEventListener("DOMContentLoaded", function() {
     // বাটনে ক্লিক করলে মেনু খুলবে/বন্ধ হবে
     menuBtn.addEventListener("click", (e) => {
       e.stopPropagation(); // ইভেন্টটি যেন ডকুমেন্টে না ছড়ায়
-      mobileMenu.classList.toggle("-translate-x-full");
-      mobileMenu.classList.toggle("translate-x-0");
+      if (mobileMenu.classList.contains("-translate-x-full")) {
+        mobileMenu.classList.remove("-translate-x-full");
+        mobileMenu.classList.add("translate-x-0");
+      } else {
+        mobileMenu.classList.add("-translate-x-full");
+        mobileMenu.classList.remove("translate-x-0");
+      }
     });
 
     // মেনুর বাইরে কোথাও ক্লিক করলে মেনু বন্ধ হয়ে যাবে
