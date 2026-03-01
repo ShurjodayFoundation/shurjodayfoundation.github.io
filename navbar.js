@@ -1,15 +1,16 @@
 const navbarHTML = `
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
-    <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4">
+    <!-- py-2 দেওয়া হয়েছে মোবাইলের জন্য, md:py-4 কম্পিউটারের জন্য -->
+    <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-2 md:py-4">
       
       <!-- LOGO & BRAND NAME START -->
-      <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
+      <a href="index.html" class="flex items-center gap-2 md:gap-3 hover:opacity-90 transition">
         
-        <!-- আপডেট করা অংশ: -->
-        <!-- ইমেজের নামের বানান ঠিক আছে কিনা নিশ্চিত হোন। যদি jpg হয় তবে .jpg দিন -->
-        <img src="./images/logo1.png" alt="SF Logo" class="h-12 w-auto object-contain">
+        <!-- লোগো: মোবাইলে h-8 (ছোট), কম্পিউটারে h-10 (বড়) -->
+        <img src="./images/logo.png" alt="SF Logo" class="h-9 md:h-11 w-auto object-contain">
         
-        <span class="text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</span>
+        <!-- লেখা: মোবাইলে text-lg, কম্পিউটারে text-xl -->
+        <span class="text-lg md:text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</span>
       </a>
       <!-- LOGO & BRAND NAME END -->
 
@@ -21,12 +22,14 @@ const navbarHTML = `
           <a href="members.html" class="nav-link text-[#1f2937] hover:text-[#008E48] transition">সদস্যবৃন্দ</a>
           <a href="contact.html" class="nav-link text-[#1f2937] hover:text-[#008E48] transition">যোগাযোগ</a>
         </div>
+        
         <!-- Donate Button -->
         <a href="donate.html" class="hidden md:inline-block bg-[#008E48] text-white px-8 py-2 text-lg font-semibold rounded-lg hover:bg-[#163322] transition">
           ডোনেট করুন
         </a>
-        <!-- Hamburger -->
-        <button id="menuBtn" class="text-2xl md:hidden text-[#1f2937]">
+        
+        <!-- Hamburger (মোবাইলের মেনু বাটন) -->
+        <button id="menuBtn" class="text-2xl md:hidden text-[#1f2937] focus:outline-none">
           ☰
         </button>
       </div>
