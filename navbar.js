@@ -1,7 +1,7 @@
 const navbarHTML = `
   <nav class="fixed top-0 left-0 right-0 bg-white shadow-sm z-50">
     <!-- py-2 দেওয়া হয়েছে মোবাইলের জন্য, md:py-4 কম্পিউটারের জন্য -->
-    <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-2 md:py-4">
+    <div class="w-full max-w-7xl mx-auto flex justify-between items-center px-4 py-4 md:py-4">
       
       <!-- LOGO & BRAND NAME START -->
       <a href="index.html" class="flex items-center gap-2 md:gap-3 hover:opacity-90 transition">
