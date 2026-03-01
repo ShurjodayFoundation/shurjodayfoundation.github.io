@@ -7,7 +7,7 @@ const navbarHTML = `
         
         <!-- আপডেট করা অংশ: -->
         <!-- ইমেজের নামের বানান ঠিক আছে কিনা নিশ্চিত হোন। যদি jpg হয় তবে .jpg দিন -->
-        <img src="./images/logo.png" alt="SF Logo" class="h-12 w-auto object-contain">
+        <img src="./images/logo1.png" alt="SF Logo" class="h-12 w-auto object-contain">
         
         <span class="text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</span>
       </a>
