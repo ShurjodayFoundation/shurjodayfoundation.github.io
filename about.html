@@ -225,6 +225,235 @@
       expenseContent.classList.remove("hidden");
       incomeContent.classList.add("hidden");
 
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>আমাদের সম্পর্কে | সূর্যোদয় ফাউন্ডেশন</title>
+  <meta name="description" content="সূর্যোদয় ফাউন্ডেশনের লক্ষ্য, উদ্দেশ্য, নীতি ও আয়-ব্যয়ের নীতিমালা সম্পর্কে বিস্তারিত জানুন।">
+
+  <!-- AOS CSS -->
+  <link href="https://unpkg.com/aos@2.3.4/dist/aos.css" rel="stylesheet">
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #fffdf7; 
+      color: #1f2937;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    
+    /* Header with SCROLLING Background */
+    .about-header {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: url('https://raw.githubusercontent.com/ShurjodayFoundation/shurjodayfoundation.github.io/0a0e4050594e48af769d1915f2a496e14973e242/images/1000167146.jpg');
+      background-attachment: scroll; 
+      background-size: cover;
+      background-position: center;
+    }
+
+    .about-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(1, 51, 43, 0.7); 
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR INJECTED VIA JS -->
+  <div id="navbar-container"></div>
+
+  <!-- HEADER -->
+  <header class="about-header pt-20">
+    <!-- Header Animation Kept -->
+    <div class="relative z-10 text-center px-6 text-white" data-aos="fade-up">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">আমাদের সম্পর্কে :</h1>
+    </div>
+  </header>
+
+  <!-- ========================================= -->
+  <!-- MAIN CONTENT -->
+  <!-- ========================================= -->
+  <!-- Changed pb-4 to pb-10 for balanced spacing -->
+  <section class="pt-20 pb-10 max-w-4xl mx-auto px-6 space-y-16">
+
+    <!-- About Section -->
+    <div>
+      <h2 class="text-3xl font-semibold mb-6 text-[#1f2937]">সূর্যোদয় ফাউন্ডেশন</h2>
+      <p class="leading-relaxed text-lg text-gray-800">
+        সূর্যোদয় ফাউন্ডেশন কমলাপুর, সদর দক্ষিণ, কুমিল্লা ভিত্তিক একটি অলাভজনক, অরাজনৈতিক ও স্বেচ্ছাসেবী সংগঠন। 
+        গত ২ বছর ধরে আমরা আমাদের গ্রামের সার্বিক উন্নয়ন, মানবিক সহায়তা এবং সামাজিক ঐক্য প্রতিষ্ঠায় কাজ করে যাচ্ছি। 
+        আমাদের লক্ষ্য হলো একটি সচেতন, ঐক্যবদ্ধ ও উন্নত গ্রাম গড়ে তোলা।
+      </p>
+    </div>
+
+    <!-- লক্ষ্য-উদ্দেশ্য & নীতি ও আদর্শ (Grid Layout) -->
+    <div class="grid md:grid-cols-2 gap-10">
+      
+      <!-- লক্ষ্য-উদ্দেশ্য -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-4 text-[#1f2937]">লক্ষ্য-উদ্দেশ্য</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700 text-lg">
+          <li>শিক্ষা সহায়তা</li>
+          <li>সামাজিক উন্নয়ন</li>
+          <li>যুব সম্পৃক্ততা</li>
+          <li>মানবিক সহায়তা</li>
+          <li>ঐক্য</li>
+        </ul>
+      </div>
+
+      <!-- নীতি ও আদর্শ -->
+      <div>
+        <h2 class="text-2xl font-semibold mb-4 text-[#1f2937]">নীতি ও আদর্শ</h2>
+        <ul class="list-disc pl-6 space-y-2 text-gray-700 text-lg">
+          <li>অরাজনৈতিক</li>
+          <li>অলাভজনক</li>
+          <li>স্বেচ্ছাসেবী</li>
+        </ul>
+      </div>
+
+    </div>
+
+    <!-- আয়-ব্যয়ের নীতিমালা -->
+    <div>
+      <h2 class="text-3xl font-semibold mb-6 text-[#1f2937]">আয়-ব্যয়ের নীতিমালা</h2>
+
+      <!-- Buttons Container -->
+      <div class="flex flex-wrap gap-4">
+        <!-- Income Button (Default Active: Green background, white text) -->
+        <button id="incomeToggle" class="bg-[#008E48] text-white px-6 py-3 rounded-lg font-medium transition shadow-sm border border-transparent">
+          আয়ের উৎস দেখুন
+        </button>
+
+        <!-- Expense Button (Default Inactive: Light background, dark text) -->
+        <button id="expenseToggle" class="bg-[#DBF9DF] text-[#1f2937] px-6 py-3 rounded-lg font-medium hover:bg-[#008E48] hover:text-white transition shadow-sm border border-transparent">
+          ব্যয়ের খাতসমূহ
+        </button>
+      </div>
+
+      <!-- Hidden Income Content (Now Default Open) -->
+      <div id="incomeContent" class="mt-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all">
+        <h3 class="font-bold text-lg mb-3 text-gray-800">আয়ের উৎস:</h3>
+        <ul class="list-disc pl-6 space-y-3 text-gray-700">
+          <li>বিভিন্ন ব্যক্তি ও প্রতিষ্ঠান থেকে প্রাপ্ত স্বেচ্ছা অনুদান ও অর্থসহায়তা।</li>
+          <li>সদস্য, সমর্থক ও শুভাকাঙ্ক্ষীদের এককালীন ও নিয়মিত অনুদান।</li>
+          <li>ফাউন্ডেশনের যে কোনো প্রকল্পের জন্য সংগৃহীত অর্থ।</li>
+        </ul>
+      </div>
+
+      <!-- Hidden Expense Content -->
+      <div id="expenseContent" class="hidden mt-6 bg-white p-6 rounded-xl shadow-sm border border-gray-100 transition-all">
+        <h3 class="font-bold text-lg mb-3 text-gray-800">ব্যয়ের খাতসমূহ:</h3>
+        <ul class="list-disc pl-6 space-y-3 text-gray-700">
+          <li>জনকল্যাণ ও সেবামূলক প্রকল্প</li>
+          <li>উদ্ভাবনী ও নতুন উদ্যোগ</li>
+          <li>যাতায়াত ও পরিবহন</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- NEWSLETTER -->
+  <!-- ========================================== -->
+  <!-- Changed pt-4 to pt-10 to match the footer spacing (pb-20) -->
+  <section class="max-w-4xl mx-auto px-6 pb-20 pt-10">
+    <div data-aos="zoom-in" class="bg-[#01332B] text-white p-8 md:p-12 rounded-3xl text-center shadow-2xl">
+      <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+      
+      <form id="newsletterForm" class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+        <input type="email" id="emailInput" placeholder="আপনার ইমেইল এড্রেস" class="flex-1 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#008E48] text-white placeholder-gray-400" required>
+        <button type="submit" class="bg-[#008E48] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#163322] transition duration-300">সাবস্ক্রাইব</button>
+      </form>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FOOTER -->
+  <!-- ========================================== -->
+  <footer class="py-12 bg-[#002620] text-white text-sm">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div>
+        <h3 class="font-bold text-lg mb-4">সূর্যোদয় ফাউন্ডেশন</h3>
+        <p class="opacity-70 leading-relaxed">হাতে রেখে হাত, আনবো রঙিন প্রভাত ।</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-4">যোগাযোগ</h3>
+        <p class="opacity-70 mb-2">📍 কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
+        <p class="opacity-70">✉️ contact.shurjodayfoundation@gmail.com</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-4">মেনু</h3>
+        <ul class="space-y-2 opacity-70">
+          <li><a href="about.html" class="hover:text-[#B9F6CA] transition">আমাদের সম্পর্কে</a></li>
+          <li><a href="activities.html" class="hover:text-[#B9F6CA] transition">কার্যক্রম</a></li>
+          <li><a href="contact.html" class="hover:text-[#B9F6CA] transition">যোগাযোগ</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-12 pt-8 border-t border-white/10 text-xs opacity-50">
+      © <span id="year"></span> সূর্যোদয় ফাউন্ডেশন – সর্বস্বত্ব সংরক্ষিত
+    </div>
+  </footer>
+
+  <!-- ========================================= -->
+  <!-- SCRIPTS                                   -->
+  <!-- ========================================= -->
+  <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+  
+  <script>
+    // Initialize AOS
+    AOS.init({ duration: 1000, once: true });
+    
+    // Dynamic Year
+    document.getElementById("year").textContent = new Date().getFullYear();
+
+    // Toggle Logic for Income and Expense Sections
+    const incomeToggle = document.getElementById("incomeToggle");
+    const incomeContent = document.getElementById("incomeContent");
+    
+    const expenseToggle = document.getElementById("expenseToggle");
+    const expenseContent = document.getElementById("expenseContent");
+
+    // CSS Classes for Active/Inactive states
+    const activeClasses = ['bg-[#008E48]', 'text-white'];
+    const inactiveClasses = ['bg-[#DBF9DF]', 'text-[#1f2937]', 'hover:bg-[#008E48]', 'hover:text-white'];
+
+    // Income Toggle Event
+    incomeToggle.addEventListener("click", () => {
+      // Show Income, Hide Expense
+      incomeContent.classList.remove("hidden");
+      expenseContent.classList.add("hidden"); 
+
+      // Set Income Button to Active
+      incomeToggle.classList.add(...activeClasses);
+      incomeToggle.classList.remove(...inactiveClasses);
+
+      // Set Expense Button to Inactive
+      expenseToggle.classList.add(...inactiveClasses);
+      expenseToggle.classList.remove(...activeClasses);
+    });
+
+    // Expense Toggle Event
+    expenseToggle.addEventListener("click", () => {
+      // Show Expense, Hide Income
+      expenseContent.classList.remove("hidden");
+      incomeContent.classList.add("hidden");
+
       // Set Expense Button to Active
       expenseToggle.classList.add(...activeClasses);
       expenseToggle.classList.remove(...inactiveClasses);
@@ -240,4 +469,4 @@
   <script src="newsletter.js"></script>
 
 </body>
-    </html>
+</html>
