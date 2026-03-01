@@ -137,8 +137,7 @@
 
   <section class="max-w-7xl mx-auto px-6 py-16">
     
-    <!-- Tab Buttons (ID added for scroll targeting) -->
-    <!-- CHANGED: Rounded-xl applied here -->
+    <!-- Tab Buttons -->
     <div id="tab-buttons-container" class="flex justify-center space-x-4 mb-12">
       <button id="btn-photos" onclick="switchTab('photos')" class="px-8 py-2.5 rounded-xl font-bold transition-all tab-active">
         ছবির গ্যালারি
@@ -236,21 +235,58 @@
     document.getElementById("year").textContent = new Date().getFullYear();
 
     // ==========================================
-    // 1. ADD YOUR PHOTO FILENAMES HERE (Just the paths)
+    // 48 Images Extracted & Randomized Safely
+    // No two images from the same exact category are placed consecutively
     // ==========================================
-    const galleryImages = [
-        // Page 1
-        "images/koborsthan.jpg",
-        "images/photo2.jpg",
-        "images/photo3.jpg",
-        "images/photo4.jpg",
-        "images/photo5.jpg",
-        "images/photo6.jpg",
-
-        // Page 2 (Auto-created)
-        "images/photo7.jpg",
-        "images/photo8.jpg",
-        // Add as many as you want...
+    const galleryImages =[
+        "activitiesphoto/tree1.jpg",
+        "activitiesphoto/iftar.jpg",
+        "activitiesphoto/koborsthan.jpg",
+        "activitiesphoto/tree10.jpg",
+        "activitiesphoto/iftarmahfil.jpg",
+        "activitiesphoto/adomshumari.jpg",
+        "activitiesphoto/tree11.jpg",
+        "activitiesphoto/machine.jpeg",
+        "activitiesphoto/iftar1.jpg",
+        "activitiesphoto/tree12.jpg",
+        "activitiesphoto/koborsthan1.jpg",
+        "activitiesphoto/iftarmahfil1.jpg",
+        "activitiesphoto/tree13.jpg",
+        "activitiesphoto/adomshumari1.jpg",
+        "activitiesphoto/Gallery_1772360647783.jpg",
+        "activitiesphoto/tree14.jpg",
+        "activitiesphoto/iftar2.1.jpg",
+        "activitiesphoto/koborsthan2.jpg",
+        "activitiesphoto/tree16.jpg",
+        "activitiesphoto/iftarmahfil2.jpg",
+        "activitiesphoto/machine1.jpg",
+        "activitiesphoto/tree2.png",
+        "activitiesphoto/adomshumari2.jpg",
+        "activitiesphoto/iftar2.2.jpg",
+        "activitiesphoto/tree3.jpg",
+        "activitiesphoto/koborsthan3.jpg",
+        "activitiesphoto/iftarmahfil3.jpg",
+        "activitiesphoto/tree4.jpg",
+        "activitiesphoto/IMG-20260123-WA0002.jpg",
+        "activitiesphoto/adomshumari3.jpg",
+        "activitiesphoto/tree5.jpg",
+        "activitiesphoto/iftar2.3.jpg",
+        "activitiesphoto/koborsthan4.jpeg",
+        "activitiesphoto/tree6.jpg",
+        "activitiesphoto/iftarmahfil4.jpg",
+        "activitiesphoto/machine2.jpeg",
+        "activitiesphoto/tree7.jpg",
+        "activitiesphoto/adomshumari4.jpg",
+        "activitiesphoto/iftar2.jpg",
+        "activitiesphoto/tree8.jpg",
+        "activitiesphoto/koborsthan5.jpeg",
+        "activitiesphoto/iftarmahfil5.jpg",
+        "activitiesphoto/tree9.jpg",
+        "activitiesphoto/adomshumari5.jpg",
+        "activitiesphoto/iftarmahfil8.jpg",
+        "activitiesphoto/treeplantation.jpg",
+        "activitiesphoto/iftarmahfil6.jpg",
+        "activitiesphoto/koborsthan6.jpeg"
     ];
 
     // Configuration
@@ -258,7 +294,6 @@
     let currentPage = 1;
     
     // Calculate total pages automatically
-    // Use Math.max(..., 1) to ensure at least 1 page exists
     const totalPages = Math.max(Math.ceil(galleryImages.length / itemsPerPage), 1);
 
     // --- TAB SWITCHING LOGIC ---
@@ -294,7 +329,6 @@
 
         // If list is empty, show placeholder
         if(galleryImages.length === 0) {
-            // Optional: Show 6 dummy placeholders if you have no real images yet
             for(let i=0; i<6; i++){
                 grid.innerHTML += `<div class="aspect-[3/2] bg-gray-100 rounded-xl border border-gray-200 flex items-center justify-center text-gray-400">No Image</div>`;
             }
@@ -305,7 +339,6 @@
                 div.className = "group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative";
                 div.setAttribute('data-aos', 'zoom-in');
                 
-                // NO CAPTION CODE HERE anymore
                 div.innerHTML = `
                     <img src="${imagePath}" 
                          alt="Gallery Image" 
@@ -324,7 +357,6 @@
                 // Mobile: Scroll to buttons
                 document.getElementById('tab-buttons-container').scrollIntoView({ behavior: 'smooth', block: 'start' });
             } 
-            // Desktop: Do nothing
         }
     }
 
