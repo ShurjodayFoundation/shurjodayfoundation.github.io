@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="bn">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>কবরস্থান পরিষ্কার কর্মসূচি | সূর্যোদয় ফাউন্ডেশন</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Hind+Siliguri:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+
+  <style>
+    body {
+      font-family: 'Hind Siliguri', sans-serif;
+      background-color: #ffffff; 
+      color: #1f2937;
+      margin: 0;
+      overflow-x: hidden;
+    }
+    
+    /* Header with SCROLLING Background */
+    .activity-header {
+      position: relative;
+      height: 400px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      overflow: hidden;
+      background-image: url('images/1000167146.jpg'); 
+      background-attachment: scroll; 
+      background-size: cover;
+      background-position: center;
+    }
+
+    .activity-header::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(1, 51, 43, 0.7); 
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- NAVBAR INJECTED VIA JS -->
+  <div id="navbar-container"></div>
+
+  <!-- HEADER -->
+  <header class="activity-header pt-20">
+    <div class="relative z-10 text-center px-6 text-white">
+      <h1 class="text-2xl md:text-5xl font-bold mb-4 leading-tight">
+        ভ্রাতৃত্বের বন্ধনে এক কাতার:
+      </h1>
+      <p class="text-[#B9F6CA] text-lg max-w-2xl mx-auto opacity-90 mt-4">
+        সম্মিলিত ইফতার মাহফিল ২০২৫
+      </p>
+    </div>
+  </header>
+
+  <!-- ========================================== -->
+  <!-- DESCRIPTION SECTION (Plain Text)           -->
+  <!-- ========================================== -->
+  <section class="max-w-5xl mx-auto px-6 py-16">
+    <h2 class="text-2xl font-bold mb-8 text-[#008E48] text-center">কার্যক্রমের বিবরণ</h2>
+    
+    <div class="text-lg text-gray-800 leading-relaxed space-y-6">
+      <p>
+        সবার সাথে মিলেমিশে ইফতার করার মধ্যেও আলাদা এক তৃপ্তি আছে। ২০২৫ সালে আমরা গ্রামের সকল স্তরের মানুষকে নিয়ে মসজিদে একটি বিশাল ইফতার মাহফিলের আয়োজন করি।
+      </p>
+      <p>
+        সেই মাহফিলে সকল ভেদাভেদ ভুলে সবাই এক কাতারে বসে ইফতার করেছেন। এই আয়োজন আমাদের গ্রামের মানুষের মাঝে পারস্পরিক ভালোবাসা বৃদ্ধি করেছে এবং সামাজিক ঐক্যকে আরও সুদৃঢ় করেছে।
+      </p>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- PHOTOS SECTION (3:2 Ratio, No Details)     -->
+  <!-- ========================================== -->
+  <section class="max-w-5xl mx-auto px-6 pb-20">
+    <h2 class="text-2xl font-bold mb-8 text-[#008E48] text-center">কার্যক্রমের ছবি</h2>
+    
+    <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6" id="photo-grid">
+        
+        <!-- Photo 1 -->
+        <div class="group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative">
+            <img src="images/photo1.jpg" alt="Activity Photo" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+        </div>
+
+        <!-- Photo 2 -->
+        <div class="group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative">
+            <img src="images/photo2.jpg" alt="Activity Photo" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+        </div>
+
+        <!-- Photo 3 -->
+        <div class="group cursor-pointer overflow-hidden rounded-xl aspect-[3/2] bg-gray-50 border border-gray-200 relative">
+            <img src="images/photo3.jpg" alt="Activity Photo" onerror="this.src='https://via.placeholder.com/600x400?text=Image+Not+Found'" class="w-full h-full object-cover transform group-hover:scale-110 transition duration-500">
+        </div>
+
+        <!-- Add more photos exactly like this if needed -->
+
+    </div>
+  
+  <!-- GO BACK BUTTON -->
+    <div class="mt-12 text-center">
+      <a href="index.html" class="inline-block bg-[#008E48] text-white px-8 py-3 rounded-lg font-bold hover:bg-[#163322] transition shadow-md">
+        ← ফিরে যান
+      </a>
+    </div>
+
+  </section>
+
+  <!-- ========================================== -->
+  <!-- NEWSLETTER -->
+  <!-- ========================================== -->
+  <section class="max-w-4xl mx-auto px-6 py-12">
+    <div class="bg-[#01332B] text-white p-8 md:p-12 rounded-3xl text-center shadow-2xl">
+      <h3 class="text-2xl md:text-3xl font-semibold mb-4 text-[#B9F6CA]">আপডেট পেতে সাবস্ক্রাইব করুন</h3>
+      <p class="opacity-70 mb-8 text-sm md:text-base">ফাউন্ডেশনের কার্যক্রম এবং নতুন ইভেন্টের আপডেট সরাসরি ইমেইলে পেতে যুক্ত হোন আমাদের সাথে।</p>
+      
+      <form id="newsletterForm" class="flex flex-col md:flex-row gap-4 max-w-lg mx-auto">
+        <input type="email" id="emailInput" placeholder="আপনার ইমেইল এড্রেস" class="flex-1 px-6 py-3.5 rounded-full bg-white/10 border border-white/20 focus:outline-none focus:ring-2 focus:ring-[#008E48] text-white placeholder-gray-400" required>
+        <button type="submit" class="bg-[#008E48] text-white px-8 py-3.5 rounded-full font-bold hover:bg-[#163322] transition duration-300">সাবস্ক্রাইব</button>
+      </form>
+      <p id="formMessage" class="text-sm font-semibold mt-3"></p>
+    </div>
+  </section>
+
+  <!-- ========================================== -->
+  <!-- FOOTER -->
+  <!-- ========================================== -->
+  <footer class="py-12 bg-[#002620] text-white text-sm mt-10">
+    <div class="max-w-7xl mx-auto px-6 grid md:grid-cols-3 gap-12">
+      <div>
+        <h3 class="font-bold text-lg mb-4">সূর্যোদয় ফাউন্ডেশন</h3>
+        <p class="opacity-70 leading-relaxed">হাতে রেখে হাত, আনবো রঙিন প্রভাত। আমরা আমাদের গ্রাম ও গ্রামের মানুষের সার্বিক উন্নয়নে অঙ্গীকারবদ্ধ।</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-4">যোগাযোগ</h3>
+        <p class="opacity-70 mb-2">📍 কমলাপুর, সদর দক্ষিণ, কুমিল্লা</p>
+        <p class="opacity-70">✉️ contact.shurjodayfoundation@gmail.com</p>
+      </div>
+      <div>
+        <h3 class="font-bold text-lg mb-4">দ্রুত লিংক</h3>
+        <ul class="space-y-2 opacity-70">
+          <li><a href="about.html" class="hover:text-[#B9F6CA] transition">আমাদের সম্পর্কে</a></li>
+          <li><a href="index.html" class="hover:text-[#B9F6CA] transition">কার্যক্রম</a></li>
+          <li><a href="donate.html" class="hover:text-[#B9F6CA] transition">ডোনেট করুন</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="text-center mt-12 pt-8 border-t border-white/10 text-xs opacity-50">
+      © <span id="year"></span> সূর্যোদয় ফাউন্ডেশন | সর্বস্বত্ব সংরক্ষিত
+    </div>
+  </footer>
+
+  <!-- ========================================= -->
+  <!-- SCRIPTS                                   -->
+  <!-- ========================================= -->
+  <script>
+    document.getElementById("year").textContent = new Date().getFullYear();
+  </script>
+
+  <!-- Global Scripts -->
+  <script src="navbar.js"></script>
+  <script src="newsletter.js"></script>
+</body>
+</html>
