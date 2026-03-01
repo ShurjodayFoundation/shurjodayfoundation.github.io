@@ -4,10 +4,11 @@ const navbarHTML = `
       
       <!-- LOGO & BRAND NAME START -->
       <a href="index.html" class="flex items-center gap-3 hover:opacity-90 transition">
-        <!-- আপনার লোগোর লিংক নিচে দিন (যেমন: images/logo.png) -->
-        <img src="images/logo.png" alt="Logo" class="h-10 w-auto object-contain">
         
-        <!-- যদি লোগোর পাশে নাম রাখতে চান, তবে নিচের লাইনটি রাখুন। না চাইলে মুছে দিন -->
+        <!-- আপডেট করা অংশ: -->
+        <!-- ইমেজের নামের বানান ঠিক আছে কিনা নিশ্চিত হোন। যদি jpg হয় তবে .jpg দিন -->
+        <img src="./images/logo.png" alt="SF Logo" class="h-12 w-auto object-contain">
+        
         <span class="text-xl font-bold text-[#008E48]">সূর্যোদয় ফাউন্ডেশন</span>
       </a>
       <!-- LOGO & BRAND NAME END -->
@@ -43,39 +44,32 @@ const navbarHTML = `
 `;
 
 document.addEventListener("DOMContentLoaded", function() {
-  // ১. নেভিগেশন বারটি পেজে যুক্ত করা
   const navContainer = document.getElementById("navbar-container");
   if (navContainer) {
     navContainer.innerHTML = navbarHTML;
   }
 
-  // ২. ডাইনামিক অ্যাক্টিভ মেনু হাইলাইট করা
   const currentPath = window.location.pathname.split('/').pop() || 'index.html';
 
-  // ডেস্কটপ মেনু হাইলাইট
   document.querySelectorAll('#desktop-menu .nav-link').forEach(link => {
-    // যদি href এবং currentPath হুবহু মিলে অথবা home page এর ক্ষেত্রে
     if (link.getAttribute('href') === currentPath) {
       link.classList.add('text-[#008E48]', 'font-bold');
       link.classList.remove('text-[#1f2937]', 'hover:text-[#008E48]');
     }
   });
 
-  // মোবাইল মেনু হাইলাইট
   document.querySelectorAll('#mobileMenu .mobile-nav-link').forEach(link => {
     if (link.getAttribute('href') === currentPath) {
       link.classList.add('text-[#008E48]', 'font-bold');
     }
   });
 
-  // ৩. মোবাইল হ্যামবার্গার মেনু টগল এবং Outside Click Logic
   const menuBtn = document.getElementById("menuBtn");
   const mobileMenu = document.getElementById("mobileMenu");
 
   if (menuBtn && mobileMenu) {
-    // বাটনে ক্লিক করলে মেনু খুলবে/বন্ধ হবে
     menuBtn.addEventListener("click", (e) => {
-      e.stopPropagation(); // ইভেন্টটি যেন ডকুমেন্টে না ছড়ায়
+      e.stopPropagation(); 
       if (mobileMenu.classList.contains("-translate-x-full")) {
         mobileMenu.classList.remove("-translate-x-full");
         mobileMenu.classList.add("translate-x-0");
@@ -85,13 +79,11 @@ document.addEventListener("DOMContentLoaded", function() {
       }
     });
 
-    // মেনুর বাইরে কোথাও ক্লিক করলে মেনু বন্ধ হয়ে যাবে
     document.addEventListener("click", (e) => {
       const isMenuOpen = mobileMenu.classList.contains("translate-x-0");
       const isClickInsideMenu = mobileMenu.contains(e.target);
       const isClickOnBtn = menuBtn.contains(e.target);
 
-      // যদি মেনু খোলা থাকে এবং ক্লিকটি মেনু বা বাটনের ভেতরে না হয়
       if (isMenuOpen && !isClickInsideMenu && !isClickOnBtn) {
         mobileMenu.classList.add("-translate-x-full");
         mobileMenu.classList.remove("translate-x-0");
